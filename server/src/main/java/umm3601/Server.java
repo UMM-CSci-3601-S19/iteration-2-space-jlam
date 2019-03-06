@@ -4,6 +4,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import spark.Request;
 import spark.Response;
+import umm3601.rides.RideController;
+import umm3601.rides.RideRequestHandler;
 import umm3601.user.UserController;
 import umm3601.user.UserRequestHandler;
 
@@ -21,6 +23,9 @@ public class Server {
 
     UserController userController = new UserController(userDatabase);
     UserRequestHandler userRequestHandler = new UserRequestHandler(userController);
+
+    RideController rideController = new RideController(userDatabase);
+    RideRequestHandler rideRequestHandler = new RideRequestHandler(rideController);
 
     //Configure Spark
     port(serverPort);
@@ -63,6 +68,10 @@ public class Server {
     get("api/users", userRequestHandler::getUsers);
     get("api/users/:id", userRequestHandler::getUserJSON);
     post("api/users/new", userRequestHandler::addNewUser);
+
+    get("api/rides", rideRequestHandler::getRides);
+    get("api/rides/:id", rideRequestHandler::getRideJSON);
+    post("api/rides/new", rideRequestHandler::addNewRide);
 
     // An example of throwing an unhandled exception so you can see how the
     // Java Spark debugger displays errors like this.
