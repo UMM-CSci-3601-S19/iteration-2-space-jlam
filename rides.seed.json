@@ -1,0 +1,62 @@
+[
+  {
+    "_id": {
+      "oid": "5c800ec5dfb7b8d78e42a190"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 14,
+    "condition": "Average",
+    "start_location": "{\"Morris\"}",
+    "destination": "Mappsville \", Minnesota\""
+  },
+  {
+    "_id": {
+      "oid": "5c800ec50493fc620b2398d9"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 13,
+    "condition": "Good",
+    "start_location": "{\"Morris\"}",
+    "destination": "Kaka \", Minnesota\""
+  },
+  {
+    "_id": {
+      "oid": "5c800ec54d3c8b05db2bae95"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 35,
+    "condition": "Poor",
+    "start_location": "{\"Morris\"}",
+    "destination": "Sanborn \", Minnesota\""
+  },
+  {
+    "_id": {
+      "oid": "5c800ec57526658e34806ddf"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 27,
+    "condition": "New",
+    "start_location": "{\"Morris\"}",
+    "destination": "Chautauqua \", Minnesota\""
+  },
+  {
+    "_id": {
+      "oid": "5c800ec504a5c0c9a88c06b6"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 40,
+    "condition": "Average",
+    "start_location": "{\"Morris\"}",
+    "destination": "Why \", Minnesota\""
+  },
+  {
+    "_id": {
+      "oid": "5c800ec54f3765b585044699"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 19,
+    "condition": "Average",
+    "start_location": "{\"Morris\"}",
+    "destination": "Tuskahoma \", Minnesota\""
+  }
+]
