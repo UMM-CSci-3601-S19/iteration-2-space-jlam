@@ -28,19 +28,20 @@
         <button mat-raised-button id="submit" color="primary" #input type="button" (click)="loadService()">Submit
         </button>
 
-        <div class="cardlist" *ngIf="rides; else ridesError">
-          <mat-card #elem class="rides" [id]="ride.start_location"
+        <mat-card class="cardlist" *ngIf="rides; else ridesError">
+          <mat-expansion-panel #elem class="rides" [id]="ride.start_location"
                     *ngFor="let ride of this.filterRides(rideVehicle, rideMileage, rideCondition)">
-            <mat-card-header>
-              <mat-card-title class="rideVehicle" [id]="ride.vehicle">{{ride.vehicle}}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <p>
-                {{ride.start_location}}
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="rideVehicle" [id]="ride.destination">{{ride.destination}}</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-panel-description>Start Location: {{ride.start_location}}</mat-panel-description>
+            <mat-panel-description>Vehicle: {{ride.vehicle}}</mat-panel-description>
+            <mat-panel-description>Mileage: {{ride.mileage}}</mat-panel-description>
+            <mat-panel-description>Condition: {{ride.condition}}</mat-panel-description>
+
+          </mat-expansion-panel>
+        </mat-card>
         <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
         <ng-template #ridesError>
           <mat-error>
