@@ -6,39 +6,54 @@ is potentially helpful and contributed to the shaping of this example -->
     <h2 mat-dialog-title>New Ride</h2>
     <mat-dialog-content layout="column">
       <mat-form-field flex>
-        <input matInput #input id="nameField" placeholder="Name" [(ngModel)]="data.ride.name" formControlName="name"
-               required>
-        <mat-error *ngFor="let validation of add_ride_validation_messages.name">
-          <mat-error class="error-message" id="name-error"
-                     *ngIf="addRideForm.get('name').hasError(validation.type) && (addRideForm.get('name').dirty || addRideForm.get('name').touched)">
+        <input matInput #input id="vehicleField" placeholder="Vehicle" [(ngModel)]="data.ride.vehicle" formControlName="vehicle">
+        <mat-error *ngFor="let validation of add_ride_validation_messages.vehicle">
+          <mat-error class="error-message" id="vehicle-error"
+                     *ngIf="addRideForm.get('vehicle').hasError(validation.type) && (addRideForm.get('vehicle').dirty || addRideForm.get('vehicle').touched)">
             {{validation.message}}
           </mat-error>
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput #input id="ageField" type="number" placeholder="Age" [(ngModel)]="data.ride.age"
-               formControlName="age">
-        <mat-error *ngFor="let validation of add_ride_validation_messages.age">
-          <mat-error class="error-message" id="age-error"
-                     *ngIf="addRideForm.get('age').hasError(validation.type) && (addRideForm.get('age').dirty || addRideForm.get('age').touched)">
+        <input matInput #input id="startField" placeholder="Start Location" [(ngModel)]="data.ride.start_location"
+               formControlName="start">
+        <mat-error *ngFor="let validation of add_ride_validation_messages.start_location">
+          <mat-error class="error-message" id="start_location-error"
+                     *ngIf="addRideForm.get('start_location').hasError(validation.type) && (addRideForm.get('start_location').dirty || addRideForm.get('start_location').touched)">
             {{validation.message}}
           </mat-error>
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput #input id="companyField" placeholder="Company" [(ngModel)]="data.ride.company"
-               formControlName="company">
-      </mat-form-field>
-      <mat-form-field flex>
-        <input matInput #input id="emailField" placeholder="Email" [(ngModel)]="data.ride.email"
-               formControlName="email">
-        <mat-error *ngFor="let validation of add_ride_validation_messages.email">
-          <mat-error class="error-message" id='email-error'
-                     *ngIf="addRideForm.get('email').hasError(validation.type) && (addRideForm.get('email').dirty || addRideForm.get('email').touched)">
+        <input matInput #input id="destinationField" placeholder="Destination" [(ngModel)]="data.ride.destination"
+               formControlName="destination">
+        <mat-error *ngFor="let validation of add_ride_validation_messages.destination">
+          <mat-error class="error-message" id='destination-error'
+                     *ngIf="addRideForm.get('destination').hasError(validation.type) && (addRideForm.get('destination').dirty || addRideForm.get('destination').touched)">
             {{validation.message}}
           </mat-error>
         </mat-error>
       </mat-form-field>
+      <mat-form-field flex>
+        <input matInput #input id="conditionField" placeholder="Condition" [(ngModel)]="data.ride.condition"
+               formControlName="condition">
+        <mat-error *ngFor="let validation of add_ride_validation_messages.condition">
+          <mat-error class="error-message" id='condition-error'
+                     *ngIf="addRideForm.get('condition').hasError(validation.type) && (addRideForm.get('condition').dirty || addRideForm.get('condition').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field flex>
+      <input matInput #input id="mileageField" type="number" placeholder="Mileage" [(ngModel)]="data.ride.mileage"
+             formControlName="mileage">
+      <mat-error *ngFor="let validation of add_ride_validation_messages.mileage">
+        <mat-error class="error-message" id='mileage-error'
+                   *ngIf="addRideForm.get('mileage').hasError(validation.type) && (addRideForm.get('mileage').dirty || addRideForm.get('mileage').touched)">
+          {{validation.message}}
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
     </mat-dialog-content>
     <mat-dialog-actions layout="row">
       <!-- [mat-dialog-close]="data.ride" causes the data.ride object to be returned when the dialog is closed. -->

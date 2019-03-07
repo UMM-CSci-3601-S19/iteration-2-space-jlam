@@ -28,14 +28,22 @@ export class AddRideComponent implements OnInit {
     ],
 
     'mileage': [
-      {type: 'pattern', message: 'Age must be a number'},
-      {type: 'min', message: 'Age must be at least 15'},
-      {type: 'max', message: 'Age may not be greater than 200'},
-      {type: 'required', message: 'Age is required'}
+      {type: 'pattern', message: 'Mileage must be a number'},
+      {type: 'min', message: 'Mileage must be at least 1'},
+      {type: 'max', message: 'Mileage may not be greater than 500,000'},
+      {type: 'required', message: 'Mileage is required'}
     ],
 
     'start_location': [
-      {type: 'email', message: 'Email must be formatted properly'}
+      {type: 'required', message: 'Location is required'}
+    ],
+
+    'destination': [
+      {type: 'required', message: 'Destination is required'}
+    ],
+
+    'condition': [
+      {type: 'required', message: 'Condition is required'}
     ]
   };
 
@@ -53,19 +61,27 @@ export class AddRideComponent implements OnInit {
       ])),
 
       // Since this is for a company, we need workers to be old enough to work, and probably not older than 200.
-      mileage: new FormControl('age', Validators.compose([
+      mileage: new FormControl('mileage', Validators.compose([
         Validators.pattern('^[0-9]+[0-9]?'),
-        Validators.min(15),
-        Validators.max(200),
+        Validators.min(1),
+        Validators.max(500000),
         Validators.required
       ])),
 
       // We don't care much about what is in the company field, so we just add it here as part of the form
       // without any particular validation.
-      condition: new FormControl('condition'),
+      condition: new FormControl('condition', Validators.compose([
+        Validators.required
+      ])),
 
       // We don't need a special validator just for our app here, but there is a default one for email.
-      start_location: new FormControl('start_location')
+      start_location: new FormControl('start_location', Validators.compose([
+        Validators.required
+      ])),
+
+      destination: new FormControl('destination', Validators.compose([
+        Validators.required
+      ]))
     })
 
   }
