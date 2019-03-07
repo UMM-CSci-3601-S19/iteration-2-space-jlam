@@ -9,7 +9,7 @@ import {environment} from '../../environments/environment';
 
 @Injectable()
 export class RideListService {
-  readonly baseUrl: string = environment.API_URL + 'users';
+  readonly baseUrl: string = environment.API_URL + 'rides';
   private rideUrl: string = this.baseUrl;
 
   constructor(private http: HttpClient) {
@@ -27,8 +27,8 @@ export class RideListService {
   /*
   //This method looks lovely and is more compact, but it does not clear previous searches appropriately.
   //It might be worth updating it, but it is currently commented out since it is not used (to make that clear)
-  getUsersByCompany(userCompany?: string): Observable<User> {
-      this.rideUrl = this.rideUrl + (!(userCompany == null || userCompany == "") ? "?company=" + userCompany : "");
+  getRidesByCompany(rideCompany?: string): Observable<Ride> {
+      this.rideUrl = this.rideUrl + (!(rideCompany == null || rideCompany == "") ? "?company=" + rideCompany : "");
       console.log("The url is: " + this.rideUrl);
       return this.http.request(this.rideUrl).map(res => res.json());
   }
@@ -83,12 +83,12 @@ export class RideListService {
         'Content-Type': 'application/json'
       }),
       // But we're getting a simple (text) string in response
-      // The server sends the hex version of the new user back
-      // so we know how to find/access that user again later.
+      // The server sends the hex version of the new ride back
+      // so we know how to find/access that ride again later.
       responseType: 'text' as 'json'
     };
 
-    // Send post request to add a new user with the user data as the body with specified headers.
+    // Send post request to add a new ride with the ride data as the body with specified headers.
     return this.http.post<string>(this.rideUrl + '/new', newRide, httpOptions);
   }
 }

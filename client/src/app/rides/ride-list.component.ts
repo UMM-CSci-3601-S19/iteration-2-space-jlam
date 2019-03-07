@@ -20,6 +20,7 @@ export class RideListComponent implements OnInit {
   // We should rename them to make that clearer.
   public rideVehicle: string;
   public rideMileage: number;
+  public rideCondition: string;
   public rideDestination: string;
 
   // The ID of the
@@ -58,47 +59,29 @@ export class RideListComponent implements OnInit {
     });
   }
 
-  public filterRides(searchVehicle: string, searchMileage: number): Ride[] {
+  public filterRides(searchVehicle: string, searchMileage: number, searchDestination: string): Ride[] {
 
     this.filteredRides = this.rides;
 
-    // Filter by name
+    // Filter by vehicle
     if (searchVehicle != null) {
       searchVehicle = searchVehicle.toLocaleLowerCase();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       this.filteredRides = this.filteredRides.filter(ride => {
-        return !searchVehicle || ride.name.toLowerCase().indexOf(searchVehicle) !== -1;
+        return !searchVehicle || ride.vehicle.toLowerCase().indexOf(searchVehicle) !== -1;
       });
     }
 
-    // Filter by age
+    // Filter by mileage
     if (searchMileage != null) {
       this.filteredRides = this.filteredRides.filter(ride => {
         return !searchMileage || ride.mileage == searchMileage;
+      });
+    }
+
+    // Filter by destination
+    if (searchDestination != null) {
+      this.filteredRides = this.filteredRides.filter(ride => {
+        return !searchDestination || ride.destination == searchDestination;
       });
     }
 
@@ -120,7 +103,7 @@ export class RideListComponent implements OnInit {
     rides.subscribe(
       rides => {
         this.rides = rides;
-        this.filterRides(this.rideVehicle, this.Mileage);
+        this.filterRides(this.rideVehicle, this.rideMileage, this.rideDestination);
       },
       err => {
         console.log(err);
