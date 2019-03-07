@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {RideListService} from './ride-list.service';
-import {User} from './user';
+import {Ride} from './ride';
 
 @Component({
   selector: 'ride-component',
   styleUrls: ['./ride.component.css'],
   templateUrl: 'ride.component.html'
 })
-export class UserComponent implements OnInit {
+export class RideComponent implements OnInit {
   public ride: Ride = null;
   private id: string;
 
