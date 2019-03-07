@@ -3,80 +3,80 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {Observable} from 'rxjs/Observable';
 
-import {User} from './user';
+import {Ride} from './ride';
 import {environment} from '../../environments/environment';
 
 
 @Injectable()
-export class UserListService {
+export class RideListService {
   readonly baseUrl: string = environment.API_URL + 'users';
-  private userUrl: string = this.baseUrl;
+  private rideUrl: string = this.baseUrl;
 
   constructor(private http: HttpClient) {
   }
 
-  getUsers(userCompany?: string): Observable<User[]> {
-    this.filterByCompany(userCompany);
-    return this.http.get<User[]>(this.userUrl);
+  getRides(rideDestination?: string): Observable<Ride[]> {
+    this.filterByDestination(rideDestination);
+    return this.http.get<Ride[]>(this.rideUrl);
   }
 
-  getUserById(id: string): Observable<User> {
-    return this.http.get<User>(this.userUrl + '/' + id);
+  getRideById(id: string): Observable<Ride> {
+    return this.http.get<Ride>(this.rideUrl + '/' + id);
   }
 
   /*
   //This method looks lovely and is more compact, but it does not clear previous searches appropriately.
   //It might be worth updating it, but it is currently commented out since it is not used (to make that clear)
   getUsersByCompany(userCompany?: string): Observable<User> {
-      this.userUrl = this.userUrl + (!(userCompany == null || userCompany == "") ? "?company=" + userCompany : "");
-      console.log("The url is: " + this.userUrl);
-      return this.http.request(this.userUrl).map(res => res.json());
+      this.rideUrl = this.rideUrl + (!(userCompany == null || userCompany == "") ? "?company=" + userCompany : "");
+      console.log("The url is: " + this.rideUrl);
+      return this.http.request(this.rideUrl).map(res => res.json());
   }
   */
 
-  filterByCompany(userCompany?: string): void {
-    if (!(userCompany == null || userCompany === '')) {
-      if (this.parameterPresent('company=')) {
+  filterByDestination(rideDestination?: string): void {
+    if (!(rideDestination == null || rideDestination === '')) {
+      if (this.parameterPresent('destination=')) {
         // there was a previous search by company that we need to clear
-        this.removeParameter('company=');
+        this.removeParameter('destination=');
       }
-      if (this.userUrl.indexOf('?') !== -1) {
+      if (this.rideUrl.indexOf('?') !== -1) {
         // there was already some information passed in this url
-        this.userUrl += 'company=' + userCompany + '&';
+        this.rideUrl += 'destination=' + rideDestination + '&';
       } else {
         // this was the first bit of information to pass in the url
-        this.userUrl += '?company=' + userCompany + '&';
+        this.rideUrl += '?destination=' + rideDestination + '&';
       }
     } else {
       // there was nothing in the box to put onto the URL... reset
-      if (this.parameterPresent('company=')) {
-        let start = this.userUrl.indexOf('company=');
-        const end = this.userUrl.indexOf('&', start);
-        if (this.userUrl.substring(start - 1, start) === '?') {
+      if (this.parameterPresent('destination=')) {
+        let start = this.rideUrl.indexOf('destination=');
+        const end = this.rideUrl.indexOf('&', start);
+        if (this.rideUrl.substring(start - 1, start) === '?') {
           start = start - 1;
         }
-        this.userUrl = this.userUrl.substring(0, start) + this.userUrl.substring(end + 1);
+        this.rideUrl = this.rideUrl.substring(0, start) + this.rideUrl.substring(end + 1);
       }
     }
   }
 
   private parameterPresent(searchParam: string) {
-    return this.userUrl.indexOf(searchParam) !== -1;
+    return this.rideUrl.indexOf(searchParam) !== -1;
   }
 
   //remove the parameter and, if present, the &
   private removeParameter(searchParam: string) {
-    let start = this.userUrl.indexOf(searchParam);
+    let start = this.rideUrl.indexOf(searchParam);
     let end = 0;
-    if (this.userUrl.indexOf('&') !== -1) {
-      end = this.userUrl.indexOf('&', start) + 1;
+    if (this.rideUrl.indexOf('&') !== -1) {
+      end = this.rideUrl.indexOf('&', start) + 1;
     } else {
-      end = this.userUrl.indexOf('&', start);
+      end = this.rideUrl.indexOf('&', start);
     }
-    this.userUrl = this.userUrl.substring(0, start) + this.userUrl.substring(end);
+    this.rideUrl = this.rideUrl.substring(0, start) + this.rideUrl.substring(end);
   }
 
-  addNewUser(newUser: User): Observable<string> {
+  addNewRide(newRide: Ride): Observable<string> {
     const httpOptions = {
       headers: new HttpHeaders({
         // We're sending JSON
@@ -89,6 +89,6 @@ export class UserListService {
     };
 
     // Send post request to add a new user with the user data as the body with specified headers.
-    return this.http.post<string>(this.userUrl + '/new', newUser, httpOptions);
+    return this.http.post<string>(this.rideUrl + '/new', newRide, httpOptions);
   }
 }

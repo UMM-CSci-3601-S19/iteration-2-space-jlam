@@ -22,5 +22,5 @@ task seedMongoDB {
   group = "application"
 }
 seedMongoDB.dependsOn(clearMongoDB)
-seedMongoDB.dependsOn(seedToDoData)
+seedMongoDB.dependsOn(seedRideData)
 seedMongoDB.dependsOn(seedUserData)

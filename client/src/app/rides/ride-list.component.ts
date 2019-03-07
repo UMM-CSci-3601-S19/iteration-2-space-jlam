@@ -18,9 +18,9 @@ export class RideListComponent implements OnInit {
 
   // These are the target values used in searching.
   // We should rename them to make that clearer.
-  public rideName: string;
-  public rideAge: number;
-  public rideCompany: string;
+  public rideVehicle: string;
+  public rideMileage: number;
+  public rideDestination: string;
 
   // The ID of the
   private highlightedID: string = '';
@@ -35,7 +35,7 @@ export class RideListComponent implements OnInit {
   }
 
   openDialog(): void {
-    const newRide: Ride = {_id: '', name: '', age: -1, company: '', email: ''};
+    const newRide: Ride = {_id: '', vehicle: '', mileage: -1, condition: '', start_location: '', destination: ''};
     const dialogRef = this.dialog.open(AddRideComponent, {
       width: '500px',
       data: {ride: newRide}
@@ -58,23 +58,47 @@ export class RideListComponent implements OnInit {
     });
   }
 
-  public filterRides(searchName: string, searchAge: number): Ride[] {
+  public filterRides(searchVehicle: string, searchMileage: number): Ride[] {
 
     this.filteredRides = this.rides;
 
     // Filter by name
-    if (searchName != null) {
-      searchName = searchName.toLocaleLowerCase();
+    if (searchVehicle != null) {
+      searchVehicle = searchVehicle.toLocaleLowerCase();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       this.filteredRides = this.filteredRides.filter(ride => {
-        return !searchName || ride.name.toLowerCase().indexOf(searchName) !== -1;
+        return !searchVehicle || ride.name.toLowerCase().indexOf(searchVehicle) !== -1;
       });
     }
 
     // Filter by age
-    if (searchAge != null) {
+    if (searchMileage != null) {
       this.filteredRides = this.filteredRides.filter(ride => {
-        return !searchAge || ride.age == searchAge;
+        return !searchMileage || ride.mileage == searchMileage;
       });
     }
 
@@ -96,7 +120,7 @@ export class RideListComponent implements OnInit {
     rides.subscribe(
       rides => {
         this.rides = rides;
-        this.filterRides(this.rideName, this.rideAge);
+        this.filterRides(this.rideVehicle, this.Mileage);
       },
       err => {
         console.log(err);
@@ -105,7 +129,7 @@ export class RideListComponent implements OnInit {
   }
 
   loadService(): void {
-    this.rideListService.getRides(this.rideCompany).subscribe(
+    this.rideListService.getRides(this.rideCondition).subscribe(
       rides => {
         this.rides = rides;
         this.filteredRides = this.rides;

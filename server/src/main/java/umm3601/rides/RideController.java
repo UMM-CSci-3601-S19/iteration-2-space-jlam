@@ -40,14 +40,14 @@ public class RideController {
    * and `null` if no user with that ID is found
    */
   public String getRide(String id) {
-    FindIterable<Document> jsonUsers
+    FindIterable<Document> jsonRides
       = rideCollection
       .find(eq("_id", new ObjectId(id)));
 
-    Iterator<Document> iterator = jsonUsers.iterator();
+    Iterator<Document> iterator = jsonRides.iterator();
     if (iterator.hasNext()) {
-      Document user = iterator.next();
-      return user.toJson();
+      Document ride = iterator.next();
+      return ride.toJson();
     } else {
       // We didn't find the desired ride
       return null;
