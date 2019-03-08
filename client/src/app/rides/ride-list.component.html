@@ -1,7 +1,3 @@
-<div>
-  <button id="addNewRide" mat-raised-button (click)="openDialog()">Add New Ride</button>
-</div>
-
 <mat-card style="max-width: 300px;">
   <mat-expansion-panel>
     <mat-expansion-panel-header>Filter</mat-expansion-panel-header>
@@ -9,32 +5,37 @@
       <input matInput id="rideVehicle" #input type="text" placeholder="Filter by vehicle"
              (input)="rideVehicle = $event.target.value">
     </mat-form-field>
-      <mat-form-field>
-        <input matInput id="rideMileage" #input type="number" placeholder="Filter by mileage"
-               (input)="rideMileage = $event.target.value">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput id="rideDestination" #input type="text" placeholder="Filter by destination"
-               (input)="rideDestination = $event.target.value">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput id="rideStartLocation" #input type="text" placeholder="Filter by start location"
-               (input)="rideStartLocation = $event.target.value">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput id="rideCondition" #input type="search" placeholder="Search for condition"
-               (input)="rideCondition = $event.target.value">
-      </mat-form-field></mat-expansion-panel>
+    <mat-form-field>
+      <input matInput id="rideMileage" #input type="number" placeholder="Filter by mileage"
+             (input)="rideMileage = $event.target.value">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput id="rideDestination" #input type="text" placeholder="Filter by destination"
+             (input)="rideDestination = $event.target.value">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput id="rideStartLocation" #input type="text" placeholder="Filter by start location"
+             (input)="rideStartLocation = $event.target.value">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput id="rideCondition" #input type="search" placeholder="Search for condition"
+             (input)="rideCondition = $event.target.value">
+    </mat-form-field>
+  </mat-expansion-panel>
 </mat-card>
-<div layout="row" layout-sm="column">
-<div style="min-width: 50%;">
+
+<div layout="row" layout-align="center start">
+  <div flex-gt-xs="80" flex-xs="90">
+    <div layout="column">
+      <h2>Rides</h2>
+    </div>
+    <div layout="column">
 
 
-
-        <mat-card class="cardlist" *ngIf="rides; else ridesError">
-          <mat-card-title>Rides</mat-card-title>
+      <div class="cardlist" *ngIf="rides; else ridesError">
+        <mat-accordion>
           <mat-expansion-panel #elem class="rides" [id]="ride.start_location"
-                    *ngFor="let ride of this.filterRides(rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition)">
+                               *ngFor="let ride of this.filterRides(rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition)">
             <mat-expansion-panel-header>
               <mat-panel-title class="rideVehicle" [id]="ride.destination">{{ride.destination}}</mat-panel-title>
             </mat-expansion-panel-header>
@@ -45,19 +46,27 @@
             <mat-panel-description>Condition: {{ride.condition}}</mat-panel-description>
 
           </mat-expansion-panel>
-        </mat-card>
-        <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
-        <ng-template #ridesError>
-          <mat-error>
-            There was a problem loading the rides. Possibly the server is down or perhaps there are network
-            issues.
-          </mat-error>
-          <mat-error>
-            Please wait a bit and try again or start the server.
-          </mat-error>
-        </ng-template>
+        </mat-accordion>
+      </div>
+      <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
+      <ng-template #ridesError>
+        <mat-error>
+          There was a problem loading the rides. Possibly the server is down or perhaps there are network
+          issues.
+        </mat-error>
+        <mat-error>
+          Please wait a bit and try again or start the server.
+        </mat-error>
+      </ng-template>
 
+
+    </div>
+
+  </div>
 
 </div>
 
-</div>
+<button mat-fab id="addNewRide" class="add-fab" matTooltip="New Ride" matTooltipPosition="left"
+        (click)="openDialog()">
+  <mat-icon class="md-24" aria-label="New Ride">add</mat-icon>
+</button>
