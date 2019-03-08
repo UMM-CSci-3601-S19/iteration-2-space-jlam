@@ -2,35 +2,37 @@
   <button id="addNewRide" mat-raised-button (click)="openDialog()">Add New Ride</button>
 </div>
 
+<mat-card style="max-width: 300px;">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Filter</mat-expansion-panel-header>
+    <mat-form-field>
+      <input matInput id="rideVehicle" #input type="text" placeholder="Filter by vehicle"
+             (input)="rideVehicle = $event.target.value">
+    </mat-form-field>
+      <mat-form-field>
+        <input matInput id="rideMileage" #input type="number" placeholder="Filter by mileage"
+               (input)="rideMileage = $event.target.value">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput id="rideDestination" #input type="text" placeholder="Filter by destination"
+               (input)="rideDestination = $event.target.value">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput id="rideStartLocation" #input type="text" placeholder="Filter by start location"
+               (input)="rideStartLocation = $event.target.value">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput id="rideCondition" #input type="search" placeholder="Search for condition"
+               (input)="rideCondition = $event.target.value">
+      </mat-form-field></mat-expansion-panel>
+</mat-card>
+<div layout="row" layout-sm="column">
+<div style="min-width: 50%;">
 
-<div layout-gt-sm="row">
-  <div flex-gt-sm="80" flex-offset-gt-sm="10">
-    <mat-card>
-      <mat-card-title id="ride-list-title">Rides</mat-card-title>
-      <mat-divider></mat-divider>
-      <mat-card-content>
-        <mat-form-field>
-          <input matInput id="rideVehicle" #input type="text" placeholder="Filter by vehicle"
-                 (input)="rideVehicle = $event.target.value">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput id="rideMileage" #input type="number" placeholder="Filter by mileage"
-                 (input)="rideMileage = $event.target.value">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput id="rideDestination" #input type="text" placeholder="Filter by destination"
-                 (input)="rideDestination = $event.target.value">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput id="rideStartLocation" #input type="text" placeholder="Filter by start location"
-                 (input)="rideStartLocation = $event.target.value">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput id="rideCondition" #input type="search" placeholder="Search for condition"
-                 (input)="rideCondition = $event.target.value">
-        </mat-form-field>
+
 
         <mat-card class="cardlist" *ngIf="rides; else ridesError">
+          <mat-card-title>Rides</mat-card-title>
           <mat-expansion-panel #elem class="rides" [id]="ride.start_location"
                     *ngFor="let ride of this.filterRides(rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition)">
             <mat-expansion-panel-header>
@@ -54,7 +56,8 @@
             Please wait a bit and try again or start the server.
           </mat-error>
         </ng-template>
-      </mat-card-content>
-    </mat-card>
-  </div>
+
+
+</div>
+
 </div>
