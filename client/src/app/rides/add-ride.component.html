@@ -16,7 +16,7 @@ is potentially helpful and contributed to the shaping of this example -->
       </mat-form-field>
       <mat-form-field flex>
         <input matInput #input id="startField" placeholder="Start Location" [(ngModel)]="data.ride.start_location"
-               formControlName="start">
+               formControlName="start_location">
         <mat-error *ngFor="let validation of add_ride_validation_messages.start_location">
           <mat-error class="error-message" id="start_location-error"
                      *ngIf="addRideForm.get('start_location').hasError(validation.type) && (addRideForm.get('start_location').dirty || addRideForm.get('start_location').touched)">

@@ -126,5 +126,26 @@ public class RideController {
       return null;
     }
   }
+
+  public String addEditedRide(String _id, String vehicle, int mileage, String condition, String start_location, String destination) {
+
+    Document oldRide = new Document();
+    oldRide.append(getRide(_id), vehicle);
+    oldRide.append("mileage", mileage);
+    oldRide.append("condition", condition);
+    oldRide.append("start_location", start_location);
+    oldRide.append("destination", destination);
+
+    try {
+      rideCollection.insertOne(oldRide);
+      ObjectId id = oldRide.getObjectId("_id");
+      System.err.println("Successfully added edited ride [_id=" + id + ", vehicle=" + vehicle + ", mileage=" + mileage
+        + " condition=" + condition + " start_location=" + start_location + "destination=" + destination + ']');
+      return id.toHexString();
+    } catch (MongoException me) {
+      me.printStackTrace();
+      return null;
+    }
+  }
 }
 

@@ -1,0 +1,65 @@
+<div class="edit-ride">
+  <form [formGroup]="editRideForm">
+    <h2 mat-dialog-title>Edit Ride</h2>
+    <mat-dialog-content layout="column">
+      <mat-form-field flex>
+        <input matInput #input id="vehicleField" placeholder="Vehicle" [(ngModel)]="data.ride.vehicle" formControlName="vehicle">
+        <mat-error *ngFor="let validation of edit_ride_validation_messages.vehicle">
+          <mat-error class="error-message" id="vehicle-error"
+                     *ngIf="editRideForm.get('vehicle').hasError(validation.type) && (editRideForm.get('vehicle').dirty || editRideForm.get('vehicle').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field flex>
+        <input matInput #input id="startField" placeholder="Start Location" [(ngModel)]="data.ride.start_location"
+               formControlName="start_location">
+        <mat-error *ngFor="let validation of edit_ride_validation_messages.start_location">
+          <mat-error class="error-message" id="start_location-error"
+                     *ngIf="editRideForm.get('start_location').hasError(validation.type) && (editRideForm.get('start_location').dirty || editRideForm.get('start_location').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field flex>
+        <input matInput #input id="destinationField" placeholder="Destination" [(ngModel)]="data.ride.destination"
+               formControlName="destination">
+        <mat-error *ngFor="let validation of edit_ride_validation_messages.destination">
+          <mat-error class="error-message" id='destination-error'
+                     *ngIf="editRideForm.get('destination').hasError(validation.type) && (editRideForm.get('destination').dirty || editRideForm.get('destination').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field flex>
+        <input matInput #input id="conditionField" placeholder="Condition" [(ngModel)]="data.ride.condition"
+               formControlName="condition">
+        <mat-error *ngFor="let validation of edit_ride_validation_messages.condition">
+          <mat-error class="error-message" id='condition-error'
+                     *ngIf="editRideForm.get('condition').hasError(validation.type) && (editRideForm.get('condition').dirty || editRideForm.get('condition').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field flex>
+        <input matInput #input id="mileageField" type="number" placeholder="Mileage" [(ngModel)]="data.ride.mileage"
+               formControlName="mileage">
+        <mat-error *ngFor="let validation of edit_ride_validation_messages.mileage">
+          <mat-error class="error-message" id='mileage-error'
+                     *ngIf="editRideForm.get('mileage').hasError(validation.type) && (editRideForm.get('mileage').dirty || editRideForm.get('mileage').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions layout="row">
+      <!-- [mat-dialog-close]="data.ride" causes the data.ride object to be returned when the dialog is closed. -->
+      <button mat-raised-button id="confirmEditRideButton" [mat-dialog-close]="data.ride" type="button" color="primary"
+              [disabled]="!editRideForm.valid">Edit Ride</button>
+      <!-- [mat-dialog-close]="null" causes null to be returned when the dialog is closed. -->
+      <button mat-raised-button id="exitWithoutEditingButton" [mat-dialog-close]="null" type="button">Cancel</button>
+      <button mat-raised-button id="deleteRide" [mat-dialog-close]="null" type="button" color="warn" (click)="deleteRide()">Delete Ride
+      </button>
+    </mat-dialog-actions>
+  </form>
+</div>

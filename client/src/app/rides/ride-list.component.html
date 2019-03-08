@@ -39,6 +39,9 @@
             <mat-panel-description>Vehicle: {{ride.vehicle}}</mat-panel-description>
             <mat-panel-description>Mileage: {{ride.mileage}}</mat-panel-description>
             <mat-panel-description>Condition: {{ride.condition}}</mat-panel-description>
+            <button mat-button id="editRide" type="button"
+                    (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
+                    ride.destination, ride.condition)">Edit</button>
 
           </mat-expansion-panel>
         </mat-card>
