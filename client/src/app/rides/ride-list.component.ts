@@ -4,6 +4,7 @@ import {Ride} from './ride';
 import {Observable} from 'rxjs/Observable';
 import {MatDialog} from '@angular/material';
 import {AddRideComponent} from './add-ride.component';
+import {EditRideComponent} from "./edit-ride.component";
 
 @Component({
   selector: 'ride-list-component',
@@ -54,6 +55,30 @@ export class RideListComponent implements OnInit {
             // This should probably be turned into some sort of meaningful response.
             console.log('There was an error adding the ride.');
             console.log('The newRide or dialogResult was ' + newRide);
+            console.log('The error was ' + JSON.stringify(err));
+          });
+      }
+    });
+  }
+
+  openEditDialog(_id : String, vehicle : String, mileage : number, start_location : String, destination : String, condition : String): void {
+    const oldRide: Ride = {_id: _id, vehicle: vehicle, mileage: mileage, condition: condition, start_location: start_location, destination: destination};
+    const dialogRef = this.dialog.open(EditRideComponent, {
+      width: '500px',
+      data: {ride: oldRide}
+    });
+
+    dialogRef.afterClosed().subscribe(oldRide => {
+      if (oldRide != null) {
+        this.rideListService.addEditedRide(oldRide).subscribe(
+          result => {
+            this.highlightedID = result;
+            this.refreshRides();
+          },
+          err => {
+            // This should probably be turned into some sort of meaningful response.
+            console.log('There was an error editing the ride.');
+            console.log('The oldRide or dialogResult was ' + oldRide);
             console.log('The error was ' + JSON.stringify(err));
           });
       }

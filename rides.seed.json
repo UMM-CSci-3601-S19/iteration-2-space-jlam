@@ -1,62 +1,502 @@
 [
   {
     "_id": {
-      "oid": "5c800ec5dfb7b8d78e42a190"
+      "oid": "5c81bda753c4b4a118c67810"
     },
     "vehicle": "Ford Ranger",
-    "mileage": 14,
-    "condition": "Average",
-    "start_location": "{\"Morris\"}",
-    "destination": "Mappsville \", Minnesota\""
+    "mileage": 33,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Hoehne , Minnesota"
   },
   {
     "_id": {
-      "oid": "5c800ec50493fc620b2398d9"
+      "oid": "5c81bda7caef34488ba18e18"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 24,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Dotsero , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7210745e5ed8c5bc8"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 21,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Harrodsburg , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7883108823a6b5eea"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 20,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Yorklyn , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7be35fc7854096a0d"
     },
     "vehicle": "Kia Sedona",
-    "mileage": 13,
-    "condition": "Good",
-    "start_location": "{\"Morris\"}",
-    "destination": "Kaka \", Minnesota\""
+    "mileage": 12,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Fairview , Minnesota"
   },
   {
     "_id": {
-      "oid": "5c800ec54d3c8b05db2bae95"
+      "oid": "5c81bda70ab26c695ba16d7d"
     },
     "vehicle": "Ford Ranger",
-    "mileage": 35,
+    "mileage": 21,
     "condition": "Poor",
-    "start_location": "{\"Morris\"}",
-    "destination": "Sanborn \", Minnesota\""
+    "start_location": "Morris",
+    "destination": "Farmington , Minnesota"
   },
   {
     "_id": {
-      "oid": "5c800ec57526658e34806ddf"
+      "oid": "5c81bda7a6e8ee184b1c47f4"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 30,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Kidder , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7a02ba94db1be9d63"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 15,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Bynum , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda70012c7aa658df3c7"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 11,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Calverton , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda78fcd3810b54bebe7"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 25,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Gilmore , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7f6ca7848a12a604b"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 35,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Grayhawk , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7bb750d6aeda34932"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 22,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Bangor , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda796cdda7bce77db16"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 39,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Faxon , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda731213f8aac7996f5"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 21,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Hoagland , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7173c98ef338d4044"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 38,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Strykersville , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7538782ae8ec62604"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 21,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Watchtower , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7cb2e687cb1c6d8c5"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 12,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Fannett , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda759a358a9fe82a41a"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 36,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Shaft , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda743b1d48fdef0fca9"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 24,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Detroit , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda719c80ee51e9cf4d5"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 18,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Ahwahnee , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda70fdafb0f0b46ff68"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 31,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Cornfields , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7fcc6555882bdc5b8"
     },
     "vehicle": "Kia Sedona",
     "mileage": 27,
-    "condition": "New",
-    "start_location": "{\"Morris\"}",
-    "destination": "Chautauqua \", Minnesota\""
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Groveville , Minnesota"
   },
   {
     "_id": {
-      "oid": "5c800ec504a5c0c9a88c06b6"
+      "oid": "5c81bda7fe1016ea11c95dbb"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 29,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Bannock , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7133b07925c864eaf"
     },
     "vehicle": "Ford Ranger",
-    "mileage": 40,
-    "condition": "Average",
-    "start_location": "{\"Morris\"}",
-    "destination": "Why \", Minnesota\""
+    "mileage": 35,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Brecon , Minnesota"
   },
   {
     "_id": {
-      "oid": "5c800ec54f3765b585044699"
+      "oid": "5c81bda7684eb9f2d3640efe"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 39,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Loveland , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda76025237ba4587718"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 15,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Bradenville , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda79341e6e145102b89"
     },
     "vehicle": "Kia Sedona",
-    "mileage": 19,
+    "mileage": 17,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Whitewater , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda779ecf0825d4f64da"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 17,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Orason , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7494d9a4946e57b22"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 21,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Trail , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7cf4057592d6c6a37"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 32,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Greensburg , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda714a371efbe5ebf6c"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 38,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Boomer , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda75b7ec0dd17072a96"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 18,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Juntura , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7e721835b228a711e"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 40,
     "condition": "Average",
-    "start_location": "{\"Morris\"}",
-    "destination": "Tuskahoma \", Minnesota\""
+    "start_location": "Morris",
+    "destination": "Newry , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7bdcd6264a8c34665"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 29,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Clay , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda73d7823493b65fa52"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 14,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Brandermill , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda72c47d6877e7d3cc3"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 37,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Colton , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7424b23bce58514f3"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 13,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Sharon , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7a1bd83538504d5f6"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 37,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Welch , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda715a4418040def7b0"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 18,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Weedville , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7b95f7bb26f82ad3a"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 33,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Bagtown , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda78d294e64755a2abe"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 18,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Dunbar , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7246978b3b96e6898"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 24,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Montura , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda76e362528a4b92455"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 14,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Nettie , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda717e6623b83453397"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 18,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Bellamy , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda72ef948a7a6746e0f"
+    },
+    "vehicle": "Ford Ranger",
+    "mileage": 24,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Dubois , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda74060cebb1cea3447"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 24,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Northchase , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7392d511e8a42844e"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 29,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Nescatunga , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7a49af56c8f266b92"
+    },
+    "vehicle": "Chevy Impala",
+    "mileage": 33,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Thermal , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda7e42d70b406925dd5"
+    },
+    "vehicle": "Kia Sedona",
+    "mileage": 14,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Caberfae , Minnesota"
+  },
+  {
+    "_id": {
+      "oid": "5c81bda709298d74eb5d942e"
+    },
+    "vehicle": "Honda Civic",
+    "mileage": 39,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Dargan , Minnesota"
   }
 ]
