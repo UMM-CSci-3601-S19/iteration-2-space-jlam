@@ -22,6 +22,7 @@ export class RideListComponent implements OnInit {
   public rideMileage: number;
   public rideCondition: string;
   public rideDestination: string;
+  public rideStartLocation: string;
 
   // The ID of the
   private highlightedID: string = '';
@@ -59,7 +60,7 @@ export class RideListComponent implements OnInit {
     });
   }
 
-  public filterRides(searchVehicle: string, searchMileage: number, searchDestination: string): Ride[] {
+  public filterRides(searchVehicle: string, searchMileage: number, searchDestination: string, searchStartLocation: string, searchCondition: string): Ride[] {
 
     this.filteredRides = this.rides;
 
@@ -80,11 +81,27 @@ export class RideListComponent implements OnInit {
 
     // Filter by destination
     if (searchDestination != null) {
+      searchDestination = searchDestination.toLocaleLowerCase();
       this.filteredRides = this.filteredRides.filter(ride => {
-        return !searchDestination || ride.destination == searchDestination;
+        return !searchDestination || ride.destination.toLowerCase().indexOf(searchDestination) !== -1;
       });
     }
 
+    // Filter by Start Location
+    if (searchStartLocation != null) {
+      searchStartLocation = searchStartLocation.toLocaleLowerCase();
+      this.filteredRides = this.filteredRides.filter(ride => {
+        return !searchStartLocation || ride.start_location.toLowerCase().indexOf(searchStartLocation) !== -1;
+      });
+    }
+
+    // Filter by Condition
+    if (searchCondition != null) {
+      searchCondition = searchCondition.toLocaleLowerCase();
+      this.filteredRides = this.filteredRides.filter(ride => {
+        return !searchCondition || ride.condition.toLowerCase().indexOf(searchCondition) !== -1;
+      });
+    }
     return this.filteredRides;
   }
 
@@ -103,7 +120,7 @@ export class RideListComponent implements OnInit {
     rides.subscribe(
       rides => {
         this.rides = rides;
-        this.filterRides(this.rideVehicle, this.rideMileage, this.rideDestination);
+        this.filterRides(this.rideVehicle, this.rideMileage, this.rideDestination, this.rideStartLocation, this.rideCondition);
       },
       err => {
         console.log(err);
@@ -112,7 +129,7 @@ export class RideListComponent implements OnInit {
   }
 
   loadService(): void {
-    this.rideListService.getRides(this.rideCondition).subscribe(
+    this.rideListService.getRides().subscribe(
       rides => {
         this.rides = rides;
         this.filteredRides = this.rides;
