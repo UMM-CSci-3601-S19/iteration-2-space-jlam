@@ -31,6 +31,9 @@ describe('Add ride component', () => {
     });
   }));
 
+
+
+
   beforeEach(() => {
     calledClose = false;
     fixture = TestBed.createComponent(AddRideComponent);
