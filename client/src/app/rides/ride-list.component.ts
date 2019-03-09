@@ -37,12 +37,21 @@ export class RideListComponent implements OnInit {
     return ride._id['$oid'] === this.highlightedID;
   }
 
-  openDialog(): void {
+  deleteRide(destination : String): void {
+    this.getRideById(destination);
+  }
+
+  openDialog(ride?:Ride): void {
     const newRide: Ride = {_id: '', vehicle: '', mileage: 0, condition: '', start_location: '', destination: ''};
     const dialogRef = this.dialog.open(AddRideComponent, {
       width: '500px',
       data: {ride: newRide}
     });
+
+    if(data.ride){
+      newRide._id = (data.ride_id);
+      newRide.vehicle = (data.rideVehicle);
+    }
 
     dialogRef.afterClosed().subscribe(newRide => {
       if (newRide != null) {

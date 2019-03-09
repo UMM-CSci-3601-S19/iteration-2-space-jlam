@@ -76,6 +76,8 @@ export class RideListService {
     this.rideUrl = this.rideUrl.substring(0, start) + this.rideUrl.substring(end);
   }
 
+
+
   addNewRide(newRide: Ride): Observable<string> {
     const httpOptions = {
       headers: new HttpHeaders({
