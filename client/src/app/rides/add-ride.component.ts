@@ -30,7 +30,7 @@ export class AddRideComponent implements OnInit {
     'mileage': [
       {type: 'pattern', message: 'Mileage must be a number'},
       {type: 'min', message: 'Mileage must be at least 1'},
-      {type: 'max', message: 'Mileage may not be greater than 500,000'},
+      {type: 'max', message: 'Mileage may not be greater than 5000'},
       {type: 'required', message: 'Mileage is required'}
     ],
 
@@ -60,21 +60,21 @@ export class AddRideComponent implements OnInit {
         Validators.required
       ])),
 
-      // Since this is for a company, we need workers to be old enough to work, and probably not older than 200.
+      // mileage should be bewteen 1 and 5000
       mileage: new FormControl('mileage', Validators.compose([
         Validators.pattern('^[0-9]+[0-9]?'),
         Validators.min(1),
-        Validators.max(500000),
+        Validators.max(5000),
         Validators.required
       ])),
 
-      // We don't care much about what is in the company field, so we just add it here as part of the form
+      // We don't care much about what is in the condition field, so we just add it here as part of the form
       // without any particular validation.
       condition: new FormControl('condition', Validators.compose([
         Validators.required
       ])),
 
-      // We don't need a special validator just for our app here, but there is a default one for email.
+
       start_location: new FormControl('start_location', Validators.compose([
         Validators.required
       ])),
