@@ -2,15 +2,15 @@ import {User} from "../users/user";
 
 export interface Ride
 {
-  _id: String;
+  _id: string;
   driver: User;
   riders: [User];
-  vehicle: String;
+  vehicle: string;
   mileage: number;
-  condition: String;
-  start_location: String;
-  destination: String;
+  condition: string;
+  start_location: string;
+  destination: string;
   route:[string, string];
   hasDriver: boolean;
-  tags:[];
+  tags:string;
 }

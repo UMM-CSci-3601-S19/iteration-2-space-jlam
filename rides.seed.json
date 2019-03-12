@@ -10,8 +10,8 @@
       "start_location": "Morris",
       "destination": "Skyland Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -24,8 +24,8 @@
       "start_location": "Morris",
       "destination": "Gadsden Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -38,8 +38,8 @@
       "start_location": "Morris",
       "destination": "Valmy Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -52,8 +52,8 @@
       "start_location": "Morris",
       "destination": "Gilgo Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -66,8 +66,8 @@
       "start_location": "Morris",
       "destination": "Caledonia Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -80,8 +80,8 @@
       "start_location": "Morris",
       "destination": "Websterville Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -94,8 +94,8 @@
       "start_location": "Morris",
       "destination": "Flintville Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -108,8 +108,8 @@
       "start_location": "Morris",
       "destination": "Clarktown Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -122,8 +122,8 @@
       "start_location": "Morris",
       "destination": "Hoagland Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -136,8 +136,8 @@
       "start_location": "Morris",
       "destination": "Dawn Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -150,8 +150,8 @@
       "start_location": "Morris",
       "destination": "Kraemer Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -164,8 +164,8 @@
       "start_location": "Morris",
       "destination": "Golconda Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -178,8 +178,8 @@
       "start_location": "Morris",
       "destination": "Logan Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -192,8 +192,8 @@
       "start_location": "Morris",
       "destination": "Noblestown Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -206,8 +206,8 @@
       "start_location": "Morris",
       "destination": "Springdale Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -220,8 +220,8 @@
       "start_location": "Morris",
       "destination": "Blairstown Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -234,8 +234,8 @@
       "start_location": "Morris",
       "destination": "Hebron Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -248,8 +248,8 @@
       "start_location": "Morris",
       "destination": "Bluffview Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -262,8 +262,8 @@
       "start_location": "Morris",
       "destination": "Gila Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -276,8 +276,8 @@
       "start_location": "Morris",
       "destination": "Hemlock Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -290,8 +290,8 @@
       "start_location": "Morris",
       "destination": "Blanford Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -304,8 +304,8 @@
       "start_location": "Morris",
       "destination": "Columbus Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -318,8 +318,8 @@
       "start_location": "Morris",
       "destination": "Calverton Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -332,8 +332,8 @@
       "start_location": "Morris",
       "destination": "Advance Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -346,8 +346,8 @@
       "start_location": "Morris",
       "destination": "Summertown Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -360,8 +360,8 @@
       "start_location": "Morris",
       "destination": "Leroy Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -374,8 +374,8 @@
       "start_location": "Morris",
       "destination": "Freetown Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -388,8 +388,8 @@
       "start_location": "Morris",
       "destination": "Townsend Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -402,8 +402,8 @@
       "start_location": "Morris",
       "destination": "Strykersville Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -416,8 +416,8 @@
       "start_location": "Morris",
       "destination": "Chicopee Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -430,8 +430,8 @@
       "start_location": "Morris",
       "destination": "Topanga Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -444,8 +444,8 @@
       "start_location": "Morris",
       "destination": "Carbonville Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -458,8 +458,8 @@
       "start_location": "Morris",
       "destination": "Ironton Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -472,8 +472,8 @@
       "start_location": "Morris",
       "destination": "Callaghan Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -486,8 +486,8 @@
       "start_location": "Morris",
       "destination": "Choctaw Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -500,8 +500,8 @@
       "start_location": "Morris",
       "destination": "Crumpler Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -514,8 +514,8 @@
       "start_location": "Morris",
       "destination": "Brethren Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -528,8 +528,8 @@
       "start_location": "Morris",
       "destination": "Corinne Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -542,8 +542,8 @@
       "start_location": "Morris",
       "destination": "Sanford Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -556,8 +556,8 @@
       "start_location": "Morris",
       "destination": "Como Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -570,8 +570,8 @@
       "start_location": "Morris",
       "destination": "Cobbtown Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -584,8 +584,8 @@
       "start_location": "Morris",
       "destination": "Cataract Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -598,8 +598,8 @@
       "start_location": "Morris",
       "destination": "Muse Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -612,8 +612,8 @@
       "start_location": "Morris",
       "destination": "Nadine Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -626,8 +626,8 @@
       "start_location": "Morris",
       "destination": "Germanton Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -640,8 +640,8 @@
       "start_location": "Morris",
       "destination": "Levant Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -654,8 +654,8 @@
       "start_location": "Morris",
       "destination": "Ypsilanti Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -668,8 +668,8 @@
       "start_location": "Morris",
       "destination": "Harold Minnesota"
     },
-    "hasdriver": false,
-    "tags": []
+    "hasDriver": false,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -682,8 +682,8 @@
       "start_location": "Morris",
       "destination": "Brandywine Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   },
   {
     "_id": {
@@ -696,7 +696,7 @@
       "start_location": "Morris",
       "destination": "Wescosville Minnesota"
     },
-    "hasdriver": true,
-    "tags": []
+    "hasDriver": true,
+    "tags": ["STRING","STRING"]
   }
 ]

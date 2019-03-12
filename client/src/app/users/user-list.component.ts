@@ -19,7 +19,6 @@ export class UserListComponent implements OnInit {
   // These are the target values used in searching.
   // We should rename them to make that clearer.
   public userName: string;
-  public userAge: number;
   public userCompany: string;
 
   // The ID of the
@@ -35,7 +34,7 @@ export class UserListComponent implements OnInit {
   }
 
   openDialog(): void {
-    const newUser: User = {_id: '', name: '', age: 18, company: '', email: ''};
+    const newUser: User = {_id: '', name: '', email: '', vehicles: [], phone: string};
     const dialogRef = this.dialog.open(AddUserComponent, {
       width: '500px',
       data: {user: newUser}
@@ -58,7 +57,7 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  public filterUsers(searchName: string, searchAge: number): User[] {
+  public filterUsers(searchName: string, searchAge?: number): User[] {
 
     this.filteredUsers = this.users;
 
@@ -72,11 +71,11 @@ export class UserListComponent implements OnInit {
     }
 
     // Filter by age
-    if (searchAge != null) {
-      this.filteredUsers = this.filteredUsers.filter(user => {
-        return !searchAge || user.age == searchAge;
-      });
-    }
+    // if (searchAge != null) {
+    //   this.filteredUsers = this.filteredUsers.filter(user => {
+    //     return !searchAge || user.age == searchAge;
+    //   });
+    // }
 
     return this.filteredUsers;
   }
@@ -96,7 +95,7 @@ export class UserListComponent implements OnInit {
     users.subscribe(
       users => {
         this.users = users;
-        this.filterUsers(this.userName, this.userAge);
+        this.filterUsers(this.userName);
       },
       err => {
         console.log(err);

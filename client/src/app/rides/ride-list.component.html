@@ -24,31 +24,37 @@
   </mat-expansion-panel>
 </mat-card>
 
-<div layout="row" layout-align="" style="margin-left: 8px; max-width: 50%">
-  <div flex-gt-xs="80" flex-xs="90">
+<div id="wrapper">
+
+
+  <div id="riders">
     <div layout="column">
       <h2>Rides</h2>
     </div>
     <div layout="column">
 
-
       <div class="cardlist" *ngIf="rides; else ridesError">
         <mat-accordion>
-          <mat-expansion-panel #elem class="rides" [id]="ride.start_location"
-                               *ngFor="let ride of this.filterRides(rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition)">
-            <mat-expansion-panel-header>
-              <mat-panel-title class="rideVehicle" [id]="ride.destination">{{ride.destination}}</mat-panel-title>
-            </mat-expansion-panel-header>
+          <ng-container #elem class="rides"
+                        *ngFor="let ride of this.filterRides(
+                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition)">
+            <mat-expansion-panel *ngIf="ride.hasDriver === false">
+              <mat-expansion-panel-header class="hasDriver"
+                                          style="background-color: #556e79">
+                <mat-panel-title class="rideVehicle" [id]="ride.route.destination">{{ride.route.destination}}</mat-panel-title>
+              </mat-expansion-panel-header>
 
-            <mat-panel-description>Start Location: {{ride.start_location}}</mat-panel-description>
-            <mat-panel-description>Vehicle: {{ride.vehicle}}</mat-panel-description>
-            <mat-panel-description>Mileage: {{ride.mileage}}</mat-panel-description>
-            <mat-panel-description>Condition: {{ride.condition}}</mat-panel-description>
-            <button mat-button id="editRide" type="button"
-                    (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
+              <mat-panel-description>Start Location: {{ride.route.start_location}}</mat-panel-description>
+              <mat-panel-description>Vehicle: {{ride.vehicle}}</mat-panel-description>
+              <mat-panel-description>Mileage: {{ride.mileage}}</mat-panel-description>
+              <mat-panel-description>Condition: {{ride.condition}}</mat-panel-description>
+              <div id="editButton" style="align-self: right">
+              <button mat-button id="editRide" type="button"
+                      (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
                     ride.destination, ride.condition)">Edit</button>
-
-          </mat-expansion-panel>
+              </div>
+            </mat-expansion-panel>
+          </ng-container>
         </mat-accordion>
       </div>
       <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
@@ -62,6 +68,48 @@
         </mat-error>
       </ng-template>
 
+    </div>
+
+  </div>
+
+  <div id="drivers">
+    <div layout="column">
+      <h2>Drivers</h2>
+    </div>
+    <div layout="column">
+
+      <div class="cardlist" *ngIf="rides; else ridesError" style="float: right">
+        <mat-accordion>
+          <ng-container #elem class="rides"
+                        *ngFor="let ride of this.filterRides(
+                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition)">
+          <mat-expansion-panel *ngIf="ride.hasDriver === true">
+            <mat-expansion-panel-header class="hasDriver"
+                                        style="background-color: #556e79">
+              <mat-panel-title class="rideVehicle" [id]="ride.route.destination">{{ride.route.destination}}</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-panel-description>Start Location: {{ride.route.start_location}}</mat-panel-description>
+            <mat-panel-description>Vehicle: {{ride.vehicle}}</mat-panel-description>
+            <mat-panel-description>Mileage: {{ride.mileage}}</mat-panel-description>
+            <mat-panel-description>Condition: {{ride.condition}}</mat-panel-description>
+            <button mat-button id="editRideDriver" type="button"
+                    (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
+                    ride.destination, ride.condition)">Edit</button>
+          </mat-expansion-panel>
+          </ng-container>
+        </mat-accordion>
+      </div>
+      <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
+      <ng-template #ridesError>
+        <mat-error>
+          There was a problem loading the rides. Possibly the server is down or perhaps there are network
+          issues.
+        </mat-error>
+        <mat-error>
+          Please wait a bit and try again or start the server.
+        </mat-error>
+      </ng-template>
 
     </div>
 

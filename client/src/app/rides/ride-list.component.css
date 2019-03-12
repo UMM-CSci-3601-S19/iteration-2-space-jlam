@@ -3,3 +3,34 @@
   bottom: 15px;
   right: 30px;
 }
+
+.cardlist mat-panel-description {
+  margin-top: 5%;
+}
+.cardlist button {
+  background-color: #0ca8f4;
+  margin-top: 3%;
+
+}
+#drivers {
+  float: right;
+  width: 30%;
+  text-align: center;
+}
+#riders {
+  float: left;
+  width: 30%;
+  text-align: center;
+}
+#drivers #riders .mat-expansion-panel-header {
+  text-align: center;
+}
+#wrapper {
+
+}
+#editRide {
+  align-self: right;
+}
+.cardlist mat-expansion-panel-content.mat-expanded {
+  text-align: right;
+}
