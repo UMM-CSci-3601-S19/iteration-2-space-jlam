@@ -44,8 +44,8 @@ export class RideListComponent implements OnInit {
   // }
 
   openDialog(ride?:Ride): void {
-    const newRide: Ride = {$oid: '', vehicle: '', mileage: 0, condition: '', start_location: '', destination: '', hasDriver: null,
-                           driver: [null], riders: [null], tags: ''};
+    const newRide: Ride = {_id: '', vehicle: '', mileage: 0, condition: '', start_location: '', destination: '', hasDriver: null,
+                           driver: '', riders: null, tags: ''};
     const dialogRef = this.dialog.open(AddRideComponent, {
       width: '500px',
       data: {ride: newRide}
@@ -69,8 +69,8 @@ export class RideListComponent implements OnInit {
     });
   }
 
-  openEditDialog(_id : String, vehicle : String, mileage : number, start_location : String, destination : String, condition : String): void {
-    const oldRide: Ride = {_id: _id, vehicle: vehicle, mileage: mileage, condition: condition, start_location: start_location, destination: destination};
+  openEditDialog(_id : string, vehicle : string, mileage : number, start_location : string, destination : string, condition : string, hasDriver : boolean, driver : string, riders: boolean, tags : string): void {
+    const oldRide: Ride = {_id: _id, vehicle: vehicle, mileage: mileage, condition: condition, start_location: start_location, destination: destination, hasDriver: hasDriver, driver: driver, riders: riders, tags: tags};
     const dialogRef = this.dialog.open(EditRideComponent, {
       width: '500px',
       data: {ride: oldRide}
@@ -139,13 +139,13 @@ export class RideListComponent implements OnInit {
 
     // Filter by Tag
     if (searchTags != null) {
-      searchTag = searchTage.toLocaleLowerCase();
+      searchTags = searchTags.toLocaleLowerCase();
       this.filteredRides = this.filteredRides.filter(ride => {
-        return !searchTags || ride.tag.toLowerCase().indexOf(searchTags) !== -1;
+        return !searchTags || ride.tags.toLowerCase().indexOf(searchTags) !== -1;
       });
-    return this.filteredRides;
+      return this.filteredRides;
+    }
   }
-
   /**
    * Starts an asynchronous operation to update the rides list
    *

@@ -5,7 +5,7 @@
     },
     "name": "Connie Stewart",
     "age": 25,
-    "company": "OHMNET",
+    "vehicles": ["Ford", " Chevy"],
     "email": "conniestewart@ohmnet.com"
   },
   {

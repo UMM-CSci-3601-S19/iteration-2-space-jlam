@@ -21,6 +21,10 @@
       <input matInput id="rideCondition" #input type="search" placeholder="Search for condition"
              (input)="rideCondition = $event.target.value">
     </mat-form-field>
+    <mat-form-field>
+      <input matInput id="rideTags" #input type="search" placeholder="Search for tags"
+             (input)="rideTags = $event.target.value">
+    </mat-form-field>
   </mat-expansion-panel>
 </mat-card>
 
@@ -37,7 +41,7 @@
         <mat-accordion>
           <ng-container #elem class="rides"
                         *ngFor="let ride of this.filterRides(
-                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition)">
+                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTags)">
             <mat-expansion-panel *ngIf="ride.hasDriver === false">
               <mat-expansion-panel-header class="hasDriver"
                                           style="background-color: #556e79">
@@ -48,6 +52,7 @@
               <mat-panel-description>Vehicle: {{ride.vehicle}}</mat-panel-description>
               <mat-panel-description>Mileage: {{ride.mileage}}</mat-panel-description>
               <mat-panel-description>Condition: {{ride.condition}}</mat-panel-description>
+              <mat-panel-description>Tags: {{ride.tags}}</mat-panel-description>
               <div id="editButton" style="align-self: right">
               <button mat-button id="editRide" type="button"
                       (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
@@ -82,7 +87,7 @@
         <mat-accordion>
           <ng-container #elem class="rides"
                         *ngFor="let ride of this.filterRides(
-                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition)">
+                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTags)">
           <mat-expansion-panel *ngIf="ride.hasDriver === true">
             <mat-expansion-panel-header class="hasDriver"
                                         style="background-color: #556e79">
@@ -93,6 +98,7 @@
             <mat-panel-description>Vehicle: {{ride.vehicle}}</mat-panel-description>
             <mat-panel-description>Mileage: {{ride.mileage}}</mat-panel-description>
             <mat-panel-description>Condition: {{ride.condition}}</mat-panel-description>
+            <mat-panel-description>Tags: {{ride.tags}}</mat-panel-description>
             <button mat-button id="editRideDriver" type="button"
                     (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
                     ride.destination, ride.condition)">Edit</button>

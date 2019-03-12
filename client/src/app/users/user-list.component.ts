@@ -19,7 +19,9 @@ export class UserListComponent implements OnInit {
   // These are the target values used in searching.
   // We should rename them to make that clearer.
   public userName: string;
-  public userCompany: string;
+  // public userEmail: string;
+  // public userVehicle: [string];
+  // public userPhone: string;
 
   // The ID of the
   private highlightedID: string = '';
@@ -34,7 +36,7 @@ export class UserListComponent implements OnInit {
   }
 
   openDialog(): void {
-    const newUser: User = {_id: '', name: '', email: '', vehicles: [], phone: string};
+    const newUser: User = {_id: '', name: '', email: '', vehicles: [''], phone: ''};
     const dialogRef = this.dialog.open(AddUserComponent, {
       width: '500px',
       data: {user: newUser}
@@ -57,7 +59,7 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  public filterUsers(searchName: string, searchAge?: number): User[] {
+  public filterUsers(searchName: string ): User[] {
 
     this.filteredUsers = this.users;
 
@@ -70,12 +72,7 @@ export class UserListComponent implements OnInit {
       });
     }
 
-    // Filter by age
-    // if (searchAge != null) {
-    //   this.filteredUsers = this.filteredUsers.filter(user => {
-    //     return !searchAge || user.age == searchAge;
-    //   });
-    // }
+
 
     return this.filteredUsers;
   }
@@ -104,7 +101,7 @@ export class UserListComponent implements OnInit {
   }
 
   loadService(): void {
-    this.userListService.getUsers(this.userCompany).subscribe(
+    this.userListService.getUsers().subscribe(
       users => {
         this.users = users;
         this.filteredUsers = this.users;

@@ -8,9 +8,10 @@
 }
 
 .cardlist  {
+  align-content: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+
 }
 
 .users {

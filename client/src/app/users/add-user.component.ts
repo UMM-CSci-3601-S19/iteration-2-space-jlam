@@ -27,15 +27,16 @@ export class AddUserComponent implements OnInit {
       {type: 'existingName', message: 'Name has already been taken'}
     ],
 
-    'age': [
-      {type: 'pattern', message: 'Age must be a number'},
-      {type: 'min', message: 'Age must be at least 15'},
-      {type: 'max', message: 'Age may not be greater than 200'},
-      {type: 'required', message: 'Age is required'}
-    ],
-
     'email': [
       {type: 'email', message: 'Email must be formatted properly'}
+    ],
+
+    'vehicles': [
+      {type: 'vehicles', message: 'Vehicles must be formatted properly'}
+    ],
+
+    'phone': [
+      {type: 'required', message: 'Phone is required'}
     ]
   };
 
@@ -52,20 +53,16 @@ export class AddUserComponent implements OnInit {
         Validators.required
       ])),
 
-      // Since this is for a company, we need workers to be old enough to work, and probably not older than 200.
-      age: new FormControl('age', Validators.compose([
-        Validators.pattern('^[0-9]+[0-9]?'),
-        Validators.min(15),
-        Validators.max(200),
-        Validators.required
+      // We don't need a special validator just for our app here, but there is a default one for email.
+      email: new FormControl('email', Validators.email),
+
+      vehicles: new FormControl('vehicles', Validators.compose([
+        Valdiators.pattern()
       ])),
 
-      // We don't care much about what is in the company field, so we just add it here as part of the form
-      // without any particular validation.
-      company: new FormControl('company'),
-
-      // We don't need a special validator just for our app here, but there is a default one for email.
-      email: new FormControl('email', Validators.email)
+      phone: new FormControl('phone', Validators.compose([
+        Validators.required
+      ]))
     })
 
   }
