@@ -76,6 +76,8 @@ export class RideListService {
     this.rideUrl = this.rideUrl.substring(0, start) + this.rideUrl.substring(end);
   }
 
+
+
   addNewRide(newRide: Ride): Observable<string> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -91,4 +93,8 @@ export class RideListService {
     // Send post request to add a new ride with the ride data as the body with specified headers.
     return this.http.post<string>(this.rideUrl + '/new', newRide, httpOptions);
   }
+
+  addEditedRide(newRide: Ride): Observable<string>{
+    return null;
+}
 }

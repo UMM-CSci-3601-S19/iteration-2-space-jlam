@@ -5,12 +5,12 @@ import {FormControl, Validators, FormGroup, FormBuilder} from "@angular/forms";
 import {RideValidator} from "./ride.validator";
 
 @Component({
-  selector: 'add-ride.component',
-  templateUrl: 'add-ride.component.html',
+  selector: 'edit-ride.component',
+  templateUrl: 'edit-ride.component.html',
 })
-export class AddRideComponent implements OnInit {
+export class EditRideComponent implements OnInit {
 
-  addRideForm: FormGroup;
+  editRideForm: FormGroup;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: { ride: Ride }, private fb: FormBuilder) {
@@ -18,7 +18,7 @@ export class AddRideComponent implements OnInit {
 
   // not sure if this vehicle is magical and making it be found or if I'm missing something,
   // but this is where the red text that shows up (when there is invalid input) comes from
-  add_ride_validation_messages = {
+  edit_ride_validation_messages = {
     'vehicle': [
       {type: 'required', message: 'Vehicle is required'},
       {type: 'minlength', message: 'Vehicle must be at least 2 characters long'},
@@ -44,17 +44,13 @@ export class AddRideComponent implements OnInit {
 
     'condition': [
       {type: 'required', message: 'Condition is required'}
-    ],
-
-    'tagging': [
-      {type: 'required', message: 'Condition is required'}
     ]
   };
 
   createForms() {
 
     // add ride form validations
-    this.addRideForm = this.fb.group({
+    this.editRideForm = this.fb.group({
       // We allow alphanumeric input and limit the length for vehicle.
       vehicle: new FormControl('vehicle', Validators.compose([
         RideValidator.validRide,

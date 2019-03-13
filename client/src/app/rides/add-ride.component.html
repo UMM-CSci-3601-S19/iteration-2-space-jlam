@@ -6,7 +6,7 @@ is potentially helpful and contributed to the shaping of this example -->
     <h2 mat-dialog-title>New Ride</h2>
     <mat-dialog-content layout="column">
       <mat-form-field flex>
-        <input matInput #input id="vehicleField" placeholder="Vehicle" [(ngModel)]="data.ride.vehicle" formControlName="vehicle">
+        <input matInput required #input id="vehicleField" placeholder="Vehicle" [(ngModel)]="data.ride.vehicle" formControlName="vehicle">
         <mat-error *ngFor="let validation of add_ride_validation_messages.vehicle">
           <mat-error class="error-message" id="vehicle-error"
                      *ngIf="addRideForm.get('vehicle').hasError(validation.type) && (addRideForm.get('vehicle').dirty || addRideForm.get('vehicle').touched)">
@@ -15,8 +15,8 @@ is potentially helpful and contributed to the shaping of this example -->
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput #input id="startField" placeholder="Start Location" [(ngModel)]="data.ride.start_location"
-               formControlName="start">
+        <input matInput required #input id="startField" placeholder="Start Location" [(ngModel)]="data.ride.start_location"
+               formControlName="start_location">
         <mat-error *ngFor="let validation of add_ride_validation_messages.start_location">
           <mat-error class="error-message" id="start_location-error"
                      *ngIf="addRideForm.get('start_location').hasError(validation.type) && (addRideForm.get('start_location').dirty || addRideForm.get('start_location').touched)">
@@ -25,7 +25,7 @@ is potentially helpful and contributed to the shaping of this example -->
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput #input id="destinationField" placeholder="Destination" [(ngModel)]="data.ride.destination"
+        <input matInput required #input id="destinationField" placeholder="Destination" [(ngModel)]="data.ride.destination"
                formControlName="destination">
         <mat-error *ngFor="let validation of add_ride_validation_messages.destination">
           <mat-error class="error-message" id='destination-error'
@@ -35,7 +35,7 @@ is potentially helpful and contributed to the shaping of this example -->
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput #input id="conditionField" placeholder="Condition" [(ngModel)]="data.ride.condition"
+        <input matInput required #input id="conditionField" placeholder="Condition" [(ngModel)]="data.ride.condition"
                formControlName="condition">
         <mat-error *ngFor="let validation of add_ride_validation_messages.condition">
           <mat-error class="error-message" id='condition-error'
@@ -45,7 +45,7 @@ is potentially helpful and contributed to the shaping of this example -->
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-      <input matInput #input id="mileageField" type="number" placeholder="Mileage" [(ngModel)]="data.ride.mileage"
+      <input matInput required #input id="mileageField" type="number" placeholder="Mileage" [(ngModel)]="data.ride.mileage"
              formControlName="mileage">
       <mat-error *ngFor="let validation of add_ride_validation_messages.mileage">
         <mat-error class="error-message" id='mileage-error'
@@ -61,7 +61,7 @@ is potentially helpful and contributed to the shaping of this example -->
               [disabled]="!addRideForm.valid">Add Ride
       </button>
       <!-- [mat-dialog-close]="null" causes null to be returned when the dialog is closed. -->
-      <button mat-raised-button id="exitWithoutAddingButton" [mat-dialog-close]="null" type="button">Cancel</button>
+      <button mat-button id="exitWithoutAddingButton" [mat-dialog-close]="null" type="button">Cancel</button>
     </mat-dialog-actions>
   </form>
 </div>

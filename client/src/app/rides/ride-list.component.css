@@ -1,27 +1,36 @@
-#title input {
-  width: 16%;
-  min-width: 100px;
+.add-fab {
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
 }
 
-#list-title {
-  padding-right: 14px;
+.cardlist mat-panel-description {
+  margin-top: 5%;
 }
+.cardlist button {
+  background-color: #0ca8f4;
+  margin-top: 3%;
 
-.cardlist  {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
-
-.rides {
-  margin: 10px;
-  flex-basis: 30%;
+#drivers {
+  float: right;
+  width: 30%;
+  text-align: center;
 }
-
-.mat-card>:first-child {
-  margin: 10px;
+#riders {
+  float: left;
+  width: 30%;
+  text-align: center;
 }
+#drivers #riders .mat-expansion-panel-header {
+  text-align: center;
+}
+#wrapper {
 
-.mat-card>:last-child:not(.mat-card-footer) {
-  margin: 10px;
+}
+#editRide {
+  align-self: right;
+}
+.cardlist mat-expansion-panel-content.mat-expanded {
+  text-align: right;
 }
