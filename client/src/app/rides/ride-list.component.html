@@ -10,20 +10,20 @@
              (input)="rideMileage = $event.target.value">
     </mat-form-field>
     <mat-form-field>
-      <input matInput id="rideDestination" #input type="text" placeholder="Filter by destination"
+      <input matInput id="rideDestination" placeholder="Filter by destination"
              (input)="rideDestination = $event.target.value">
     </mat-form-field>
     <mat-form-field>
-      <input matInput id="rideStartLocation" #input type="text" placeholder="Filter by start location"
+      <input matInput id="rideStartLocation" placeholder="Filter by start location"
              (input)="rideStartLocation = $event.target.value">
     </mat-form-field>
     <mat-form-field>
-      <input matInput id="rideCondition" #input type="search" placeholder="Search for condition"
+      <input matInput id="rideCondition" placeholder="Search for condition"
              (input)="rideCondition = $event.target.value">
     </mat-form-field>
     <mat-form-field>
-      <input matInput id="rideTags" #input type="search" placeholder="Search for tags"
-             (input)="rideTags = $event.target.value">
+      <input matInput id="rideTag" placeholder="Search for tag"
+             (input)="rideTag = $event.target.value">
     </mat-form-field>
   </mat-expansion-panel>
 </mat-card>
@@ -41,14 +41,14 @@
         <mat-accordion>
           <ng-container #elem class="rides"
                         *ngFor="let ride of this.filterRides(
-                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTags)">
+                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTag)">
             <mat-expansion-panel *ngIf="ride.hasDriver === false">
               <mat-expansion-panel-header class="hasDriver"
                                           style="background-color: #556e79">
-                <mat-panel-title class="rideVehicle" [id]="ride.route.destination">{{ride.route.destination}}</mat-panel-title>
+                <mat-panel-title class="rideVehicle" [id]="ride.destination">{{ride.destination}}</mat-panel-title>
               </mat-expansion-panel-header>
 
-              <mat-panel-description>Start Location: {{ride.route.start_location}}</mat-panel-description>
+              <mat-panel-description>Start Location: {{ride.start_location}}</mat-panel-description>
               <mat-panel-description>Vehicle: {{ride.vehicle}}</mat-panel-description>
               <mat-panel-description>Mileage: {{ride.mileage}}</mat-panel-description>
               <mat-panel-description>Condition: {{ride.condition}}</mat-panel-description>
@@ -87,14 +87,14 @@
         <mat-accordion>
           <ng-container #elem class="rides"
                         *ngFor="let ride of this.filterRides(
-                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTags)">
+                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTag)">
           <mat-expansion-panel *ngIf="ride.hasDriver === true">
             <mat-expansion-panel-header class="hasDriver"
                                         style="background-color: #556e79">
-              <mat-panel-title class="rideVehicle" [id]="ride.route.destination">{{ride.route.destination}}</mat-panel-title>
+              <mat-panel-title class="rideVehicle" [id]="ride.destination">{{ride.destination}}</mat-panel-title>
             </mat-expansion-panel-header>
 
-            <mat-panel-description>Start Location: {{ride.route.start_location}}</mat-panel-description>
+            <mat-panel-description>Start Location: {{ride.start_location}}</mat-panel-description>
             <mat-panel-description>Vehicle: {{ride.vehicle}}</mat-panel-description>
             <mat-panel-description>Mileage: {{ride.mileage}}</mat-panel-description>
             <mat-panel-description>Condition: {{ride.condition}}</mat-panel-description>

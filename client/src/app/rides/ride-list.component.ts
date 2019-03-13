@@ -25,7 +25,7 @@ export class RideListComponent implements OnInit {
   public rideDestination: string;
   public rideStartLocation: string;
   public rideHasDriver: boolean;
-  public rideTags: string;
+  public rideTag: string;
 
   // The ID of the
   private highlightedID: string = '';
@@ -43,7 +43,7 @@ export class RideListComponent implements OnInit {
   //   this.getRideById(destination);
   // }
 
-  openDialog(ride?:Ride): void {
+  openDialog(): void {
     const newRide: Ride = {_id: '', vehicle: '', mileage: 0, condition: '', start_location: '', destination: '', hasDriver: null,
                            driver: '', riders: null, tags: ''};
     const dialogRef = this.dialog.open(AddRideComponent, {
@@ -69,8 +69,10 @@ export class RideListComponent implements OnInit {
     });
   }
 
-  openEditDialog(_id : string, vehicle : string, mileage : number, start_location : string, destination : string, condition : string, hasDriver : boolean, driver : string, riders: boolean, tags : string): void {
-    const oldRide: Ride = {_id: _id, vehicle: vehicle, mileage: mileage, condition: condition, start_location: start_location, destination: destination, hasDriver: hasDriver, driver: driver, riders: riders, tags: tags};
+  openEditDialog(_id : string, vehicle : string, mileage : number, start_location : string,
+                 destination : string, condition : string, hasDriver : boolean, driver : string, riders: boolean, tags : string): void {
+    const oldRide: Ride = {_id: _id, vehicle: vehicle, mileage: mileage, condition: condition, start_location: start_location,
+                           destination: destination, hasDriver: hasDriver, driver: driver, riders: riders, tags: tags};
     const dialogRef = this.dialog.open(EditRideComponent, {
       width: '500px',
       data: {ride: oldRide}
@@ -94,7 +96,7 @@ export class RideListComponent implements OnInit {
   }
 
   public filterRides(searchVehicle: string, searchMileage: number, searchDestination: string, searchStartLocation: string,
-                     searchCondition: string, searchTags: string): Ride[] {
+                     searchCondition: string, searchTag: string): Ride[] {
 
     this.filteredRides = this.rides;
 
@@ -138,13 +140,13 @@ export class RideListComponent implements OnInit {
     }
 
     // Filter by Tag
-    if (searchTags != null) {
-      searchTags = searchTags.toLocaleLowerCase();
+    if (searchTag != null) {
+      searchTag = searchTag.toLocaleLowerCase();
       this.filteredRides = this.filteredRides.filter(ride => {
-        return !searchTags || ride.tags.toLowerCase().indexOf(searchTags) !== -1;
+        return !searchTag || ride.tags.toLowerCase().indexOf(searchTag) !== -1;
       });
-      return this.filteredRides;
     }
+    return this.filteredRides;
   }
   /**
    * Starts an asynchronous operation to update the rides list
@@ -161,7 +163,7 @@ export class RideListComponent implements OnInit {
     rides.subscribe(
       rides => {
         this.rides = rides;
-        this.filterRides(this.rideVehicle, this.rideMileage, this.rideDestination, this.rideStartLocation, this.rideCondition, this.rideTags);
+        this.filterRides(this.rideVehicle, this.rideMileage, this.rideDestination, this.rideStartLocation, this.rideCondition, this.rideTag);
       },
       err => {
         console.log(err);
@@ -182,7 +184,7 @@ export class RideListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.refreshRides();
     this.loadService();
+    this.refreshRides();
   }
 }

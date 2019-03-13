@@ -57,7 +57,7 @@ export class AddUserComponent implements OnInit {
       email: new FormControl('email', Validators.email),
 
       vehicles: new FormControl('vehicles', Validators.compose([
-        Valdiators.pattern()
+        Validators.required
       ])),
 
       phone: new FormControl('phone', Validators.compose([

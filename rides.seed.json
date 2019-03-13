@@ -1,702 +1,602 @@
 [
   {
-    "_id": {
-      "oid": "5c84261e352a73301bc382f5"
-    },
-    "vehicle": "Kia Sedona",
-    "mileage": 25,
-    "condition": "Bad",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Skyland Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261ecf56c2a69fd32917"
-    },
-    "vehicle": "Chevy Impala",
-    "mileage": 31,
+    "_id": "5c893b38498863cd7a33b39d",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Ford Ranger",
+    "mileage": 21,
     "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Gadsden Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Westboro Minnesota",
     "hasDriver": false,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261eda489f9744f5ea5d"
-    },
+    "_id": "5c893b382786b841cf039ca8",
+    "driver": "Roen",
+    "riders": true,
     "vehicle": "Honda Civic",
-    "mileage": 40,
+    "mileage": 18,
     "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Valmy Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Alfarata Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b380de8b18944f94d65",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Chevy Impala",
+    "mileage": 29,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Terlingua Minnesota",
     "hasDriver": false,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261e26ac95726d0ae903"
-    },
-    "vehicle": "Chevy Impala",
-    "mileage": 40,
-    "condition": "Poor",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Gilgo Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e8669a7a0d04709c0"
-    },
-    "vehicle": "Chevy Impala",
-    "mileage": 19,
-    "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Caledonia Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261ef8776f63e3c859a1"
-    },
+    "_id": "5c893b389dac895cd6af8625",
+    "driver": "Roen",
+    "riders": false,
     "vehicle": "Honda Civic",
     "mileage": 10,
     "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Websterville Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Buxton Minnesota",
     "hasDriver": true,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261ea5f6e225c4c41f05"
-    },
+    "_id": "5c893b385742b6caa29b424a",
+    "driver": "Roen",
+    "riders": false,
     "vehicle": "Honda Civic",
-    "mileage": 34,
-    "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Flintville Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
+    "mileage": 28,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Dyckesville Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261ef56101b3385aae68"
-    },
-    "vehicle": "Chevy Impala",
-    "mileage": 19,
+    "_id": "5c893b38b40a3fee1adf1750",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Honda Civic",
+    "mileage": 36,
     "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Clarktown Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Fowlerville Minnesota",
     "hasDriver": false,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261e87b1a1be2896706a"
-    },
-    "vehicle": "Chevy Impala",
-    "mileage": 11,
-    "condition": "Poor",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Hoagland Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261ebbbd69bbac503aa9"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 35,
-    "condition": "Good",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Dawn Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261eac535ed8f4892d74"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 13,
-    "condition": "Poor",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Kraemer Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261ee5905ff1b73004f4"
-    },
+    "_id": "5c893b38191edc2699032bac",
+    "driver": "Roen",
+    "riders": false,
     "vehicle": "Ford Ranger",
-    "mileage": 21,
+    "mileage": 16,
     "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Golconda Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e485ab4721fcc19ae"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 32,
-    "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Logan Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Selma Minnesota",
     "hasDriver": false,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261e82c622aae54436f1"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 37,
-    "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Noblestown Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261ec21a0f90ac69a149"
-    },
+    "_id": "5c893b3848e102687679c7af",
+    "driver": "Roen",
+    "riders": true,
     "vehicle": "Kia Sedona",
     "mileage": 12,
     "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Springdale Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Wikieup Minnesota",
     "hasDriver": true,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261ec1375ec5deee2421"
-    },
+    "_id": "5c893b38b7dd07e56f7c7314",
+    "driver": "Roen",
+    "riders": true,
     "vehicle": "Chevy Impala",
-    "mileage": 19,
-    "condition": "Bad",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Blairstown Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e0234b0072d4685b6"
-    },
-    "vehicle": "Kia Sedona",
     "mileage": 17,
     "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Hebron Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e3216fcb3ca308565"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 24,
-    "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Bluffview Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Dragoon Minnesota",
     "hasDriver": true,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261ee71058eed6b1b3a7"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 34,
-    "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Gila Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e8482e695b0c35b68"
-    },
-    "vehicle": "Chevy Impala",
-    "mileage": 25,
-    "condition": "Good",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Hemlock Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e0a61029a84d14ec4"
-    },
+    "_id": "5c893b38a68e3425f5d25c36",
+    "driver": "Roen",
+    "riders": true,
     "vehicle": "Kia Sedona",
-    "mileage": 26,
-    "condition": "Good",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Blanford Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e93cf3b85719b8cf7"
-    },
-    "vehicle": "Honda Civic",
     "mileage": 25,
-    "condition": "Good",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Columbus Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e675b63d77573632b"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 23,
-    "condition": "Poor",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Calverton Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e6406bb00d1c6c54c"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 15,
-    "condition": "Good",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Advance Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261ed7383865def5e1ec"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 19,
-    "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Summertown Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e61ed1202516927a5"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 35,
-    "condition": "Good",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Leroy Minnesota"
-    },
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Bethany Minnesota",
     "hasDriver": false,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261eb56a2b4665219595"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 23,
-    "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Freetown Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e23219d82f7af177c"
-    },
+    "_id": "5c893b380ae54ae34c92df58",
+    "driver": "Roen",
+    "riders": true,
     "vehicle": "Chevy Impala",
-    "mileage": 15,
-    "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Townsend Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e5deada17ac5d2faa"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 26,
+    "mileage": 16,
     "condition": "Poor",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Strykersville Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Elliott Minnesota",
     "hasDriver": false,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261ef7b7d8be19320cc4"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 30,
-    "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Chicopee Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e165e357394463c3c"
-    },
-    "vehicle": "Chevy Impala",
-    "mileage": 13,
-    "condition": "Poor",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Topanga Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e17d16e7849f0be21"
-    },
+    "_id": "5c893b38664aa9bb3fe2ffa7",
+    "driver": "Roen",
+    "riders": false,
     "vehicle": "Ford Ranger",
     "mileage": 14,
-    "condition": "Good",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Carbonville Minnesota"
-    },
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Walland Minnesota",
     "hasDriver": true,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261e18873df6e58a5667"
-    },
-    "vehicle": "Kia Sedona",
-    "mileage": 19,
-    "condition": "Good",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Ironton Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e11f203df5c8a2183"
-    },
+    "_id": "5c893b38fdcb2dd378e56b97",
+    "driver": "Roen",
+    "riders": false,
     "vehicle": "Chevy Impala",
-    "mileage": 34,
-    "condition": "Poor",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Callaghan Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261ecc6310aa9a730dfb"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 20,
-    "condition": "Poor",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Choctaw Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e685be335f08f9fb4"
-    },
-    "vehicle": "Kia Sedona",
-    "mileage": 17,
-    "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Crumpler Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e709d4ca9dc3e2bce"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 31,
-    "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Brethren Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e05153dd8eaa5f4d6"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 23,
-    "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Corinne Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261ec271afeac56bb7ff"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 37,
-    "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Sanford Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e661dd31732ce8c03"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 15,
-    "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Como Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e172a6d835589ddca"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 35,
-    "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Cobbtown Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e20bf262221c2dbe9"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 16,
-    "condition": "Bad",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Cataract Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e6cb67a1e546ecdf5"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 28,
-    "condition": "New",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Muse Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e0412b0fedf0585e3"
-    },
-    "vehicle": "Honda Civic",
-    "mileage": 10,
-    "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Nadine Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261ea346e0c80ce0cc35"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 20,
-    "condition": "Bad",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Germanton Minnesota"
-    },
-    "hasDriver": true,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261ef80b6d03f04f7366"
-    },
-    "vehicle": "Kia Sedona",
-    "mileage": 32,
-    "condition": "Good",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Levant Minnesota"
-    },
-    "hasDriver": false,
-    "tags": ["STRING","STRING"]
-  },
-  {
-    "_id": {
-      "oid": "5c84261e6c62adddccebb98c"
-    },
-    "vehicle": "Ford Ranger",
     "mileage": 29,
     "condition": "Poor",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Ypsilanti Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Smock Minnesota",
     "hasDriver": true,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261ecbcf72c52a1a6e7a"
-    },
-    "vehicle": "Honda Civic",
+    "_id": "5c893b384103a9346543520f",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Kia Sedona",
+    "mileage": 11,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Sunriver Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b380c80ba56c34455f6",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Chevy Impala",
+    "mileage": 12,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Saddlebrooke Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3809d0a9005aa4dcda",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Chevy Impala",
+    "mileage": 21,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Iberia Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38b5a6ff5f69d5ae32",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Kia Sedona",
+    "mileage": 23,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Ironton Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38868070d67abe3cd4",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Kia Sedona",
+    "mileage": 17,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Soudan Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3829d224e83ae8940c",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Kia Sedona",
+    "mileage": 24,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Roulette Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38a83a086953f42f56",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Chevy Impala",
+    "mileage": 31,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Vowinckel Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38ce47ffb7ab9075ab",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Ford Ranger",
     "mileage": 15,
     "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Harold Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Marbury Minnesota",
     "hasDriver": false,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261e98c1c1b0014bab23"
-    },
-    "vehicle": "Kia Sedona",
-    "mileage": 21,
-    "condition": "Average",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Brandywine Minnesota"
-    },
+    "_id": "5c893b38c3e731d52414bed2",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Chevy Impala",
+    "mileage": 25,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Brenton Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b380ee98b358bb9e65d",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Ford Ranger",
+    "mileage": 18,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Sussex Minnesota",
     "hasDriver": true,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
   },
   {
-    "_id": {
-      "oid": "5c84261e909e21d78b2320c1"
-    },
+    "_id": "5c893b385ffad168c48893ed",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Chevy Impala",
+    "mileage": 39,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Waverly Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38ec988505dd16c65f",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Honda Civic",
+    "mileage": 33,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Chumuckla Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b389f374d30f313068d",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Chevy Impala",
+    "mileage": 31,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Coalmont Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b384e51e229cad9527e",
+    "driver": "Roen",
+    "riders": true,
     "vehicle": "Kia Sedona",
+    "mileage": 31,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Enoree Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b386e8e9c76072a4f0a",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Honda Civic",
+    "mileage": 13,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Snyderville Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3898b428b38d6d9933",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Chevy Impala",
     "mileage": 37,
     "condition": "Bad",
-    "route": {
-      "start_location": "Morris",
-      "destination": "Wescosville Minnesota"
-    },
+    "start_location": "Morris",
+    "destination": "Lydia Minnesota",
     "hasDriver": true,
-    "tags": ["STRING","STRING"]
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b381eef7610843568e1",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Honda Civic",
+    "mileage": 20,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Caberfae Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3857085846f8cfea11",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Kia Sedona",
+    "mileage": 29,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Caledonia Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3885eeff3fa457f298",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Chevy Impala",
+    "mileage": 19,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Montura Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38e9b7fe9ff4738477",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Chevy Impala",
+    "mileage": 37,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Hickory Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3812dac974465cb1bd",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Kia Sedona",
+    "mileage": 27,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Holtville Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b388d63ce672aff0332",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Kia Sedona",
+    "mileage": 38,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Hatteras Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3847e993a2f9bf031a",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Ford Ranger",
+    "mileage": 12,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Lawrence Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3843a7f8a80f444c06",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Kia Sedona",
+    "mileage": 24,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Ladera Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38e6e3208a7afdcf2c",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Honda Civic",
+    "mileage": 26,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Brownlee Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b387ce959d13be6f88d",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Kia Sedona",
+    "mileage": 22,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Nash Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38651e3bce922fba46",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Honda Civic",
+    "mileage": 40,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Martinez Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38e52109d2b2c8af2b",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Ford Ranger",
+    "mileage": 15,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Orick Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3800bffc6eabff7466",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Chevy Impala",
+    "mileage": 33,
+    "condition": "New",
+    "start_location": "Morris",
+    "destination": "Floriston Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38441e1c3ab839cb9b",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Ford Ranger",
+    "mileage": 10,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Convent Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38489cc2cf782fbfe9",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Honda Civic",
+    "mileage": 26,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Coultervillle Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3861088ddd8dd56cc3",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Ford Ranger",
+    "mileage": 27,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Barronett Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38bfa276e94d444433",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Honda Civic",
+    "mileage": 38,
+    "condition": "Poor",
+    "start_location": "Morris",
+    "destination": "Croom Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b3856f4a6df12ad0c11",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Ford Ranger",
+    "mileage": 23,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Clarence Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38cdaaa8ae24c87ece",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Honda Civic",
+    "mileage": 26,
+    "condition": "Average",
+    "start_location": "Morris",
+    "destination": "Martell Minnesota",
+    "hasDriver": false,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38828865eccf1eb93b",
+    "driver": "Roen",
+    "riders": true,
+    "vehicle": "Ford Ranger",
+    "mileage": 38,
+    "condition": "Bad",
+    "start_location": "Morris",
+    "destination": "Yardville Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
+  {
+    "_id": "5c893b38b3d4bad9569aa383",
+    "driver": "Roen",
+    "riders": false,
+    "vehicle": "Kia Sedona",
+    "mileage": 36,
+    "condition": "Good",
+    "start_location": "Morris",
+    "destination": "Neahkahnie Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
   }
 ]
