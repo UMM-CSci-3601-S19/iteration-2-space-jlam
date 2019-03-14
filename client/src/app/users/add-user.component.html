@@ -16,25 +16,25 @@ is potentially helpful and contributed to the shaping of this example -->
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput #input id="ageField" type="number" placeholder="Age" [(ngModel)]="data.user.age"
-               formControlName="age">
-        <mat-error *ngFor="let validation of add_user_validation_messages.age">
-          <mat-error class="error-message" id="age-error"
-                     *ngIf="addUserForm.get('age').hasError(validation.type) && (addUserForm.get('age').dirty || addUserForm.get('age').touched)">
+        <input matInput #input id="emailField" type="text" placeholder="Email" [(ngModel)]="data.user.email"
+               formControlName="email">
+        <mat-error *ngFor="let validation of add_user_validation_messages.email">
+          <mat-error class="error-message" id="email-error"
+                     *ngIf="addUserForm.get('email').hasError(validation.type) && (addUserForm.get('email').dirty || addUserForm.get('email').touched)">
             {{validation.message}}
           </mat-error>
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput #input id="companyField" placeholder="Company" [(ngModel)]="data.user.company"
-               formControlName="company">
+        <input matInput #input id="vehiclesField" placeholder="Vehicles" [(ngModel)]="data.user.vehicles"
+               formControlName="vehicles">
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput #input id="emailField" placeholder="Email" [(ngModel)]="data.user.email"
-               formControlName="email">
-        <mat-error *ngFor="let validation of add_user_validation_messages.email">
-          <mat-error class="error-message" id='email-error'
-                     *ngIf="addUserForm.get('email').hasError(validation.type) && (addUserForm.get('email').dirty || addUserForm.get('email').touched)">
+        <input matInput #input id="phoneField" placeholder="Phone" [(ngModel)]="data.user.phone"
+               formControlName="phone">
+        <mat-error *ngFor="let validation of add_user_validation_messages.phone">
+          <mat-error class="error-message" id='phone-error'
+                     *ngIf="addUserForm.get('phone').hasError(validation.type) && (addUserForm.get('phone').dirty || addUserForm.get('phone').touched)">
             {{validation.message}}
           </mat-error>
         </mat-error>

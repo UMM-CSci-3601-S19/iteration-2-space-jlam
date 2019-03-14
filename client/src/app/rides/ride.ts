@@ -1,9 +1,13 @@
 export interface Ride
 {
-  _id: String,
-  vehicle: String,
-  mileage: number,
-  condition: String,
-  start_location: String,
-  destination: String,
+  _id: string;
+  driver: string;
+  riders: boolean;
+  vehicle: string;
+  mileage: number;
+  condition: string;
+  start_location: string;
+  destination: string;
+  hasDriver: boolean;
+  tags:string;
 }

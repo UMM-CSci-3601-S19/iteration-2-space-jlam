@@ -44,6 +44,10 @@ export class AddRideComponent implements OnInit {
 
     'condition': [
       {type: 'required', message: 'Condition is required'}
+    ],
+
+    'tagging': [
+      {type: 'required', message: 'Condition is required'}
     ]
   };
 

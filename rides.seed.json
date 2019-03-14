@@ -1,14 +1,5 @@
 [
   {
-    "_id": {
-      "oid": "5c81bda753c4b4a118c67810"
-    },
-    "vehicle": "Ford Ranger",
-    "mileage": 33,
-    "condition": "Bad",
-    "start_location": "Morris",
-    "destination": "Hoehne , Minnesota"
-  },
   {
     "_id": {
       "oid": "5c81bda7caef34488ba18e18"
@@ -498,5 +489,10 @@
     "condition": "Average",
     "start_location": "Morris",
     "destination": "Dargan , Minnesota"
+
+    "destination": "Walland Minnesota",
+    "hasDriver": true,
+    "tags": "sample tag"
+  },
   }
 ]
