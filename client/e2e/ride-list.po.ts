@@ -21,8 +21,8 @@ export class RidePage {
   }
 
   getRideTitle() {
-    const title = element(by.id('ride-list-title')).getText();
-    this.highlightElement(by.id('ride-list-title'));
+    const title = element(by.id('title1')).getText();
+    this.highlightElement(by.id('title1'));
 
     return title;
   }
@@ -53,9 +53,9 @@ export class RidePage {
     input.sendKeys(Key.TAB);
   }
 
-  getUniqueRide(destination: string) {
-    const ride = element(by.id(destination)).getText();
-    this.highlightElement(by.id(destination));
+  getUniqueRide(vehicle: string) {
+    const ride = element(by.id(vehicle)).getText();
+    this.highlightElement(by.id(vehicle));
 
     return ride;
   }

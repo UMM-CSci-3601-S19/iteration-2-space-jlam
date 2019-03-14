@@ -28,9 +28,6 @@ describe('Ride list', () => {
 
   beforeEach(() => {
     page = new RidePage();
-    browser.actions().sendKeys(Key.TAB).perform();
-    browser.actions().sendKeys(Key.TAB).perform();
-    browser.actions().sendKeys(Key.ENTER).perform();
   });
 
   it('should get and highlight Rides title attribute ', () => {
@@ -40,8 +37,9 @@ describe('Ride list', () => {
 
   it('should type something in filter name box and check that it returned correct element', () => {
     page.navigateTo();
+    page.click("filter");
     page.typeADestination('Au');
-    expect(page.getUniqueRide('Auroroa Minnesota')).toEqual('Auroroa Minnesota');
+    expect(page.getUniqueRide('Honda Civic')).toEqual('Auroroa Minnesota');
     page.backspace();
     page.typeADestination('Cru');
     expect(page.getUniqueRide('Crucible Minnesota')).toEqual('Crucible Minnesota');
@@ -49,6 +47,7 @@ describe('Ride list', () => {
 
   it('should click on the age 27 times and return 3 elements then ', () => {
     page.navigateTo();
+    page.click("filter")
     page.getRideByMileage();
     for (let i = 0; i < 20; i++) {
       page.selectUpKey();
@@ -61,6 +60,7 @@ describe('Ride list', () => {
 
   it('Should open the expansion panel and get the company', () => {
     page.navigateTo();
+    page.click("filter")
     page.getVehicle('Ford');
 
     expect(page.getUniqueRide('Rockbridge Minnesota')).toEqual('Rockbridge Minnesota');
@@ -158,7 +158,7 @@ describe('Ride list', () => {
        * and then for the client to display this new ride.
        * http://www.protractortest.org/#/api?view=ProtractorExpectedConditions
        */
-      const Ford_element = element(by.destination('Saint Cloud'));
+      const Ford_element = element(by.id('Saint Cloud'));
       browser.wait(protractor.ExpectedConditions.presenceOf(Ford_element), 10000);
 
       expect(page.getUniqueRide('Saint Cloud')).toMatch('Saint Cloud*'); // toEqual('Tracy Kim');
