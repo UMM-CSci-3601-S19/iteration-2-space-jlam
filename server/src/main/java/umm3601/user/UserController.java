@@ -97,8 +97,8 @@ public class UserController {
    * Helper method which appends received user information to the to-be added document
    *
    * @param name the name of the new user
-   * @param age the age of the new user
-   * @param company the company the new user works for
+   * @param vehicle the vehicle of the new user
+   * @param phone the phone number of the new user
    * @param email the email of the new user
    * @return boolean after successfully or unsuccessfully adding a user
    */
