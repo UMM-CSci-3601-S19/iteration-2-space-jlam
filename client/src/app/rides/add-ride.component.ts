@@ -85,6 +85,9 @@ export class AddRideComponent implements OnInit {
 
       destination: new FormControl('destination', Validators.compose([
         Validators.required
+      ])),
+      tagging: new FormControl('tagging', Validators.compose([
+        Validators.required
       ]))
     })
 

@@ -47,6 +47,8 @@ export class EditRideComponent implements OnInit {
     ]
   };
 
+
+
   createForms() {
 
     // add ride form validations

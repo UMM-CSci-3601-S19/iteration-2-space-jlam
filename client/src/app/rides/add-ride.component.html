@@ -54,6 +54,16 @@ is potentially helpful and contributed to the shaping of this example -->
         </mat-error>
       </mat-error>
     </mat-form-field>
+      <mat-form-field flex>
+        <input matInput required #input id="taggingField" placeholder="Tagging" [(ngModel)]="data.ride.tags"
+               formControlName="tagging">
+        <mat-error *ngFor="let validation of add_ride_validation_messages.tagging">
+          <mat-error class="error-message" id='tagging-error'
+                     *ngIf="addRideForm.get('tagging').hasError(validation.type) && (addRideForm.get('tagging').dirty || addRideForm.get('tagging').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
     </mat-dialog-content>
     <mat-dialog-actions layout="row">
       <!-- [mat-dialog-close]="data.ride" causes the data.ride object to be returned when the dialog is closed. -->

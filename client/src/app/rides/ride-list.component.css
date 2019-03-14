@@ -10,27 +10,57 @@
 .cardlist button {
   background-color: #0ca8f4;
   margin-top: 3%;
+}
 
-}
-#drivers {
-  float: right;
-  width: 30%;
-  text-align: center;
-}
-#riders {
-  float: left;
-  width: 30%;
-  text-align: center;
-}
-#drivers #riders .mat-expansion-panel-header {
-  text-align: center;
-}
-#wrapper {
 
+@media only screen and (max-width: 414px) {
+  #wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  #drivers {
+    margin-left: 5%;
+    width: 90%;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  #riders {
+    margin-left: 5%;
+    width: 90%;
+    text-align: center;
+  }
 }
-#editRide {
-  align-self: right;
-}
-.cardlist mat-expansion-panel-content.mat-expanded {
-  text-align: right;
+
+@media only screen and (min-width: 415px) {
+  #drivers {
+    float: right;
+    width: 30%;
+    text-align: center;
+    margin-right: 10%;
+    margin-bottom: 10%;
+  }
+
+  #riders {
+    float: left;
+    width: 30%;
+    text-align: center;
+    margin-left: 10%;
+    margin-bottom: 10%;
+  }
+
+  #drivers #riders .mat-expansion-panel-header {
+    text-align: center;
+  }
+
+  #wrapper {
+
+  }
+
+  #editRide {
+    align-self: right;
+  }
+
+  .cardlist mat-expansion-panel-content.mat-expanded {
+    text-align: right;
+  }
 }

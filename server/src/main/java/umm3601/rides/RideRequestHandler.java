@@ -80,9 +80,15 @@ public class RideRequestHandler {
     String condition = newRide.getString("condition");
     String start_location = newRide.getString("start_location");
     String destination = newRide.getString("destination");
+    String tags = newRide.getString("tags");
+    String driver = "Roen";
+    Boolean riders = false;
+    Boolean hasDriver = true;
+
 
     System.err.println("Adding new ride [vehicle=" + vehicle + ", mileage=" + mileage + " condition=" + condition
       + " start_location=" + start_location + " destination=" + destination +']');
-    return rideController.addNewRide(vehicle, mileage, condition, start_location, destination);
+    return rideController.addNewRide(vehicle, mileage, condition, start_location, destination, tags, driver, riders, hasDriver);
   }
+
 }
