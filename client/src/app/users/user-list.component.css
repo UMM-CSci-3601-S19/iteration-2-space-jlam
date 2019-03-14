@@ -7,13 +7,6 @@
   padding-right: 14px;
 }
 
-.cardlist  {
-  align-content: center;
-  display: flex;
-  flex-wrap: wrap;
-
-}
-
 .users {
   flex-basis: 20%;
 }
@@ -21,3 +14,25 @@
 mat-panel-description {
   margin-top: 3px;
 }
+
+.cardlist {
+  position: absolute;
+  left: 25%;
+  top:10%;
+  width: 50%;
+}
+
+.add-fab {
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+}
+
+.cardlist mat-panel-description {
+  margin-top: 15px;
+}
+
+.cardlist mat-panel-title {
+
+}
+

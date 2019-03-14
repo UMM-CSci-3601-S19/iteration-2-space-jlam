@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit {
 
   // These are the target values used in searching.
   // We should rename them to make that clearer.
-  public userName: string;
+  public userName: string = '';
   // public userEmail: string;
   // public userVehicle: [string];
   // public userPhone: string;
