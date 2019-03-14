@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import java.util.HashMap;
 import static com.mongodb.client.model.Filters.eq;
 
 
@@ -106,7 +107,8 @@ public class RideController {
    * Helper method which appends received user information to the to-be added document
 
    */
-  public String addNewRide(String vehicle, int mileage, String condition, String start_location, String destination) {
+  public String addNewRide(String vehicle, int mileage, String condition, String start_location, String destination,
+                           String tags, String driver, Boolean riders, Boolean hasDriver) {
 
     Document newRide = new Document();
     newRide.append("vehicle", vehicle);
@@ -114,18 +116,31 @@ public class RideController {
     newRide.append("condition", condition);
     newRide.append("start_location", start_location);
     newRide.append("destination", destination);
+    newRide.append("tags", tags);
+    newRide.append("driver", driver);
+    newRide.append("riders", riders);
+    newRide.append("hasDriver", hasDriver);
+
 
     try {
       rideCollection.insertOne(newRide);
-      ObjectId id = newRide.getObjectId("_id");
+      String id = newRide.getObjectId("_id").toString();
       System.err.println("Successfully added new ride [_id=" + id + ", vehicle=" + vehicle + ", mileage=" + mileage
-        + " condition=" + condition + " start_location=" + start_location + "destination=" + destination + ']');
-      return id.toHexString();
+        + " condition=" + condition + " start_location=" + start_location + "destination=" + destination + "tags=" + tags +']');
+      return id;
     } catch (MongoException me) {
       me.printStackTrace();
       return null;
     }
   }
+//ObjectId id
+//  public void removeRide(String id) {
+//
+//    HashMap<String,Object> result =
+//      new ObjectMapper().readValue(getRide(id), HashMap.class);
+//
+//  rideCollection.deleteOne();
+//  }
 
   public String addEditedRide(String _id, String vehicle, int mileage, String condition, String start_location, String destination) {
 

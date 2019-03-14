@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit {
 
   // These are the target values used in searching.
   // We should rename them to make that clearer.
-  public userName: string;
+  public userName: string = '';
   // public userEmail: string;
   // public userVehicle: [string];
   // public userPhone: string;
@@ -36,7 +36,7 @@ export class UserListComponent implements OnInit {
   }
 
   openDialog(): void {
-    const newUser: User = {_id: '', name: '', email: '', vehicles: [''], phone: ''};
+    const newUser: User = {_id: '', name: '', email: '', vehicles: '', phone: ''};
     const dialogRef = this.dialog.open(AddUserComponent, {
       width: '500px',
       data: {user: newUser}

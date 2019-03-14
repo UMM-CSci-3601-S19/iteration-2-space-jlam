@@ -45,7 +45,6 @@ public class Server {
       if (accessControlRequestMethod != null) {
         response.header("Access-Control-Allow-Methods", accessControlRequestMethod);
       }
-
       return "OK";
     });
 

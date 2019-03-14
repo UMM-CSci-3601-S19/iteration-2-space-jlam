@@ -1,43 +1,61 @@
-<div>
-  <button id="addNewUser" mat-raised-button (click)="openDialog()">Add New Profile</button>
-</div>
-
 <div layout-gt-sm="row">
   <div flex-gt-sm="80" flex-offset-gt-sm="10">
-    <mat-card>
-      <mat-card-title id="user-list-title">Users</mat-card-title>
-      <mat-divider></mat-divider>
-      <mat-card-content>
-        <mat-form-field>
-          <input matInput id="userName" #input type="text" placeholder="Filter by name"
-                 (input)="userName = $event.target.value">
-        </mat-form-field>
+    <div class="cardlist" *ngIf="users; else usersError">
+      <mat-accordion>
+        <ng-container #elem class="users"
+                      *ngFor="let user of this.filterUsers(
+                        userName)">
+          <mat-expansion-panel class="userInfo">
+            <mat-expansion-panel-header style="background-color: #747474">
+              <mat-panel-title class="userVehicle" [id]="user.name">{{user.name}}</mat-panel-title>
+            </mat-expansion-panel-header>
 
-        <div class="cardlist" *ngIf="users; else usersError">
-          <mat-card #elem class="users" [id]="user.email"
-                    *ngFor="let user of this.filterUsers(userName)">
-            <mat-card-header>
-              <mat-card-title class="userName" [id]="user.name">{{user.name}}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <p>
-                {{user.vehicles}}
-                {{user.email}}
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
-        <ng-template #usersError>
-          <mat-error>
-            There was a problem loading the users. Possibly the server is down or perhaps there are network
-            issues.
-          </mat-error>
-          <mat-error>
-            Please wait a bit and try again or start the server.
-          </mat-error>
-        </ng-template>
-      </mat-card-content>
-    </mat-card>
+            <mat-panel-description style="color: black">Phone: {{user.phone}}</mat-panel-description>
+            <mat-panel-description style="color: black">Email: {{user.email}}</mat-panel-description>
+            <mat-panel-description style="color: black">Vehicle: {{user.vehicle}}</mat-panel-description>
+          </mat-expansion-panel>
+        </ng-container>
+      </mat-accordion>
+    </div>
+    <button mat-fab id="addNewUser" class="add-fab" matTooltip="New User" matTooltipPosition="left"
+            (click)="openDialog()">
+      <mat-icon class="md-24" aria-label="New User">add</mat-icon>
+    </button>
+    <!--<mat-card>-->
+      <!--<mat-card-title id="user-list-title">Users</mat-card-title>-->
+      <!--<mat-divider></mat-divider>-->
+      <!--<mat-card-content>-->
+        <!--<mat-form-field>-->
+          <!--<input matInput id="userName" #input type="text" placeholder="Filter by name"-->
+                 <!--(input)="userName = $event.target.value">-->
+        <!--</mat-form-field>-->
+        <!--<button mat-raised-button id="submit" color="primary" #input type="button" (click)="loadService()">Submit-->
+        <!--</button>-->
+        <!--<div class="cardlist" *ngIf="users; else usersError">-->
+          <!--<mat-card #elem class="users" [id]="user.email"-->
+                    <!--*ngFor="let user of this.filterUsers(userName)">-->
+            <!--<ng-container *ngIf="userName != ''">-->
+            <!--<mat-card-header>-->
+              <!--<mat-card-title class="userName" [id]="user.name">{{user.name}}</mat-card-title>-->
+            <!--</mat-card-header>-->
+            <!--<mat-card-content>-->
+              <!--<mat-panel-description>{{user.vehicle}}</mat-panel-description>-->
+              <!--<mat-panel-description>{{user.email}}</mat-panel-description>-->
+            <!--</mat-card-content>-->
+            <!--</ng-container>-->
+          <!--</mat-card>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; Maybe this should be a pop-up instead of just a text message? Not sure. &ndash;&gt;-->
+        <!--<ng-template #usersError>-->
+          <!--<mat-error>-->
+            <!--There was a problem loading the users. Possibly the server is down or perhaps there are network-->
+            <!--issues.-->
+          <!--</mat-error>-->
+          <!--<mat-error>-->
+            <!--Please wait a bit and try again or start the server.-->
+          <!--</mat-error>-->
+        <!--</ng-template>-->
+      <!--</mat-card-content>-->
+    <!--</mat-card>-->
   </div>
 </div>

@@ -31,8 +31,8 @@ export class AddUserComponent implements OnInit {
       {type: 'email', message: 'Email must be formatted properly'}
     ],
 
-    'vehicles': [
-      {type: 'vehicles', message: 'Vehicles must be formatted properly'}
+    'vehicle': [
+      {type: 'vehicle', message: 'Vehicle must be formatted properly'}
     ],
 
     'phone': [
@@ -56,7 +56,7 @@ export class AddUserComponent implements OnInit {
       // We don't need a special validator just for our app here, but there is a default one for email.
       email: new FormControl('email', Validators.email),
 
-      vehicles: new FormControl('vehicles', Validators.compose([
+      vehicle: new FormControl('vehicle', Validators.compose([
         Validators.required
       ])),
 

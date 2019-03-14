@@ -67,11 +67,6 @@ public class UserController {
 
     Document filterDoc = new Document();
 
-    if (queryParams.containsKey("age")) {
-      int targetAge = Integer.parseInt(queryParams.get("age")[0]);
-      filterDoc = filterDoc.append("age", targetAge);
-    }
-
     if (queryParams.containsKey("company")) {
       String targetContent = (queryParams.get("company")[0]);
       Document contentRegQuery = new Document();
@@ -102,23 +97,23 @@ public class UserController {
    * Helper method which appends received user information to the to-be added document
    *
    * @param name the name of the new user
-   * @param age the age of the new user
-   * @param company the company the new user works for
+   * @param vehicle the vehicle of the new user
+   * @param phone the phone number of the new user
    * @param email the email of the new user
    * @return boolean after successfully or unsuccessfully adding a user
    */
-  public String addNewUser(String name, int age, String company, String email) {
+  public String addNewUser(String name, String vehicle, String phone, String email) {
 
     Document newUser = new Document();
     newUser.append("name", name);
-    newUser.append("age", age);
-    newUser.append("company", company);
+    newUser.append("vehicle", vehicle);
+    newUser.append("phone", phone);
     newUser.append("email", email);
 
     try {
       userCollection.insertOne(newUser);
       ObjectId id = newUser.getObjectId("_id");
-      System.err.println("Successfully added new user [_id=" + id + ", name=" + name + ", age=" + age + " company=" + company + " email=" + email + ']');
+      System.err.println("Successfully added new user [_id=" + id + ", name=" + name + ", vehicle=" + vehicle + " phone=" + phone + " email=" + email + ']');
       return id.toHexString();
     } catch (MongoException me) {
       me.printStackTrace();
