@@ -28,7 +28,7 @@ export class AddRideComponent implements OnInit {
     ],
 
     'mileage': [
-      {type: 'pattern', message: 'Mileage must be a number'},
+      {type: 'pattern', message: 'Mileage must be above zero'},
       {type: 'min', message: 'Mileage must be at least 1'},
       {type: 'max', message: 'Mileage may not be greater than 500,000'},
       {type: 'required', message: 'Mileage is required'}
