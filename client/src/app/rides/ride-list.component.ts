@@ -39,9 +39,9 @@ export class RideListComponent implements OnInit {
     return ride._id['$oid'] === this.highlightedID;
   }
 
-  deleteRide(id : String): void {
-    removeRideFromDatabase(id);
-  }
+  // deleteRide(id : String): void {
+  //   removeRideFromDatabase(id);
+  // }
 
   openDialog(): void {
     const newRide: Ride = {_id: '', vehicle: '', mileage: 0, condition: '', start_location: '', destination: '', hasDriver: null,

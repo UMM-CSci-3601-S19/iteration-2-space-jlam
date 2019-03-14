@@ -78,11 +78,11 @@ public class UserRequestHandler {
     Document newUser = Document.parse(req.body());
 
     String name = newUser.getString("name");
-    int age = newUser.getInteger("age");
-    String company = newUser.getString("company");
+    String vehicle = newUser.getString("vehicle");
+    String phone = newUser.getString("phone");
     String email = newUser.getString("email");
 
-    System.err.println("Adding new user [name=" + name + ", age=" + age + " company=" + company + " email=" + email + ']');
-    return userController.addNewUser(name, age, company, email);
+    System.err.println("Adding new user [name=" + name + ", vehicle=" + vehicle + " phone=" + phone + " email=" + email + ']');
+    return userController.addNewUser(name, vehicle, phone, email);
   }
 }

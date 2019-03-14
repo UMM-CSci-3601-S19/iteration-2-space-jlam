@@ -17,3 +17,7 @@
 .users {
   flex-basis: 20%;
 }
+
+mat-panel-description {
+  margin-top: 3px;
+}
