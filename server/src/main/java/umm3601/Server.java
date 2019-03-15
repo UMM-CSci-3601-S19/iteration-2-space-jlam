@@ -6,6 +6,8 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 import spark.utils.IOUtils;
+import umm3601.rides.RideController;
+import umm3601.rides.RideRequestHandler;
 import umm3601.user.UserController;
 import umm3601.user.UserRequestHandler;
 

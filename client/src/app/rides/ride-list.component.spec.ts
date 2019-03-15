@@ -9,29 +9,42 @@ describe('Ride list service: ', () => {
   // A small collection of test rides
   const testRides: Ride[] = [
     {
-      _id: "5c81bda753c4b4a118c67810",
-      vehicle: "Ford Ranger",
-      mileage: 33,
-      condition: "Bad",
-      start_location: "Morris",
-      destination: "Hoehne , Minnesota",
-    },
-    {
-      _id: "5c81bda7210745e5ed8c5bc8",
-      vehicle: "Chevy Impala",
-      mileage: 21,
-      condition: "Bad",
-      start_location: "Morris",
-      destination: "Harrodsburg , Minnesota",
-    },
-    {
-      _id: "5c81bda7883108823a6b5eea",
-      vehicle: "Honda Civic",
-      mileage: 20,
-      condition: "Average",
-      start_location: "Morris",
-      destination: "Yorklyn , Minnesota",
-    },
+      _id: "5c899e46a3a0f4fb8aa7fad0",
+  driver: "Mitchell",
+  riders: true,
+  vehicle: "Honda Civic",
+  mileage: 22,
+  condition: "good",
+  start_location: "Morris",
+  destination: "Minneapolis",
+  hasDriver: true,
+  tags:"Sample tag",
+},
+  {
+    _id: "5c899e468d0c7c2cedcccbc9",
+    driver: "Jayden",
+    riders: true,
+    vehicle: "Honda Accord",
+    mileage: 20,
+    condition: "good",
+    start_location: "Morris",
+    destination: "Minneapolis",
+    hasDriver: true,
+    tags:"Sample tag",
+  }
+,
+  {
+    _id: "5c899e46a3a0f4fb8aa7fad0",
+    driver: "Mitchell",
+    riders: true,
+    vehicle: "Honda Civic",
+    mileage: 22,
+    condition: "good",
+    start_location: "Morris",
+    destination: "Minneapolis",
+    hasDriver: true,
+    tags:"Sample tag",
+  }
   ];
   const mRides: Ride[] = testRides.filter(ride =>
     ride.destination.toLowerCase().indexOf('H') !== -1
@@ -117,17 +130,21 @@ describe('Ride list service: ', () => {
   // });
 
   it('adding a ride calls api/rides/new', () => {
-    const rideTest1_id = 'rideTest1_id';
-    const newRide: Ride = {
-      _id: "5c81bda753c4b4a118c67810",
-      vehicle: "Ford Ranger",
-      mileage: 33,
-      condition: "Bad",
-      start_location: "Morris",
-      destination: "Hoehne , Minnesota"
-    };
-
-    rideListService.addNewRide(newRide).subscribe(
+    const rideTest1_id = '5c899e46a3a0f4fb8aa7fad0';
+    const newRide1: Ride =
+      {
+        _id: "5c899e46a3a0f4fb8aa7fad0",
+        driver: "Mitchell",
+        riders: true,
+        vehicle: "Honda Civic",
+        mileage: 22,
+        condition: "good",
+        start_location: "Morris",
+        destination: "Minneapolis",
+        hasDriver: true,
+        tags:"Sample tag",
+      };
+    rideListService.addNewRide(newRide1).subscribe(
       id => {
         expect(id).toBe(rideTest1_id);
       }

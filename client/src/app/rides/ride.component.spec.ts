@@ -4,6 +4,7 @@ import {RideComponent} from './ride.component';
 import {RideListService} from './ride-list.service';
 import {Observable} from 'rxjs/Observable';
 import {CustomModule} from "../custom.module";
+import 'rxjs/add/observable/of';
 
 describe('Ride component', () => {
 
@@ -19,28 +20,41 @@ describe('Ride component', () => {
     rideListServiceStub = {
       getRideById: (rideId: string) => Observable.of([
         {
-          _id: "5c81bda753c4b4a118c67810",
-          vehicle: "Ford Ranger",
-          mileage: 33,
-          condition: "Bad",
-          start_location: "Morris",
-          destination: "Hoehne , Minnesota",
-        },
-        {
-          _id: "5c81bda7210745e5ed8c5bc8",
-          vehicle: "Chevy Impala",
-          mileage: 21,
-          condition: "Bad",
-          start_location: "Morris",
-          destination: "Harrodsburg , Minnesota",
-        },
-        {
-          _id: "5c81bda7883108823a6b5eea",
+          _id: "5c899e46a3a0f4fb8aa7fad0",
+          driver: "Mitchell",
+          riders: true,
           vehicle: "Honda Civic",
-          mileage: 20,
-          condition: "Average",
+          mileage: 22,
+          condition: "Good",
           start_location: "Morris",
-          destination: "Yorklyn , Minnesota",
+          destination: "Minneapolis",
+          hasDriver: true,
+          tags:"Sample tag",
+        },
+        {
+          _id: "5c899e468d0c7c2cedcccbc9",
+          driver: "Jayden",
+          riders: true,
+          vehicle: "Honda Accord",
+          mileage: 20,
+          condition: "good",
+          start_location: "Morris",
+          destination: "Minneapolis",
+          hasDriver: true,
+          tags:"Sample tag",
+        }
+        ,
+        {
+          _id: "5c899e46a3a0f4fb8aa7fad0",
+          driver: "Mitchell",
+          riders: true,
+          vehicle: "Honda Civic",
+          mileage: 22,
+          condition: "good",
+          start_location: "Morris",
+          destination: "Minneapolis",
+          hasDriver: true,
+          tags:"Sample tag",
         }
       ].find(ride => ride._id === rideId))
     };
@@ -60,19 +74,15 @@ describe('Ride component', () => {
   }));
 
   it('can retrieve Hoehne , Minnesota by ID', () => {
-    rideComponent.setId("5c81bda753c4b4a118c67810");
+    rideComponent.setId("5c899e46a3a0f4fb8aa7fad0");
 
-    expect(rideComponent.ride._id).toBe("5c81bda753c4b4a118c67810");
+    expect(rideComponent.ride._id).toBe("5c899e46a3a0f4fb8aa7fad0");
     expect(rideComponent.ride).toBeDefined();
-    expect(rideComponent.ride.vehicle).toBe('Ford Ranger');
-    expect(rideComponent.ride.mileage).toBe(33);
-    expect(rideComponent.ride.condition).toBe("Bad");
+    expect(rideComponent.ride.vehicle).toBe('Honda Civic');
+    expect(rideComponent.ride.mileage).toBe(22);
+    expect(rideComponent.ride.condition).toBe("Good");
     expect(rideComponent.ride.start_location).toBe('Morris');
   });
 
-  it('returns undefined for Santa', () => {
-    rideComponent.setId('Santa');
-    expect(rideComponent.ride).not.toBeDefined();
-  });
 
 });
