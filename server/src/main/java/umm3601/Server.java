@@ -4,6 +4,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import spark.Request;
 import spark.Response;
+import spark.Route;
+import spark.utils.IOUtils;
 import umm3601.rides.RideController;
 import umm3601.rides.RideRequestHandler;
 import umm3601.user.UserController;
@@ -11,6 +13,8 @@ import umm3601.user.UserRequestHandler;
 
 import static spark.Spark.*;
 import static spark.debug.DebugScreen.enableDebugScreen;
+
+import java.io.InputStream;
 
 public class Server {
   private static final String userDatabaseName = "dev";
@@ -45,19 +49,21 @@ public class Server {
       if (accessControlRequestMethod != null) {
         response.header("Access-Control-Allow-Methods", accessControlRequestMethod);
       }
+
       return "OK";
     });
 
     before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
-
-    // Simple example route
-    get("/hello", (req, res) -> "Hello World");
-
     // Redirects for the "home" page
     redirect.get("", "/");
 
-    redirect.get("/", "http://localhost:9000");
+    Route clientRoute = (req, res) -> {
+	InputStream stream = Server.class.getResourceAsStream("/public/index.html");
+	return IOUtils.toString(stream);
+    };
+
+    get("/", clientRoute);
 
     /// User Endpoints ///////////////////////////
     /////////////////////////////////////////////
@@ -84,6 +90,8 @@ public class Server {
     // There's a similar "before" method that can be used to modify requests
     // before they they're processed by things like `get`.
     after("*", Server::addGzipHeader);
+
+    get("/*", clientRoute);
 
     // Handle "404" file not found requests:
     notFound((req, res) -> {

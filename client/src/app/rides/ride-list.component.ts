@@ -69,6 +69,7 @@ export class RideListComponent implements OnInit {
     });
   }
 
+
   openEditDialog(_id : string, vehicle : string, mileage : number, start_location : string,
                  destination : string, condition : string, hasDriver : boolean, driver : string, riders: boolean, tags : string): void {
     const oldRide: Ride = {_id: _id, vehicle: vehicle, mileage: mileage, condition: condition, start_location: start_location,
