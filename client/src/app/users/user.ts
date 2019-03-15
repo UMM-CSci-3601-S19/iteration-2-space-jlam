@@ -4,6 +4,6 @@ export interface User {
   _id: string;
   name: string;
   email: string;
-  vehicles: string;
+  vehicle: string;
   phone: string;
 }

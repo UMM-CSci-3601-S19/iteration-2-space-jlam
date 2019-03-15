@@ -1,6 +1,6 @@
 <div layout-gt-sm="row">
   <div flex-gt-sm="80" flex-offset-gt-sm="10">
-    <div class="cardlist" *ngIf="users; else usersError">
+    <div class="cardlist">
       <mat-form-field>
         <input matInput id="userName" #input type="text" placeholder="Filter by name"
                (input)="userName = $event.target.value">
