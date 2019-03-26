@@ -1,0 +1,10 @@
+.cardlist mat-panel-description {
+  margin-top: 5%;
+}
+
+#firstTitle {
+  background-color: #0ca8f4;
+  text-align: center;
+  size: 48pt;
+
+}

@@ -7,7 +7,7 @@ import {RideListComponent} from './rides/ride-list.component';
 
 // Route Configuration
 export const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'users', component: UserListComponent},
   {path: 'rides', component: RideListComponent}
 ];
