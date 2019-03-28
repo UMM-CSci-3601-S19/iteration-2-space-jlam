@@ -19,13 +19,8 @@
     display: flex;
     flex-direction: column;
   }
-  #drivers {
-    margin-left: 5%;
-    width: 90%;
-    text-align: center;
-    margin-bottom: 5%;
-  }
-  #riders {
+
+  .riders {
     margin-left: 5%;
     width: 90%;
     text-align: center;
@@ -33,23 +28,16 @@
 }
 
 @media only screen and (min-width: 415px) {
-  #drivers {
-    float: right;
+
+
+  .riders {
     width: 30%;
     text-align: center;
-    margin-right: 10%;
+    margin-left: 35%;
     margin-bottom: 10%;
   }
 
-  #riders {
-    float: left;
-    width: 30%;
-    text-align: center;
-    margin-left: 10%;
-    margin-bottom: 10%;
-  }
-
-  #drivers #riders .mat-expansion-panel-header {
+  .riders .mat-expansion-panel-header {
     text-align: center;
   }
 
