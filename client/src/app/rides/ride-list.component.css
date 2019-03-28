@@ -13,6 +13,11 @@
   margin-top: 3%;
 }
 
+#filter {
+  position: fixed;
+  margin-right: 75%;
+}
+
 
 @media only screen and (max-width: 414px) {
   #wrapper {
