@@ -56,14 +56,14 @@ public class Server {
     before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
     // Redirects for the "home" page
-    redirect.get("", "/");
+    redirect.get("", "/home");
 
     Route clientRoute = (req, res) -> {
 	InputStream stream = Server.class.getResourceAsStream("/public/index.html");
 	return IOUtils.toString(stream);
     };
 
-    get("/", clientRoute);
+    get("/home", clientRoute);
 
     /// User Endpoints ///////////////////////////
     /////////////////////////////////////////////

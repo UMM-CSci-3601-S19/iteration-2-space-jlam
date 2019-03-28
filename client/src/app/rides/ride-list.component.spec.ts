@@ -98,6 +98,8 @@ describe('Ride list service: ', () => {
     req.flush(testRides);
   });
 
+
+  //this test works even though it gives you an error under the word rides
   it('getRides(ridedest) adds appropriate param string to called URL', () => {
     rideListService.getRides('Minneapolis').subscribe(
       rides => expect(rides).toEqual(mRides)
