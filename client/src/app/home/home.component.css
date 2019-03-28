@@ -1,10 +1,21 @@
-.cardlist mat-panel-description {
-  margin-top: 5%;
+/*.cardlist {*/
+  /*margin-top: 20%;*/
+  /*background-color: #0ca8f4;*/
+  /*text-align: center;*/
+  /*size: 48pt;*/
+/*}*/
+
+.mat-card{
+  margin-top: 20%;
+  background-color: #2e4057;
+  text-align: center;
+  size: 48pt;
 }
 
 #firstTitle {
-  background-color: #0ca8f4;
+  background-color: #293a4e;
   text-align: center;
   size: 48pt;
 
 }
+
