@@ -1,21 +1,27 @@
-/*.cardlist {*/
-  /*margin-top: 20%;*/
-  /*background-color: #0ca8f4;*/
-  /*text-align: center;*/
-  /*size: 48pt;*/
-/*}*/
+.cardlist {
+  margin-right: auto;
+  margin-left: auto;
+
+}
 
 .mat-card{
-  margin-top: 20%;
-  background-color: #2e4057;
-  text-align: center;
-  size: 48pt;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35em;
+  background-color: #757575;
 }
 
 #firstTitle {
-  background-color: #293a4e;
+  background-color: #757575;
   text-align: center;
-  size: 48pt;
+  font-size: 4em;
+
+}
+
+.cardContent1 {
+  font-size: 2em;
+  text-align: center;
 
 }
 
