@@ -26,6 +26,20 @@
       <input matInput id="rideTag" placeholder="Search for tag"
              (input)="rideTag = $event.target.value">
     </mat-form-field>
+
+    <br>
+
+    <mat-radio-group class="radioGroup" [(ngModel)] = "rideHasDriver">
+      <mat-radio-button id="isDriving" [value] = "true"> <mat-icon> </mat-icon> drivers</mat-radio-button>
+      <mat-radio-button id="isNotDriving" [value] = "false"> <mat-icon>  </mat-icon> riders</mat-radio-button>
+    </mat-radio-group>
+
+    <br>
+
+    <button class="filterButton" mat-raised-button id="submit" color="primary" #input type="button" (click)="loadService()">
+      Filter by driving / riding
+    </button>
+
   </mat-expansion-panel>
 </mat-card>
 
@@ -78,11 +92,7 @@
 
     </div>
 
-  </div>
-
-  <div id="drivers">
     <div layout="column">
-      <h2 id="title2">Drivers</h2>
     </div>
     <div layout="column">
 
