@@ -100,7 +100,8 @@ public class Server {
       res.status(404);
       return "Sorry, we couldn't find that!";
     });
-  }
+
+    }
 
   // Enable GZIP for all responses
   private static void addGzipHeader(Request request, Response response) {

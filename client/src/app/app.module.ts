@@ -17,6 +17,7 @@ import {CustomModule} from './custom.module';
 import {AddUserComponent} from './users/add-user.component';
 import {AddRideComponent} from "./rides/add-ride.component";
 import {EditRideComponent} from "./rides/edit-ride.component";
+import {loginComponent} from "./login/login.component";
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {EditRideComponent} from "./rides/edit-ride.component";
     RideComponent,
     AddUserComponent,
     AddRideComponent,
-    EditRideComponent
+    EditRideComponent,
+    loginComponent
   ],
   providers: [
     UserListService,
