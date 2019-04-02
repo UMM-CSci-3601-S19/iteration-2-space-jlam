@@ -42,33 +42,17 @@ describe('User list', () => {
 
   it('should type something in filter name box and check that it returned correct element', () => {
     page.navigateTo();
-    page.typeAName('t');
-    expect(page.getUniqueUser('kittypage@surelogic.com')).toEqual('Kitty Page');
+    page.typeAName('te');
+    expect(page.getUniqueUser('bettejordan@gmail.com')).toEqual('Bette Jordan');
     page.backspace();
-    page.typeAName('lynn');
-    expect(page.getUniqueUser('lynnferguson@niquent.com')).toEqual('Lynn Ferguson');
+    page.backspace();
+    page.typeAName('lyo');
+    expect(page.getUniqueUser('lyonsmclean@gmail.com')).toEqual('Lyons Mclean');
   });
 
-  it('should click on the age 27 times and return 3 elements then ', () => {
+  it('Should search for a name and show that the panels can be opened', () => {
     page.navigateTo();
-    page.getUserByAge();
-    for (let i = 0; i < 27; i++) {
-      page.selectUpKey();
-    }
-
-    expect(page.getUniqueUser('stokesclayton@momentia.com')).toEqual('Stokes Clayton');
-
-    expect(page.getUniqueUser('merrillparker@escenta.com')).toEqual('Merrill Parker');
-  });
-
-  it('Should open the expansion panel and get the company', () => {
-    page.navigateTo();
-    page.getCompany('DATA');
-    browser.actions().sendKeys(Key.ENTER).perform();
-
-    expect(page.getUniqueUser('valerieerickson@datagene.com')).toEqual('Valerie Erickson');
-
-    // This is just to show that the panels can be opened
+    page.typeAName('ree');
     browser.actions().sendKeys(Key.TAB).perform();
     browser.actions().sendKeys(Key.ENTER).perform();
   });
