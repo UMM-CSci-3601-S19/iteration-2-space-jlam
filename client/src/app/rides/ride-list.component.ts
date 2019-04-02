@@ -132,7 +132,7 @@ export class RideListComponent implements OnInit {
       });
     }
 
-    // Filter by Condition
+    // Filter by Conditionform validators for emoji angular
     if (searchCondition != null) {
       searchCondition = searchCondition.toLocaleLowerCase().trim().replace(/\s+/g, " ");
       this.filteredRides = this.filteredRides.filter(ride => {

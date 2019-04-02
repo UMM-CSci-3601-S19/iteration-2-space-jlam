@@ -23,7 +23,7 @@ export class AddRideComponent implements OnInit {
       {type: 'required', message: 'Vehicle is required'},
       {type: 'minlength', message: 'Vehicle must be at least 2 characters long'},
       {type: 'maxlength', message: 'Vehicle cannot be more than 25 characters long'},
-      {type: 'pattern', message: 'Vehicle must not contain any unnecessary spaces'}
+      {type: 'pattern', message: 'Vehicle must not contain any unnecessary spaces or emojis'}
     ],
 
     'mileage': [
@@ -37,27 +37,27 @@ export class AddRideComponent implements OnInit {
       {type: 'required', message: 'Location is required'},
       {type: 'minlength', message: 'The start location must not be shorter than 2 characters long'},
       {type: 'maxlength', message: 'The start location must not be longer than 50 characters long'},
-      {type: 'pattern', message: 'The starting location of the ride must not contain any unnecessary spaces'}
+      {type: 'pattern', message: 'The starting location of the ride must not contain any unnecessary spaces or emojis'}
     ],
 
     'destination': [
       {type: 'required', message: 'Destination is required'},
       {type: 'minlength', message: 'The destination must not be shorter than 2 characters long'},
       {type: 'maxlength', message: 'The destination must not be longer than 50 characters long'},
-      {type: 'pattern', message: 'The destination of the ride must not contain any unnecessary spaces'}
+      {type: 'pattern', message: 'The destination of the ride must not contain any unnecessary spaces or emojis'}
     ],
 
     'condition': [
       {type: 'required', message: 'Condition is required'},
       {type: 'minlength', message: 'The condition of the vehicle must not be shorter than 2 characters long'},
       {type: 'maxlength', message: 'The condition of the vehicle must not be longer than 50 characters long'},
-      {type: 'pattern', message: 'The condition of the vehicle must not contain any unnecessary spaces'}
+      {type: 'pattern', message: 'The condition of the vehicle must not contain any unnecessary spaces or emojis'}
     ],
 
     'tagging': [
       {type: 'minlength', message: 'The tag must not be shorter than 2 characters long'},
       {type: 'maxlength', message: 'The tag must not be longer than 50 characters long'},
-      {type: 'pattern', message: 'The tag of the ride must not contain any unnecessary spaces'}
+      {type: 'pattern', message: 'The tag of the ride must not contain any unnecessary spaces or emojis'}
     ]
   };
 
@@ -70,7 +70,7 @@ export class AddRideComponent implements OnInit {
         RideValidator.validRide,
         Validators.minLength(2),
         Validators.maxLength(25),
-        Validators.pattern('^[\\S]+(\\s|\\s{1,2}[\\S]+|\\s{1,2}[\\S]+\\s)*$'),
+        Validators.pattern('^[\\w]+((\\s|[\\w]+))*$'),
         Validators.required
       ])),
 
@@ -88,7 +88,7 @@ export class AddRideComponent implements OnInit {
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(50),
-        Validators.pattern('^[\\S]+(\\s|\\s{1,2}[\\S]+|\\s{1,2}[\\S]+\\s)*$'),
+        Validators.pattern('^[\\w]+((\\s|[\\w]+))*$'),
       ])),
 
 
@@ -96,19 +96,19 @@ export class AddRideComponent implements OnInit {
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(50),
-        Validators.pattern('^[\\S]+(\\s|\\s{1,2}[\\S]+|\\s{1,2}[\\S]+\\s)*$'),
+        Validators.pattern('^[\\w]+((\\s|[\\w]+))*$'),
       ])),
 
       destination: new FormControl('destination', Validators.compose([
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(50),
-        Validators.pattern('^[\\S]+(\\s|\\s{1,2}[\\S]+|\\s{1,2}[\\S]+\\s)*$'),
+        Validators.pattern('^[\\w]+((\\s|[\\w]+))*$'),
       ])),
       tagging: new FormControl('tagging', Validators.compose([
         Validators.minLength(2),
         Validators.maxLength(50),
-        Validators.pattern('^[\\S]+(\\s|\\s{1,2}[\\S]+|\\s{1,2}[\\S]+\\s)*$'),
+        Validators.pattern('^[\\w]+((\\s|[\\w]+))*$'),
       ]))
     })
 
