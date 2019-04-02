@@ -22,7 +22,7 @@ describe('Ride list service: ', () => {
 },
   {
     _id: "5c899e468d0c7c2cedcccbc9",
-    driver: "Jayden",
+    driver: "Jaydon",
     riders: true,
     vehicle: "Honda Accord",
     mileage: 20,
@@ -118,18 +118,18 @@ describe('Ride list service: ', () => {
   });
 
 
-  // it('getRideById() calls api/rides/id', () => {
-  //   const targetRide: Ride = testRides[1];
-  //   const targetId = targetRide._id;
-  //   rideListService.getRideById(targetId).subscribe(
-  //     ride => expect(ride).toBe(targetRide)
-  //   );
-  //
-  //   const expectedUrl: string = rideListService.baseUrl + '/' + targetId;
-  //   const req = httpTestingController.expectOne(expectedUrl);
-  //   expect(req.request.method).toEqual('GET');
-  //   req.flush(targetRide);
-  // });
+  it('getRideById() calls api/rides/id', () => {
+    const targetRide: Ride = testRides[1];
+    const targetId = targetRide._id;
+    rideListService.getRideById(targetId).subscribe(
+      ride => expect(ride).toBe(targetRide)
+    );
+
+    const expectedUrl: string = rideListService.baseUrl + '/' + targetId;
+    const req = httpTestingController.expectOne(expectedUrl);
+    expect(req.request.method).toEqual('GET');
+    req.flush(targetRide);
+  });
 
   it('adding a ride calls api/rides/new', () => {
     const rideTest1_id = '5c899e46a3a0f4fb8aa7fad0';
