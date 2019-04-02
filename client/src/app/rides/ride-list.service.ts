@@ -19,6 +19,10 @@ export class RideListService {
     this.filterByDestination(rideDestination);
     return this.http.get<Ride[]>(this.rideUrl);
   }
+  // getRides(rideHasDriver?: string): Observable<Ride[]> {
+  //   this.filterByHasDriver(rideHasDriver);
+  //   return this.http.get<Ride[]>(this.rideUrl);
+  // }
 
   getRideById(id: string): Observable<Ride> {
     return this.http.get<Ride>(this.rideUrl + '/' + id);
@@ -51,6 +55,32 @@ export class RideListService {
       // there was nothing in the box to put onto the URL... reset
       if (this.parameterPresent('destination=')) {
         let start = this.rideUrl.indexOf('destination=');
+        const end = this.rideUrl.indexOf('&', start);
+        if (this.rideUrl.substring(start - 1, start) === '?') {
+          start = start - 1;
+        }
+        this.rideUrl = this.rideUrl.substring(0, start) + this.rideUrl.substring(end + 1);
+      }
+    }
+  }
+
+  filterByHasDriver(rideHasDriver?: string): void {
+    if (!(rideHasDriver == null || rideHasDriver === '')) {
+      if (this.parameterPresent('hasdriver=')) {
+        // there was a previous search by company that we need to clear
+        this.removeParameter('hasdriver=');
+      }
+      if (this.rideUrl.indexOf('?') !== -1) {
+        // there was already some information passed in this url
+        this.rideUrl += 'hasdriver=' + rideHasDriver + '&';
+      } else {
+        // this was the first bit of information to pass in the url
+        this.rideUrl += '?hasdriver=' + rideHasDriver + '&';
+      }
+    } else {
+      // there was nothing in the box to put onto the URL... reset
+      if (this.parameterPresent('hasdriver=')) {
+        let start = this.rideUrl.indexOf('hasdriver=');
         const end = this.rideUrl.indexOf('&', start);
         if (this.rideUrl.substring(start - 1, start) === '?') {
           start = start - 1;

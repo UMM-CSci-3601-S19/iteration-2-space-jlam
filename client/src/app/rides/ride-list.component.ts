@@ -24,7 +24,7 @@ export class RideListComponent implements OnInit {
   public rideCondition: string;
   public rideDestination: string;
   public rideStartLocation: string;
-  public rideHasDriver: boolean;
+  public rideHasDriver: string;
   public rideTag: string;
 
   // The ID of the
@@ -97,7 +97,7 @@ export class RideListComponent implements OnInit {
   }
 
   public filterRides(searchVehicle: string, searchMileage: number, searchDestination: string, searchStartLocation: string,
-                     searchCondition: string, searchTag: string): Ride[] {
+                     searchCondition: string, searchTag: string, searchHasDriver: string): Ride[] {
 
     this.filteredRides = this.rides;
 
@@ -147,6 +147,26 @@ export class RideListComponent implements OnInit {
         return !searchTag || ride.tags.toLowerCase().indexOf(searchTag) !== -1;
       });
     }
+
+    // Filter if it has a driver
+    // if (searchHasDriver != null) {
+    //   this.filteredRides = this.filteredRides.filter(ride => {
+    //     return !searchTag || ride.hasDriver == searchHasDriver;
+    //   });
+    // }
+
+    if (searchHasDriver != null) {
+      searchHasDriver = searchHasDriver.toLocaleLowerCase();
+      this.filteredRides = this.filteredRides.filter(ride => {
+        if (searchHasDriver == 'yes') {
+          return !searchHasDriver || ride.hasDriver == true;
+        }
+        if (searchHasDriver == 'no') {
+          return !searchHasDriver || ride.hasDriver == false;
+        }
+
+      });
+    }
     return this.filteredRides;
   }
   /**
@@ -164,7 +184,7 @@ export class RideListComponent implements OnInit {
     rides.subscribe(
       rides => {
         this.rides = rides;
-        this.filterRides(this.rideVehicle, this.rideMileage, this.rideDestination, this.rideStartLocation, this.rideCondition, this.rideTag);
+        this.filterRides(this.rideVehicle, this.rideMileage, this.rideDestination, this.rideStartLocation, this.rideCondition, this.rideTag, this.rideHasDriver);
       },
       err => {
         console.log(err);
@@ -173,7 +193,7 @@ export class RideListComponent implements OnInit {
   }
 
   loadService(): void {
-    this.rideListService.getRides().subscribe(
+    this.rideListService.getRides(this.rideHasDriver).subscribe(
       rides => {
         this.rides = rides;
         this.filteredRides = this.rides;
