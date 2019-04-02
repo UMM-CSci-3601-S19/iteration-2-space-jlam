@@ -8,19 +8,19 @@ import {Key} from 'selenium-webdriver';
 
 const origFn = browser.driver.controlFlow().execute;
 
-browser.driver.controlFlow().execute = function () {
-  let args = arguments;
-
-  // queue 100ms wait between test
-  // This delay is only put here so that you can watch the browser do its thing.
-  // If you're tired of it taking long you can remove this call or change the delay
-  // to something smaller (even 0).
-  origFn.call(browser.driver.controlFlow(), () => {
-    return protractor.promise.delayed(100);
-  });
-
-  return origFn.apply(browser.driver.controlFlow(), args);
-};
+// browser.driver.controlFlow().execute = function () {
+//   let args = arguments;
+//
+//   // queue 100ms wait between test
+//   // This delay is only put here so that you can watch the browser do its thing.
+//   // If you're tired of it taking long you can remove this call or change the delay
+//   // to something smaller (even 0).
+//   origFn.call(browser.driver.controlFlow(), () => {
+//     return protractor.promise.delayed(50);
+//   });
+//
+//   return origFn.apply(browser.driver.controlFlow(), args);
+// };
 
 
 describe('User list', () => {
@@ -42,12 +42,17 @@ describe('User list', () => {
 
   it('should type something in filter name box and check that it returned correct element', () => {
     page.navigateTo();
-    page.typeAName('te');
-    expect(page.getUniqueUser('bettejordan@gmail.com')).toEqual('Bette Jordan');
+    page.typeAName('bet');
+    browser.actions().sendKeys(Key.TAB).perform();
+    browser.actions().sendKeys(Key.ENTER).perform();
+    expect(page.getUniqueUser('Bette Jordan')).toEqual('Bette Jordan');
+    page.typeAName('');
+    page.backspace();
+    page.backspace();
     page.backspace();
     page.backspace();
     page.typeAName('lyo');
-    expect(page.getUniqueUser('lyonsmclean@gmail.com')).toEqual('Lyons Mclean');
+    expect(page.getUniqueUser('Lyons Mclean')).toEqual('Lyons Mclean');
   });
 
   it('Should search for a name and show that the panels can be opened', () => {
@@ -57,46 +62,46 @@ describe('User list', () => {
     browser.actions().sendKeys(Key.ENTER).perform();
   });
 
-  it('Should allow us to filter users based on company', () => {
-    page.navigateTo();
-    page.getCompany('o');
-    page.getUsers().then((users) => {
-      expect(users.length).toBe(4);
-    });
-    expect(page.getUniqueUser('conniestewart@ohmnet.com')).toEqual('Connie Stewart');
-    expect(page.getUniqueUser('stokesclayton@momentia.com')).toEqual('Stokes Clayton');
-    expect(page.getUniqueUser('kittypage@surelogic.com')).toEqual('Kitty Page');
-    expect(page.getUniqueUser('margueritenorton@recognia.com')).toEqual('Marguerite Norton');
-  });
+  // it('Should allow us to filter users based on company', () => {
+  //   page.navigateTo();
+  //   page.getCompany('o');
+  //   page.getUsers().then((users) => {
+  //     expect(users.length).toBe(4);
+  //   });
+  //   expect(page.getUniqueUser('conniestewart@ohmnet.com')).toEqual('Connie Stewart');
+  //   expect(page.getUniqueUser('stokesclayton@momentia.com')).toEqual('Stokes Clayton');
+  //   expect(page.getUniqueUser('kittypage@surelogic.com')).toEqual('Kitty Page');
+  //   expect(page.getUniqueUser('margueritenorton@recognia.com')).toEqual('Marguerite Norton');
+  // });
 
-  it('Should allow us to clear a search for company and then still successfully search again', () => {
-    page.navigateTo();
-    page.getCompany('m');
-    page.getUsers().then((users) => {
-      expect(users.length).toBe(2);
-    });
-    page.click('companyClearSearch');
-    page.getUsers().then((users) => {
-      expect(users.length).toBe(10);
-    });
-    page.getCompany('ne');
-    page.getUsers().then((users) => {
-      expect(users.length).toBe(3);
-    });
-  });
+  // it('Should allow us to clear a search for company and then still successfully search again', () => {
+  //   page.navigateTo();
+  //   page.getCompany('m');
+  //   page.getUsers().then((users) => {
+  //     expect(users.length).toBe(2);
+  //   });
+  //   page.click('companyClearSearch');
+  //   page.getUsers().then((users) => {
+  //     expect(users.length).toBe(10);
+  //   });
+  //   page.getCompany('ne');
+  //   page.getUsers().then((users) => {
+  //     expect(users.length).toBe(3);
+  //   });
+  // });
 
-  it('Should allow us to search for company, update that search string, and then still successfully search', () => {
-    page.navigateTo();
-    page.getCompany('o');
-    page.getUsers().then((users) => {
-      expect(users.length).toBe(4);
-    });
-    page.field('userCompany').sendKeys('h');
-    page.click('submit');
-    page.getUsers().then((users) => {
-      expect(users.length).toBe(1);
-    });
-  });
+  // it('Should allow us to search for company, update that search string, and then still successfully search', () => {
+  //   page.navigateTo();
+  //   page.getCompany('o');
+  //   page.getUsers().then((users) => {
+  //     expect(users.length).toBe(4);
+  //   });
+  //   page.field('userCompany').sendKeys('h');
+  //   page.click('submit');
+  //   page.getUsers().then((users) => {
+  //     expect(users.length).toBe(1);
+  //   });
+  // });
 
 // For examples testing modal dialog related things, see:
 // https://code.tutsplus.com/tutorials/getting-started-with-end-to-end-testing-in-angular-using-protractor--cms-29318
@@ -122,14 +127,11 @@ describe('User list', () => {
     });
 
     it('Should actually add the user with the information we put in the fields', () => {
-      page.navigateTo();
-      page.click('addNewUser');
       page.field('nameField').sendKeys('Tracy Kim');
       // Need to clear the age field because the default value is -1.
-      page.field('ageField').clear();
-      page.field('ageField').sendKeys('26');
-      page.field('companyField').sendKeys('Awesome Startup, LLC');
+      page.field('vehicleField').sendKeys('Chevy Impala');
       page.field('emailField').sendKeys('tracy@awesome.com');
+      page.field('phoneField').sendKeys('5555555555');
       expect(page.button('confirmAddUserButton').isEnabled()).toBe(true);
       page.click('confirmAddUserButton');
 
@@ -140,10 +142,10 @@ describe('User list', () => {
        * and then for the client to display this new user.
        * http://www.protractortest.org/#/api?view=ProtractorExpectedConditions
        */
-      const tracy_element = element(by.id('tracy@awesome.com'));
+      const tracy_element = element(by.id('Tracy Kim'));
       browser.wait(protractor.ExpectedConditions.presenceOf(tracy_element), 10000);
 
-      expect(page.getUniqueUser('tracy@awesome.com')).toMatch('Tracy Kim.*'); // toEqual('Tracy Kim');
+      expect(page.getUniqueUser('Tracy Kim')).toMatch('Tracy Kim.*'); // toEqual('Tracy Kim');
     });
 
     describe('Add User (Validation)', () => {
@@ -155,33 +157,29 @@ describe('User list', () => {
       it('Should allow us to put information into the fields of the add user dialog', () => {
         expect(page.field('nameField').isPresent()).toBeTruthy('There should be a name field');
         page.field('nameField').sendKeys('Dana Jones');
-        expect(element(by.id('ageField')).isPresent()).toBeTruthy('There should be an age field');
-        // Need to clear this field because the default value is -1.
-        page.field('ageField').clear();
-        page.field('ageField').sendKeys('24');
-        expect(page.field('companyField').isPresent()).toBeTruthy('There should be a company field');
-        page.field('companyField').sendKeys('Awesome Startup, LLC');
+        expect(element(by.id('phoneField')).isPresent()).toBeTruthy('There should be a phone field');
+        page.field('phoneField').sendKeys('9999999999');
+        expect(page.field('vehicleField').isPresent()).toBeTruthy('There should be a vehicle field');
+        page.field('vehicleField').sendKeys('Chevy Impala');
         expect(page.field('emailField').isPresent()).toBeTruthy('There should be an email field');
         page.field('emailField').sendKeys('dana@awesome.com');
       });
 
-      it('Should show the validation error message about age being too small if the age is less than 15', () => {
-        expect(element(by.id('ageField')).isPresent()).toBeTruthy('There should be an age field');
-        page.field('ageField').clear();
-        page.field('ageField').sendKeys('2');
-        expect(page.button('confirmAddUserButton').isEnabled()).toBe(false);
-        //clicking somewhere else will make the error appear
-        page.field('nameField').click();
-        expect(page.getTextFromField('age-error')).toBe('Age must be at least 15');
-      });
+      // it('Should show the validation error message about phone not being long enough', () => {
+      //   expect(element(by.id('phoneField')).isPresent()).toBeTruthy('There should be an phone field');
+      //   page.field('phoneField').sendKeys('4783468');
+      //   expect(page.button('confirmAddUserButton').isEnabled()).toBe(false);
+      //   //clicking somewhere else will make the error appear
+      //   page.field('nameField').click();
+      //   expect(page.getTextFromField('phone-error')).toBe('Phone number must be atleast 10 numbers long');
+      // });
 
-      it('Should show the validation error message about age being required', () => {
-        expect(element(by.id('ageField')).isPresent()).toBeTruthy('There should be an age field');
-        page.field('ageField').clear();
+      it('Should show the validation error message about vehicle being required', () => {
+        expect(element(by.id('vehicleField')).isPresent()).toBeTruthy('There should be an age field');
         expect(page.button('confirmAddUserButton').isEnabled()).toBe(false);
-        //clicking somewhere else will make the error appear
+        page.field('vehicleField').click();
         page.field('nameField').click();
-        expect(page.getTextFromField('age-error')).toBe('Age is required');
+        expect(page.getTextFromField('vehicle-error')).toBe('Vehicle is required');
       });
 
       it('Should show the validation error message about name being required', () => {
@@ -192,7 +190,7 @@ describe('User list', () => {
         page.field('nameField').sendKeys('A\b');
         expect(page.button('confirmAddUserButton').isEnabled()).toBe(false);
         //clicking somewhere else will make the error appear
-        page.field('ageField').click();
+        page.field('vehicleField').click();
         expect(page.getTextFromField('name-error')).toBe('Name is required');
       });
 
@@ -201,23 +199,23 @@ describe('User list', () => {
         page.field('nameField').sendKeys('Don@ld Jones');
         expect(page.button('confirmAddUserButton').isEnabled()).toBe(false);
         //clicking somewhere else will make the error appear
-        page.field('ageField').click();
+        page.field('vehicleField').click();
         expect(page.getTextFromField('name-error')).toBe('Name must contain only numbers and letters');
       });
 
-      it('Should show the validation error message about the name being taken', () => {
-        expect(element(by.id('nameField')).isPresent()).toBeTruthy('There should be an name field');
-        page.field('nameField').sendKeys('abc123');
-        expect(page.button('confirmAddUserButton').isEnabled()).toBe(false);
-        //clicking somewhere else will make the error appear
-        page.field('ageField').click();
-        expect(page.getTextFromField('name-error')).toBe('Name has already been taken');
-      });
+      // it('Should show the validation error message about the name being taken', () => {
+      //   expect(element(by.id('nameField')).isPresent()).toBeTruthy('There should be an name field');
+      //   page.field('nameField').sendKeys('abc123');
+      //   expect(page.button('confirmAddUserButton').isEnabled()).toBe(false);
+      //   //clicking somewhere else will make the error appear
+      //   page.field('vehicleField').click();
+      //   expect(page.getTextFromField('name-error')).toBe('Name has already been taken');
+      // });
 
       it('Should show the validation error message about email format', () => {
         expect(element(by.id('emailField')).isPresent()).toBeTruthy('There should be an email field');
         page.field('nameField').sendKeys('Donald Jones');
-        page.field('ageField').sendKeys('30');
+        page.field('phoneField').sendKeys('30');
         page.field('emailField').sendKeys('donjones.com');
         expect(page.button('confirmAddUserButton').isEnabled()).toBe(false);
         //clicking somewhere else will make the error appear

@@ -41,22 +41,21 @@ export class UserPage {
     browser.actions().sendKeys(Key.BACK_SPACE).perform();
   }
 
-  getCompany(company: string) {
-    const input = element(by.id('userCompany'));
+  getVehicle(vehicle: string) {
+    const input = element(by.id('userVehicle'));
     input.click();
-    input.sendKeys(company);
-    this.click('submit');
+    input.sendKeys(vehicle);
   }
 
-  getUserByAge() {
-    const input = element(by.id('userName'));
+  getUserByPhone(phone: string) {
+    const input = element(by.id('userPhone'));
     input.click();
-    input.sendKeys(Key.TAB);
+    input.sendKeys(phone);
   }
 
-  getUniqueUser(email: string) {
-    const user = element(by.id(email)).getText();
-    this.highlightElement(by.id(email));
+  getUniqueUser(name: string) {
+    const user = element(by.id(name)).getText();
+    this.highlightElement(by.id(name));
 
     return user;
   }

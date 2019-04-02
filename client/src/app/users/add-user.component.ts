@@ -32,6 +32,7 @@ export class AddUserComponent implements OnInit {
     ],
 
     'vehicle': [
+      {type: 'required', message: 'Vehicle is required'},
       {type: 'vehicle', message: 'Vehicle must be formatted properly'}
     ],
 
