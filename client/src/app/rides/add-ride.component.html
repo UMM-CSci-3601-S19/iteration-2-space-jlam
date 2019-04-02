@@ -70,7 +70,9 @@ is potentially helpful and contributed to the shaping of this example -->
               [disabled]="!addRideForm.valid">Add Ride
       </button>
       <!-- [mat-dialog-close]="null" causes null to be returned when the dialog is closed. -->
-      <button mat-button id="exitWithoutAddingButton" [mat-dialog-close]="null" type="button">Cancel</button>
+      <button
+        mat-button id="exitWithoutAddingButton" [mat-dialog-close]="null" type="button">Cancel
+      </button>
     </mat-dialog-actions>
   </form>
 </div>

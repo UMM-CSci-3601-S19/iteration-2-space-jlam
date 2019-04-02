@@ -17,10 +17,17 @@
 
     </mat-nav-list>
   </td-navigation-drawer>
+
   <td-layout-nav toolbarTitle="Menu" navigationRoute="/">
-    <button mat-icon-button td-menu-button tdLayoutToggle>
+    <button class="menuButton" mat-icon-button td-menu-button tdLayoutToggle>
       <mat-icon>menu</mat-icon>
     </button>
     <router-outlet></router-outlet>
   </td-layout-nav>
+
+  <button mat-fab id="loginButton" class="loginButton" matTooltip="Login" matTooltipPosition="right"
+          (click)="openDialog()">
+  <mat-icon class="loginButtonText" aria-label="Login">  </mat-icon>
+  </button>
+
 </td-layout>
