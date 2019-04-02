@@ -2,7 +2,7 @@
 <mat-card style="max-width: 300px;">
   <mat-expansion-panel id="filter">
     <mat-expansion-panel-header>Filter</mat-expansion-panel-header>
-    <mat-form-field>
+      <mat-form-field>
       <input matInput id="rideVehicle" #input type="text" placeholder="Filter by vehicle"
              (input)="rideVehicle = $event.target.value">
     </mat-form-field>
@@ -34,15 +34,19 @@
     <br>
 
     <mat-radio-group class="radioGroup" [(ngModel)] = "rideHasDriver">
-      <mat-radio-button id="isDriving" [value] = "true"> <mat-icon> </mat-icon> drivers</mat-radio-button>
-      <mat-radio-button id="isNotDriving" [value] = "false"> <mat-icon>  </mat-icon> riders</mat-radio-button>
+      <mat-radio-button id="isDriving" [value] = true> Drivers</mat-radio-button>
+      <mat-radio-button id="isNotDriving" [value] = false> Riders</mat-radio-button>
+      <mat-radio-button id="Both" [value] = null> Both</mat-radio-button>
     </mat-radio-group>
 
     <br>
 
-    <button class="filterButton" mat-raised-button id="submit" color="primary" #input type="button" (click)="loadService()">
-      Filter by driving / riding
-    </button>
+    <!--<form action="">-->
+      <!--<label>Name</label><input="text"id="txtName" name="txtName" value=""/><br>-->
+      <!--<label>Phone Number</label><input type="text" id="Phonenumber"/><br>-->
+      <!--<input type="reset"/>-->
+    <!--</form>-->
+
 
 
   </mat-expansion-panel>
@@ -96,11 +100,11 @@
         </mat-error>
       </ng-template>
 
-    </div>
+
 
     <div layout="column">
     </div>
-    <div layout="column">
+
 
       <div class="cardlist" *ngIf="rides; else ridesError" style="float: right">
         <mat-accordion>

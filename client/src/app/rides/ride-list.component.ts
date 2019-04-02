@@ -156,7 +156,7 @@ export class RideListComponent implements OnInit {
     // }
 
     if (searchHasDriver != null) {
-      searchHasDriver = searchHasDriver.toLocaleLowerCase();
+      // searchHasDriver = searchHasDriver.toLocaleLowerCase();
       this.filteredRides = this.filteredRides.filter(ride => {
         if (searchHasDriver == 'yes') {
           return !searchHasDriver || ride.hasDriver == true;
@@ -193,7 +193,7 @@ export class RideListComponent implements OnInit {
   }
 
   loadService(): void {
-    this.rideListService.getRides(this.rideHasDriver).subscribe(
+    this.rideListService.getRides().subscribe(
       rides => {
         this.rides = rides;
         this.filteredRides = this.rides;

@@ -88,7 +88,7 @@ public class RideController {
     if (queryParams.containsKey("hasDriver")) {
       String targetHasDriver = (queryParams.get("hasDriver")[0]);
       boolean targetDrivingBool;
-      if (targetHasDriver.equals("true")) {
+      if (targetHasDriver.equals("yes")) {
         targetDrivingBool = true;
       } else {
         targetDrivingBool = false;

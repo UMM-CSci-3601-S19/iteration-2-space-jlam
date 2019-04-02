@@ -66,21 +66,21 @@ export class RideListService {
 
   filterByHasDriver(rideHasDriver?: string): void {
     if (!(rideHasDriver == null || rideHasDriver === '')) {
-      if (this.parameterPresent('hasdriver=')) {
+      if (this.parameterPresent('hasDriver=')) {
         // there was a previous search by company that we need to clear
-        this.removeParameter('hasdriver=');
+        this.removeParameter('hasDriver=');
       }
       if (this.rideUrl.indexOf('?') !== -1) {
         // there was already some information passed in this url
-        this.rideUrl += 'hasdriver=' + rideHasDriver + '&';
+        this.rideUrl += 'hasDriver=' + rideHasDriver + '&';
       } else {
         // this was the first bit of information to pass in the url
-        this.rideUrl += '?hasdriver=' + rideHasDriver + '&';
+        this.rideUrl += '?hasDriver=' + rideHasDriver + '&';
       }
     } else {
       // there was nothing in the box to put onto the URL... reset
-      if (this.parameterPresent('hasdriver=')) {
-        let start = this.rideUrl.indexOf('hasdriver=');
+      if (this.parameterPresent('hasDriver=')) {
+        let start = this.rideUrl.indexOf('hasDriver=');
         const end = this.rideUrl.indexOf('&', start);
         if (this.rideUrl.substring(start - 1, start) === '?') {
           start = start - 1;
