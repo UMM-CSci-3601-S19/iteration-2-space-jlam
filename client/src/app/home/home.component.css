@@ -1,7 +1,6 @@
 .cardlist {
   margin-right: auto;
   margin-left: auto;
-
 }
 
 .mat-card{
@@ -25,3 +24,22 @@
 
 }
 
+.loginButton{
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+@media only screen and (min-device-width: 1000px){
+  .cardlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /*.loginButton{*/
+    /*top: 45%;*/
+    /*left: 35%;*/
+  /*}*/
+}

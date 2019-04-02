@@ -1,4 +1,4 @@
-<td-layout #layout>
+<td-layout #layout class="pageLayout">
   <td-navigation-drawer flex sidenavTitle="">
     <mat-nav-list>
       <!--<a mat-list-item [routerLink]="['/']" (click)="layout.close()" routerLinkActive="nav-active"-->
@@ -25,9 +25,5 @@
     <router-outlet></router-outlet>
   </td-layout-nav>
 
-  <button mat-fab id="loginButton" class="loginButton" matTooltip="Login" matTooltipPosition="right"
-          (click)="openDialog()">
-  <mat-icon class="loginButtonText" aria-label="Login">  </mat-icon>
-  </button>
 
 </td-layout>
