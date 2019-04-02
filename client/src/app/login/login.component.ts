@@ -8,6 +8,8 @@ import {Component, OnInit} from '@angular/core';
 export class loginComponent {
   public text: string;
 
+
+
   constructor() {
     this.text = 'Test Text About Logging In';
   }

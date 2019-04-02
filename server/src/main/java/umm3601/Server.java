@@ -15,6 +15,15 @@ import static spark.Spark.*;
 import static spark.debug.DebugScreen.enableDebugScreen;
 
 import java.io.InputStream;
+import java.io.FileReader;
+
+
+import com.google.api.client.googleapis.auth.oauth2.*;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.jackson2.JacksonFactory;
+
+import org.json.*;
+
 
 public class Server {
   private static final String userDatabaseName = "dev";
@@ -60,8 +69,8 @@ public class Server {
     redirect.get("/", "/home");
 
     Route clientRoute = (req, res) -> {
-	InputStream stream = Server.class.getResourceAsStream("/public/index.html");
-	return IOUtils.toString(stream);
+      InputStream stream = Server.class.getResourceAsStream("/public/index.html");
+      return IOUtils.toString(stream);
     };
 
     get("/home", clientRoute);
@@ -101,7 +110,91 @@ public class Server {
       return "Sorry, we couldn't find that!";
     });
 
+
+    //Start of Google Login code
+    post("api/login", (req, res) -> {
+
+        JSONObject obj = new JSONObject(req.body());
+        String authCode = obj.getString("code");
+
+
+
+    try
+
+    {
+
+      // We can create this later to keep our secret safe
+
+      String CLIENT_SECRET_FILE = "./src/main/java/umm3601/server_files/client_secret.json";
+
+      GoogleClientSecrets clientSecrets =
+
+        GoogleClientSecrets.load(
+
+          JacksonFactory.getDefaultInstance(), new FileReader(CLIENT_SECRET_FILE));
+
+      GoogleTokenResponse tokenResponse =
+
+        new GoogleAuthorizationCodeTokenRequest(
+
+          new NetHttpTransport(),
+
+          JacksonFactory.getDefaultInstance(),
+
+          "https://www.googleapis.com/oauth2/v4/token",
+
+          clientSecrets.getDetails().getClientId(),
+
+          // Replace clientSecret with the localhost one if testing
+
+          clientSecrets.getDetails().getClientSecret(),
+
+          authCode,
+
+          "http://localhost:9000")
+
+          //Not sure if we have a redirectUri
+
+          // Specify the same redirect URI that you use with your web
+
+          // app. If you don't have a web version of your app, you can
+
+          // specify an empty string.
+
+          .execute();
+
+      GoogleIdToken idToken = tokenResponse.parseIdToken();
+
+      GoogleIdToken.Payload payload = idToken.getPayload();
+
+      String subjectId = payload.getSubject();  // Use this value as a key to identify a user.
+
+      String userEmail = payload.getEmail();
+
+      boolean emailVerified = Boolean.valueOf(payload.getEmailVerified());
+
+      String name = (String) payload.get("name");
+
+//      String pictureUrl = (String) payload.get("picture");
+
+      String locale = (String) payload.get("locale");
+
+      String userVehicle = (String) payload.get("userVehicle");
+
+      String userName = (String) payload.get("userName");
+
+      return userController.addNewUser(subjectId, userName, userVehicle, userEmail);
+
+    } catch (Exception e) {
+      System.out.println(e);
     }
+
+      return "";
+    });
+
+    //End of Google Login code
+
+  }
 
   // Enable GZIP for all responses
   private static void addGzipHeader(Request request, Response response) {
