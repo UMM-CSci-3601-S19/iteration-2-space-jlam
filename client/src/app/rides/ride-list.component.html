@@ -26,24 +26,6 @@
       <input matInput id="rideTag" placeholder="Search for tag"
              (input)="rideTag = $event.target.value">
     </mat-form-field>
-    <mat-form-field>
-      <input matInput id="rideHasDriver" placeholder="Search if has driver"
-             (input)="rideHasDriver = $event.target.value">
-    </mat-form-field>
-
-    <br>
-
-    <mat-radio-group class="radioGroup" [(ngModel)] = "rideHasDriver">
-      <mat-radio-button id="isDriving" [value] = "true"> <mat-icon> </mat-icon> drivers</mat-radio-button>
-      <mat-radio-button id="isNotDriving" [value] = "false"> <mat-icon>  </mat-icon> riders</mat-radio-button>
-    </mat-radio-group>
-
-    <br>
-
-    <button class="filterButton" mat-raised-button id="submit" color="primary" #input type="button" (click)="loadService()">
-      Filter by driving / riding
-    </button>
-
   </mat-expansion-panel>
 </mat-card>
 
@@ -95,11 +77,8 @@
         </mat-error>
       </ng-template>
 
-
-
     <div layout="column">
     </div>
-
 
       <div class="cardlist" *ngIf="rides; else ridesError" style="float: right">
         <mat-accordion>
@@ -136,12 +115,8 @@
           Please wait a bit and try again or start the server.
         </mat-error>
       </ng-template>
-
     </div>
-
   </div>
-
-
 </div>
 
 <button mat-fab id="addNewRide" class="add-fab" matTooltip="New Ride" matTooltipPosition="left"
