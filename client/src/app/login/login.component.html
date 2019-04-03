@@ -16,7 +16,7 @@
   });
 </script>
 
-<div *ngIf="!appService.isSignedIn()" class="g-signin2" (click)="signIn()"></div>
+<ng-container *ngIf="appService.isSignedIn(); then showContent else showSignIn" [ngClass]="appService.styleClassSelector()"></ng-container>
 
 <script>
   function signInCallback(authResult) {
