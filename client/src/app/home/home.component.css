@@ -1,13 +1,21 @@
 .cardlist {
-  margin-right: auto;
-  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  width: 100%;
+}
+.buttonContainer{
+   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .mat-card{
   margin-top: 10%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 35em;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
   background-color: #757575;
 }
 
@@ -25,21 +33,31 @@
 }
 
 .loginButton{
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
+  padding: 1%;
+  width: 20%;
+  background-color: #444400;
+}
+.signUpButton{
+  padding: 1%;
+  width: 20%;
+  background-color: #444400;
 }
 
-@media only screen and (min-device-width: 1000px){
-  .cardlist{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@media only screen and (min-device-width: 900px){
+  .loginButton{
+    width: 15%;
   }
-  /*.loginButton{*/
-    /*top: 45%;*/
-    /*left: 35%;*/
-  /*}*/
+  .signUpButton{
+    width: 15%;
+  }
+}
+
+
+@media only screen and (min-device-width: 1000px){
+  .loginButton{
+    width: 10%;
+  }
+  .signUpButton{
+    width: 10%;
+  }
 }
