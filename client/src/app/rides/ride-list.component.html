@@ -32,7 +32,7 @@
 <div id="wrapper">
 
 
-  <div id="riders">
+  <div class="riders">
     <div layout="column">
       <h2 id="title1">Rides</h2>
     </div>
@@ -42,7 +42,7 @@
         <mat-accordion>
           <ng-container #elem class="rides"
                         *ngFor="let ride of this.filterRides(
-                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTag)">
+                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTag, rideHasDriver)">
             <mat-expansion-panel style="background-color: #a4e4ff; border-radius: 5px;" *ngIf="ride.hasDriver === false">
               <mat-expansion-panel-header class="hasDriver"
                                           style="background-color: #747474">
@@ -55,6 +55,7 @@
               <mat-panel-description style="color: black">Mileage: {{ride.mileage}}</mat-panel-description>
               <mat-panel-description style="color: black">Condition: {{ride.condition}}</mat-panel-description>
               <mat-panel-description style="color: black">Tags: {{ride.tags}}</mat-panel-description>
+              <mat-panel-description style="color: black">Has a driver: {{ride.hasDriver}} </mat-panel-description>
               <div id="editButton" style="align-self: right">
               <button mat-button id="editRide" type="button"
                       (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
@@ -76,23 +77,16 @@
         </mat-error>
       </ng-template>
 
-    </div>
-
-  </div>
-
-  <div id="drivers">
     <div layout="column">
-      <h2 id="title2">Drivers</h2>
     </div>
-    <div layout="column">
 
       <div class="cardlist" *ngIf="rides; else ridesError" style="float: right">
         <mat-accordion>
           <ng-container #elem class="rides"
                         *ngFor="let ride of this.filterRides(
-                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTag)">
+                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTag, rideHasDriver)">
           <mat-expansion-panel class="rideInfo"
-                            *ngIf="ride.hasDriver === true">
+                               *ngIf="ride.hasDriver === true" >
             <mat-expansion-panel-header class="hasDriver"
                                         style="background-color: #747474">
               <mat-panel-title class="rideVehicle" [id]="ride.destination">{{ride.destination}}</mat-panel-title>
@@ -103,6 +97,7 @@
             <mat-panel-description style="color: black">Mileage: {{ride.mileage}}</mat-panel-description>
             <mat-panel-description style="color: black">Condition: {{ride.condition}}</mat-panel-description>
             <mat-panel-description style="color: black">Tags: {{ride.tags}}</mat-panel-description>
+            <mat-panel-description style="color: black">Has a driver: {{ride.hasDriver}} </mat-panel-description>
             <button mat-button id="editRideDriver" type="button"
                     (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
                     ride.destination, ride.condition)">Edit</button>
@@ -120,11 +115,8 @@
           Please wait a bit and try again or start the server.
         </mat-error>
       </ng-template>
-
     </div>
-
   </div>
-
 </div>
 
 <button mat-fab id="addNewRide" class="add-fab" matTooltip="New Ride" matTooltipPosition="left"
