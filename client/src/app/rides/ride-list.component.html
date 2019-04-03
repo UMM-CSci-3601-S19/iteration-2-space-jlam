@@ -26,6 +26,10 @@
       <input matInput id="rideTag" placeholder="Search for tag"
              (input)="rideTag = $event.target.value">
     </mat-form-field>
+    <mat-form-field>
+      <input matInput id="rideHasDriver" placeholder="Search if has driver"
+             (input)="rideHasDriver = $event.target.value">
+    </mat-form-field>
 
     <br>
 
@@ -56,7 +60,7 @@
         <mat-accordion>
           <ng-container #elem class="rides"
                         *ngFor="let ride of this.filterRides(
-                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTag)">
+                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTag, rideHasDriver)">
             <mat-expansion-panel style="background-color: #a4e4ff; border-radius: 5px;" *ngIf="ride.hasDriver === false">
               <mat-expansion-panel-header class="hasDriver"
                                           style="background-color: #747474">
@@ -69,6 +73,7 @@
               <mat-panel-description style="color: black">Mileage: {{ride.mileage}}</mat-panel-description>
               <mat-panel-description style="color: black">Condition: {{ride.condition}}</mat-panel-description>
               <mat-panel-description style="color: black">Tags: {{ride.tags}}</mat-panel-description>
+              <mat-panel-description style="color: black">Has a driver: {{ride.hasDriver}} </mat-panel-description>
               <div id="editButton" style="align-self: right">
               <button mat-button id="editRide" type="button"
                       (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
@@ -76,6 +81,48 @@
               </div>
 
             </mat-expansion-panel>
+          </ng-container>
+        </mat-accordion>
+      </div>
+      <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
+      <ng-template #ridesError>
+        <mat-error>
+          There was a problem loading the rides. Possibly the server is down or perhaps there are network
+          issues.
+        </mat-error>
+        <mat-error>
+          Please wait a bit and try again or start the server.
+        </mat-error>
+      </ng-template>
+
+
+
+    <div layout="column">
+    </div>
+
+
+      <div class="cardlist" *ngIf="rides; else ridesError" style="float: right">
+        <mat-accordion>
+          <ng-container #elem class="rides"
+                        *ngFor="let ride of this.filterRides(
+                        rideVehicle, rideMileage, rideDestination, rideStartLocation, rideCondition, rideTag, rideHasDriver)">
+          <mat-expansion-panel class="rideInfo"
+                               *ngIf="ride.hasDriver === true" >
+            <mat-expansion-panel-header class="hasDriver"
+                                        style="background-color: #747474">
+              <mat-panel-title class="rideVehicle" [id]="ride.destination">{{ride.destination}}</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-panel-description style="color: black">Start Location: {{ride.start_location}}</mat-panel-description>
+            <mat-panel-description style="color: black">Vehicle: {{ride.vehicle}}</mat-panel-description>
+            <mat-panel-description style="color: black">Mileage: {{ride.mileage}}</mat-panel-description>
+            <mat-panel-description style="color: black">Condition: {{ride.condition}}</mat-panel-description>
+            <mat-panel-description style="color: black">Tags: {{ride.tags}}</mat-panel-description>
+            <mat-panel-description style="color: black">Has a driver: {{ride.hasDriver}} </mat-panel-description>
+            <button mat-button id="editRideDriver" type="button"
+                    (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
+                    ride.destination, ride.condition)">Edit</button>
+          </mat-expansion-panel>
           </ng-container>
         </mat-accordion>
       </div>
