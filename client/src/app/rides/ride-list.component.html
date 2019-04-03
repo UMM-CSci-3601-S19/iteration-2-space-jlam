@@ -55,6 +55,8 @@
               <mat-panel-description style="color: black">Mileage: {{ride.mileage}}</mat-panel-description>
               <mat-panel-description style="color: black">Condition: {{ride.condition}}</mat-panel-description>
               <mat-panel-description style="color: black">Tags: {{ride.tags}}</mat-panel-description>
+              <mat-panel-description style="color: black">Driver? {{ride.hasDriver}}</mat-panel-description>
+
               <div id="editButton" style="align-self: right">
               <button mat-button id="editRide" type="button"
                       (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
@@ -103,6 +105,7 @@
             <mat-panel-description style="color: black">Mileage: {{ride.mileage}}</mat-panel-description>
             <mat-panel-description style="color: black">Condition: {{ride.condition}}</mat-panel-description>
             <mat-panel-description style="color: black">Tags: {{ride.tags}}</mat-panel-description>
+            <mat-panel-description style="color: black">Driver? {{ride.hasDriver}}</mat-panel-description>
             <button mat-button id="editRideDriver" type="button"
                     (click)="openEditDialog(ride._id, ride.vehicle, ride.mileage, ride.start_location,
                     ride.destination, ride.condition)">Edit</button>

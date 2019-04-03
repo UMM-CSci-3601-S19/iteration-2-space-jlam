@@ -34,7 +34,7 @@ is potentially helpful and contributed to the shaping of this example -->
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput required #input id="conditionField" placeholder="Condition" [(ngModel)]="data.ride.condition"
+        <input matInput required #input id="conditionField" placeholder="Condition of car" [(ngModel)]="data.ride.condition"
                formControlName="condition">
         <mat-error *ngFor="let validation of add_ride_validation_messages.condition">
           <mat-error class="error-message" id='condition-error'
@@ -59,6 +59,16 @@ is potentially helpful and contributed to the shaping of this example -->
         <mat-error *ngFor="let validation of add_ride_validation_messages.tagging">
           <mat-error class="error-message" id='tagging-error'
                      *ngIf="addRideForm.get('tagging').hasError(validation.type) && (addRideForm.get('tagging').dirty || addRideForm.get('tagging').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field flex>
+        <input matInput required #input id="hasDriverField" placeholder="Are you a Driver?" [(ngModel)]="data.ride.hasDriver"
+               formControlName="hasDriver">
+        <mat-error *ngFor="let validation of add_ride_validation_messages.hasDriver">
+          <mat-error class="error-message" id='hasDriver-error'
+                     *ngIf="addRideForm.get('hasDriver').hasError(validation.type) && (addRideForm.get('hasDriver').dirty || addRideForm.get('hasDriver').touched)">
             {{validation.message}}
           </mat-error>
         </mat-error>
