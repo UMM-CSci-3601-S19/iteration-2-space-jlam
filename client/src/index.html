@@ -1,5 +1,8 @@
 <!doctype html>
 <html lang="en" itemscope itemtype="http://schema.org/Article">
+
+<div [ngClass]="appService.styleClassSelector()"> </div>
+
 <head>
   <!-- BEGIN Pre-requisites -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
@@ -12,7 +15,7 @@
     function start() {
       gapi.load('auth2', function() {
         auth2 = gapi.auth2.init({
-          client_id: '708803690905-1epc9prguofics8h203no9sgsu01hj2n.apps.googleusercontent.com',
+          client_id: '708803690905-1epc9prguofics8h203no9sgsu01hj2n.apps.googleusercontent.com'
           // Scopes to request in addition to 'profile' and 'email'
           //scope: 'additional_scope'
         });
