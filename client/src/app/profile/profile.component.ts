@@ -17,7 +17,7 @@ export class ProfileComponent {
   constructor() {
     this.text = 'My Profile';
     this.name = 'Name';
-    this.phone = null;
+    this.phone = 12135461;
     this.email = 'Email Address';
     this.vehicle = 'Vehicle';
     this.condition = 'Vehicle Condition';
