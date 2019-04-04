@@ -6,7 +6,7 @@
       <mat-card-subtitle class="sub" *ngIf="appService.isSignedIn()">Welcome! Use the nav bar on the left.</mat-card-subtitle>
       <mat-divider></mat-divider>
       <mat-card-content>
-        <div class="g-signin2" data-onsuccess="onSignIn" onclick="signIn()"></div>
+        <div class="g-signin2" data-onsuccess="onSignIn" onclick="appComponent.signIn()"></div>
         <div *ngIf="appService.isSignedIn()" class="username">
         </div>
         <div id="signOut" *ngIf="appService.isSignedIn()" (click)="signOut()"><br>

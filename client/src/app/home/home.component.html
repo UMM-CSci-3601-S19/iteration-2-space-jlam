@@ -9,8 +9,9 @@
       </mat-card-content>
     </mat-card>
     <div class="buttonContainer">
-    <button class="loginButton" (click)="openDialog()"> Login </button>
-    <button class="signUpButton" (click)="openDialog()"> Sign Up</button>
+    <!--<button class="loginButton" (click)="openDialog()"> Login </button>-->
+      <div class="g-signin2" data-onsuccess="onSignIn" onclick="signIn()"></div>
+      <button class="signUpButton" onclick="window.location='http://gmail.com'"> Sign Up</button>
   </div>
   </div>
 
