@@ -18,6 +18,7 @@ import {AddUserComponent} from './users/add-user.component';
 import {AddRideComponent} from "./rides/add-ride.component";
 import {EditRideComponent} from "./rides/edit-ride.component";
 import {loginComponent} from "./login/login.component";
+import {AppService} from "./app.service";
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import {loginComponent} from "./login/login.component";
   providers: [
     UserListService,
     RideListService,
+    AppService,
     {provide: APP_BASE_HREF, useValue: '/'},
   ],
   entryComponents: [

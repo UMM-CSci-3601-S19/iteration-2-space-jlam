@@ -1,30 +1,18 @@
-<html lang="en">
-<head>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script>
-    function init() {
-      gapi.load('auth2', function() { // Ready. });
-      })}
-  </script>
-  <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="207007000749-dgpb2fb5f4grk2r7ep34j9qhgl8jvvu3.apps.googleusercontent.com">
-  <script>
-    $('#signinButton').click(function() {
-      // signInCallback defined in step 6.
-      auth2.grantOfflineAccess().then(signInCallback);
-    });
-  </script>
-</head>
-<body>
-<div *ngIf="!appService.isSignedIn()" class="g-signin2" (click)="signIn()"></div>
-<a href="#" onclick="signOut();">Sign out</a>
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
-</body>
-</html>
+<div layout-gt-sm="row">
+  <div flex-gt-sm="80" flex-offset-gt-sm="10">
+    <mat-card>
+      <mat-card-title id="hello-world">{{ this.text }}</mat-card-title>
+      <mat-card-subtitle class="sub" *ngIf="!appService.isSignedIn()">Welcome to MoRide, the Morris community car-pooling application! Please Sign In Below.</mat-card-subtitle>
+      <mat-card-subtitle class="sub" *ngIf="appService.isSignedIn()">Welcome {{appComponent.getUsername()}}! To start, go to the navigation bar to the left.</mat-card-subtitle>
+      <mat-divider></mat-divider>
+      <mat-card-content id="buttons">
+        <div id="signIn" *ngIf="!appService.isSignedIn()" class="g-signin2" (click)="appComponent.signIn()"></div>
+        <div *ngIf="appService.isSignedIn()" class="username">
+        </div>
+        <div id="signOut" *ngIf="appService.isSignedIn()" (click)="appComponent.signOut()">
+          <mat-icon>exit_to_app</mat-icon>
+          Sign Out</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

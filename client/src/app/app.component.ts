@@ -1,14 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../environments/environment';
 import {AppService} from "./app.service";
-import {HttpClient} from "@angular/common/http";
-import {HttpHeaders} from "@angular/common/http";
-import {environment} from "../environments/environment";
 
-
-
-
-
-//lots of the following code was from https://github.com/UMM-CSci-3601-S19/iteration-2-bananya-squad
 declare let gapi: any;
 
 @Component({
@@ -17,12 +11,12 @@ declare let gapi: any;
   styleUrls: ['./app.component.css'],
   providers: [AppService]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   googleAuth;
   userFullName: string;
   userFirstName: string;
-  public userEmail: string;
+  userEmail: string;
 
 
   constructor(private http: HttpClient, public appService: AppService,) {
@@ -101,7 +95,7 @@ export class AppComponent implements OnInit{
 
   initClient() {
     gapi.client.init({
-      'clientId': '207007000749-jabtu20innt3boqi0fcegpl9v2ep4rho.apps.googleusercontent.com',
+      'clientId': '207007000749-dgpb2fb5f4grk2r7ep34j9qhgl8jvvu3.apps.googleusercontent.com',
       'scope': 'profile email'
     });
   }
@@ -112,7 +106,5 @@ export class AppComponent implements OnInit{
     this.getUsername();
     /*gapi.load('client:auth2', this.initClient);*/
   }
-
-
 
 }
