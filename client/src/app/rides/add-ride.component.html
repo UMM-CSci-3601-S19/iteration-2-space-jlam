@@ -54,7 +54,7 @@ is potentially helpful and contributed to the shaping of this example -->
       </mat-error>
     </mat-form-field>
       <mat-form-field flex>
-        <input matInput required #input id="taggingField" placeholder="Tagging" [(ngModel)]="data.ride.tags"
+        <input matInput required #input id="tagsField" placeholder="Tagging" [(ngModel)]="data.ride.tags"
                formControlName="tagging" [maxLength]="30">
         <mat-error *ngFor="let validation of add_ride_validation_messages.tagging">
           <mat-error class="error-message" id='tagging-error'
