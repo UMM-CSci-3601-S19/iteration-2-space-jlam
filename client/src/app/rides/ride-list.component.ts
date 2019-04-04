@@ -156,7 +156,7 @@ export class RideListComponent implements OnInit {
     // }
 
     if (searchHasDriver != null) {
-      // searchHasDriver = searchHasDriver.toLocaleLowerCase();
+      searchHasDriver = searchHasDriver.toLocaleLowerCase();
       this.filteredRides = this.filteredRides.filter(ride => {
         if (searchHasDriver == 'yes') {
           return !searchHasDriver || ride.hasDriver == true;
@@ -164,7 +164,6 @@ export class RideListComponent implements OnInit {
         if (searchHasDriver == 'no') {
           return !searchHasDriver || ride.hasDriver == false;
         }
-
       });
     }
     return this.filteredRides;
