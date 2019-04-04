@@ -31,6 +31,14 @@
              (input)="rideHasDriver = $event.target.value">
     </mat-form-field>
 
+    <br>
+
+    <mat-radio-group class="radioGroup" [(ngModel)] = "rideHasDriver">
+      <mat-radio-button id="Both" [value] = null>Show Rides and Drivers</mat-radio-button>
+    </mat-radio-group>
+
+    <br>
+
 
   </mat-expansion-panel>
 </mat-card>
@@ -82,6 +90,6 @@
 
 <button mat-fab id="addNewRide" class="add-fab" matTooltip="New Ride" matTooltipPosition="left"
         (click)="openDialog()">
-  <mat-icon class="md-24" aria-label="New Ride">add </mat-icon>
+  <mat-icon class="md-24" aria-label="New Ride">add</mat-icon>
 </button>
 </div>
