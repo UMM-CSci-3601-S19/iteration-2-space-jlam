@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "importHelpers": true,
+    "types": ["gapi", "gapi.auth2"],
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

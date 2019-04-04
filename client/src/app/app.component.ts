@@ -101,7 +101,7 @@ export class AppComponent implements OnInit{
 
   initClient() {
     gapi.client.init({
-      'clientId': '708803690905-1epc9prguofics8h203no9sgsu01hj2n.apps.googleusercontent.com',
+      'clientId': '207007000749-jabtu20innt3boqi0fcegpl9v2ep4rho.apps.googleusercontent.com',
       'scope': 'profile email'
     });
   }

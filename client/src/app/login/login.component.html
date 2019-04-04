@@ -1,49 +1,25 @@
+<html lang="en">
 <head>
-  <script type="javascript">
-    function myFunction2() {
-      console.log("fuck you html");
-    }
-  </script>
-
-  <script lang="javascript">
-    gapi.load()
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="207007000749-jabtu20innt3boqi0fcegpl9v2ep4rho.apps.googleusercontent.com.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
     $('#signinButton').click(function() {
       // signInCallback defined in step 6.
       auth2.grantOfflineAccess().then(signInCallback);
     });
   </script>
-
 </head>
-
 <body>
-
-<div *ngIf="!appService.isSignedIn()" class="g-signin2" (click)="signIn() "></div>
-
-<!--<script type="typescript">-->
-  <!--var test;-->
-  <!--test = getUsers("erg");-->
-  <!--storeData(string2: string): void;-->
-
-   <!--status = localStorage.setItem('isSignedIn');-->
-  <!--}-->
-<!--</script>-->
-
+<div *ngIf="!appService.isSignedIn()" class="g-signin2" (click)="signIn()"></div>
+<a href="#" onclick="signOut();">Sign out</a>
 <script>
-  function myFunction1() {
-    console.log("the thing worked");
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
   }
 </script>
-
-<div *ngIf="!appService.isSignedIn(); then myFunction1 else elseBlock1"></div>
-<ng-template #thenBlock1>You are logged in.</ng-template>
-<ng-template #elseBlock1>You are logged out.</ng-template>
-
-
-
-
-
-<h1>A Web Page</h1>
-<p id="demo">A Paragraph</p>
-<button type="button" onclick="myFunction2()">Try it</button>
-
 </body>
+</html>
