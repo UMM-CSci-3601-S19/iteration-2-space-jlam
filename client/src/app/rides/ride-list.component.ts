@@ -164,7 +164,6 @@ export class RideListComponent implements OnInit {
         if (searchHasDriver == 'no') {
           return !searchHasDriver || ride.hasDriver == false;
         }
-
       });
     }
     return this.filteredRides;
