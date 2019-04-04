@@ -9,6 +9,6 @@ export class HomeComponent {
   public text: string;
 
   constructor() {
-    this.text = 'Welcome To Morride';
+    this.text = 'Welcome To MoRide';
   }
 }
