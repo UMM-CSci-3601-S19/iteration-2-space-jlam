@@ -1,5 +1,5 @@
-<td-layout #layout>
-  <td-navigation-drawer flex sidenavTitle="">
+<td-layout #layout class="pageLayout">
+  <td-navigation-drawer flex sidenavTitle="MoRide">
     <mat-nav-list>
       <!--<a mat-list-item [routerLink]="['/']" (click)="layout.close()" routerLinkActive="nav-active"-->
          <!--[routerLinkActiveOptions]="{exact: true}">-->
@@ -8,22 +8,30 @@
       <a mat-list-item [routerLink]="['/home']" (click)="layout.close()" routerLinkActive="nav-active">
         <mat-icon>home</mat-icon>
         Home</a>
+      <a mat-list-item [routerLink]="['/profile']" (click)="layout.close()" routerLinkActive="nav-active">
+        <mat-icon>account_box</mat-icon>
+        Profile</a>
       <a mat-list-item [routerLink]="['/users']" (click)="layout.close()" routerLinkActive="nav-active">
         <mat-icon>account_box</mat-icon>
         Users</a>
       <a mat-list-item [routerLink]="['/rides']" (click)="layout.close()" routerLinkActive="nav-active">
-        <mat-icon>train</mat-icon>
+        <mat-icon>local_taxi</mat-icon>
         Rides</a>
       <a mat-list-item [routerLink]="['/login']" (click)="layout.close()" routerLinkActive="nav-active">
         <mat-icon>lock</mat-icon>
         Login</a>
 
+
     </mat-nav-list>
   </td-navigation-drawer>
+
   <td-layout-nav toolbarTitle="Menu" navigationRoute="/">
-    <button mat-icon-button td-menu-button tdLayoutToggle>
+    <button class="menuButton" mat-icon-button td-menu-button tdLayoutToggle>
       <mat-icon>menu</mat-icon>
     </button>
+
     <router-outlet></router-outlet>
   </td-layout-nav>
+
+
 </td-layout>

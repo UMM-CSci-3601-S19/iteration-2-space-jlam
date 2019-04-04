@@ -24,7 +24,7 @@ export class RideListComponent implements OnInit {
   public rideCondition: string;
   public rideDestination: string;
   public rideStartLocation: string;
-  public rideHasDriver: boolean;
+  public rideHasDriver: string;
   public rideTag: string;
 
   // The ID of the
@@ -97,13 +97,13 @@ export class RideListComponent implements OnInit {
   }
 
   public filterRides(searchVehicle: string, searchMileage: number, searchDestination: string, searchStartLocation: string,
-                     searchCondition: string, searchTag: string): Ride[] {
+                     searchCondition: string, searchTag: string, searchHasDriver: string): Ride[] {
 
     this.filteredRides = this.rides;
 
     // Filter by vehicle
     if (searchVehicle != null) {
-      searchVehicle = searchVehicle.toLocaleLowerCase();
+      searchVehicle = searchVehicle.toLocaleLowerCase().trim().replace(/\s+/g, " ");
       this.filteredRides = this.filteredRides.filter(ride => {
         return !searchVehicle || ride.vehicle.toLowerCase().indexOf(searchVehicle) !== -1;
       });
@@ -118,7 +118,7 @@ export class RideListComponent implements OnInit {
 
     // Filter by destination
     if (searchDestination != null) {
-      searchDestination = searchDestination.toLocaleLowerCase();
+      searchDestination = searchDestination.toLocaleLowerCase().trim().replace(/\s+/g, " ");
       this.filteredRides = this.filteredRides.filter(ride => {
         return !searchDestination || ride.destination.toLowerCase().indexOf(searchDestination) !== -1;
       });
@@ -126,15 +126,15 @@ export class RideListComponent implements OnInit {
 
     // Filter by Start Location
     if (searchStartLocation != null) {
-      searchStartLocation = searchStartLocation.toLocaleLowerCase();
+      searchStartLocation = searchStartLocation.toLocaleLowerCase().trim().replace(/\s+/g, " ");
       this.filteredRides = this.filteredRides.filter(ride => {
         return !searchStartLocation || ride.start_location.toLowerCase().indexOf(searchStartLocation) !== -1;
       });
     }
 
-    // Filter by Condition
+    // Filter by Conditionform validators for emoji angular
     if (searchCondition != null) {
-      searchCondition = searchCondition.toLocaleLowerCase();
+      searchCondition = searchCondition.toLocaleLowerCase().trim().replace(/\s+/g, " ");
       this.filteredRides = this.filteredRides.filter(ride => {
         return !searchCondition || ride.condition.toLowerCase().indexOf(searchCondition) !== -1;
       });
@@ -142,9 +142,29 @@ export class RideListComponent implements OnInit {
 
     // Filter by Tag
     if (searchTag != null) {
-      searchTag = searchTag.toLocaleLowerCase();
+      searchTag = searchTag.toLocaleLowerCase().trim().replace(/\s+/g, " ");
       this.filteredRides = this.filteredRides.filter(ride => {
         return !searchTag || ride.tags.toLowerCase().indexOf(searchTag) !== -1;
+      });
+    }
+
+    // Filter if it has a driver
+    // if (searchHasDriver != null) {
+    //   this.filteredRides = this.filteredRides.filter(ride => {
+    //     return !searchTag || ride.hasDriver == searchHasDriver;
+    //   });
+    // }
+
+    if (searchHasDriver != null) {
+      searchHasDriver = searchHasDriver.toLocaleLowerCase();
+      this.filteredRides = this.filteredRides.filter(ride => {
+        if (searchHasDriver == 'yes') {
+          return !searchHasDriver || ride.hasDriver == true;
+        }
+        if (searchHasDriver == 'no') {
+          return !searchHasDriver || ride.hasDriver == false;
+        }
+
       });
     }
     return this.filteredRides;
@@ -164,7 +184,7 @@ export class RideListComponent implements OnInit {
     rides.subscribe(
       rides => {
         this.rides = rides;
-        this.filterRides(this.rideVehicle, this.rideMileage, this.rideDestination, this.rideStartLocation, this.rideCondition, this.rideTag);
+        this.filterRides(this.rideVehicle, this.rideMileage, this.rideDestination, this.rideStartLocation, this.rideCondition, this.rideTag, this.rideHasDriver);
       },
       err => {
         console.log(err);

@@ -69,6 +69,7 @@ public class Server {
     // Redirects for the "home" page
     redirect.get("", "/");
     redirect.get("/", "/home");
+    redirect.get("/", "/profile");
 
     Route clientRoute = (req, res) -> {
       InputStream stream = Server.class.getResourceAsStream("/public/index.html");
@@ -76,6 +77,7 @@ public class Server {
     };
 
     get("/home", clientRoute);
+    get("/profile", clientRoute);
 
     /// User Endpoints ///////////////////////////
     /////////////////////////////////////////////

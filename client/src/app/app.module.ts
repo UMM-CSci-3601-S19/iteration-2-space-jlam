@@ -1,9 +1,12 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {MatRadioModule}  from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
+import {ProfileComponent} from './profile/profile.component';
 import {UserComponent} from './users/user.component';
 import {RideComponent} from './rides/ride.component';
 import {UserListComponent} from './users/user-list.component';
@@ -27,10 +30,13 @@ import {AppService} from "./app.service";
     HttpClientModule,
     Routing,
     CustomModule,
+    MatRadioModule,
+    MatSelectModule,
   ],
   declarations: [
     AppComponent,
     HomeComponent,
+    ProfileComponent,
     UserListComponent,
     UserComponent,
     RideListComponent,

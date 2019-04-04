@@ -83,12 +83,18 @@ public class RideRequestHandler {
     String tags = newRide.getString("tags");
     String driver = "Roen";
     Boolean riders = false;
-    Boolean hasDriver = true;
+    String hasDriver = newRide.getString("hasDriver");
+    boolean hasDriverBool = Boolean.parseBoolean(hasDriver);
+    if (hasDriver.equals("yes")){
+      hasDriverBool = true;
+    } else if (hasDriver.equals("no")){
+      hasDriverBool = false;
+    }
 
 
     System.err.println("Adding new ride [vehicle=" + vehicle + ", mileage=" + mileage + " condition=" + condition
-      + " start_location=" + start_location + " destination=" + destination +']');
-    return rideController.addNewRide(vehicle, mileage, condition, start_location, destination, tags, driver, riders, hasDriver);
+      + " start_location=" + start_location + " destination=" + destination + "hasDriver"+ hasDriver+']');
+    return rideController.addNewRide(vehicle, mileage, condition, start_location, destination, tags, driver, riders, hasDriverBool);
   }
 
 }

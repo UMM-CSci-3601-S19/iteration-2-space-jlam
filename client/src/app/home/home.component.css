@@ -1,19 +1,27 @@
 .cardlist {
-  margin-right: auto;
-  margin-left: auto;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  background-image: linear-gradient(green, transparent);
+  width: 100%;
+}
+.buttonContainer{
+   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .mat-card{
   margin-top: 10%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 35em;
-  background-color: #757575;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  background-color: #bbe043;
 }
 
 #firstTitle {
-  background-color: #757575;
+  background-color: #bbe043;
   text-align: center;
   font-size: 4em;
 
@@ -25,3 +33,32 @@
 
 }
 
+.loginButton{
+  padding: 1%;
+  width: 20%;
+  background-color: #85a323;
+}
+.signUpButton{
+  padding: 1%;
+  width: 20%;
+  background-color: #85a323;
+}
+
+@media only screen and (min-device-width: 900px){
+  .loginButton{
+    width: 15%;
+  }
+  .signUpButton{
+    width: 15%;
+  }
+}
+
+
+@media only screen and (min-device-width: 1000px){
+  .loginButton{
+    width: 10%;
+  }
+  .signUpButton{
+    width: 10%;
+  }
+}

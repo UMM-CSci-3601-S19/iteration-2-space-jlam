@@ -34,7 +34,7 @@ is potentially helpful and contributed to the shaping of this example -->
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput required #input id="conditionField" placeholder="Condition" [(ngModel)]="data.ride.condition"
+        <input matInput required #input id="conditionField" placeholder="Condition of car" [(ngModel)]="data.ride.condition"
                formControlName="condition">
         <mat-error *ngFor="let validation of add_ride_validation_messages.condition">
           <mat-error class="error-message" id='condition-error'
@@ -63,6 +63,16 @@ is potentially helpful and contributed to the shaping of this example -->
           </mat-error>
         </mat-error>
       </mat-form-field>
+      <mat-form-field flex>
+        <input matInput required #input id="hasDriverField" placeholder="Are you a Driver yes/no?" [(ngModel)]="data.ride.hasDriver"
+               formControlName="hasDriver">
+        <mat-error *ngFor="let validation of add_ride_validation_messages.hasDriver">
+          <mat-error class="error-message" id='hasDriver-error'
+                     *ngIf="addRideForm.get('hasDriver').hasError(validation.type) && (addRideForm.get('hasDriver').dirty || addRideForm.get('hasDriver').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
     </mat-dialog-content>
     <mat-dialog-actions layout="row">
       <!-- [mat-dialog-close]="data.ride" causes the data.ride object to be returned when the dialog is closed. -->
@@ -70,7 +80,9 @@ is potentially helpful and contributed to the shaping of this example -->
               [disabled]="!addRideForm.valid">Add Ride
       </button>
       <!-- [mat-dialog-close]="null" causes null to be returned when the dialog is closed. -->
-      <button mat-button id="exitWithoutAddingButton" [mat-dialog-close]="null" type="button">Cancel</button>
+      <button
+        mat-button id="exitWithoutAddingButton" [mat-dialog-close]="null" type="button">Cancel
+      </button>
     </mat-dialog-actions>
   </form>
 </div>
