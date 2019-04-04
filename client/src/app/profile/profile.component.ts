@@ -7,8 +7,20 @@ import {Component} from '@angular/core';
 })
 export class ProfileComponent {
   public text: string;
+  public name: string;
+  public phone: number;
+  public email: string;
+  public vehicle: string;
+  public condition: string;
+  public tags: string;
 
   constructor() {
-    this.text = 'Your Profile';
+    this.text = 'My Profile';
+    this.name = 'Name';
+    this.phone = null;
+    this.email = 'Email Address';
+    this.vehicle = 'Vehicle';
+    this.condition = 'Vehicle Condition';
+    this.tags = 'I like cake';
   }
 }

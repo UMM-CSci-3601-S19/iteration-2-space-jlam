@@ -3,10 +3,21 @@
     <mat-card class="matCard1">
       <mat-card-title id="firstTitle">{{ this.text }}</mat-card-title>
       <mat-card-subtitle></mat-card-subtitle>
-      <mat-divider></mat-divider>
-      <mat-card-content class="cardContent1">
-        To get started login or setup a new account
-      </mat-card-content>
+      <div class="Info">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Info</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-panel-description>My Phone Number: {{this.phone}}</mat-panel-description>
+            <mat-panel-description>My Email: {{this.email}}</mat-panel-description>
+            <mat-panel-description>My Vehicle: {{this.vehicle}}</mat-panel-description>
+            <mat-panel-description>Vehicle Condition: {{this.condition}}</mat-panel-description>
+            <mat-panel-description>Description about me: {{this.tags}}</mat-panel-description>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </div>
     </mat-card>
   </div>
 
