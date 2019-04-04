@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: right;
+  background-image: linear-gradient(transparent, green);
   width: 100%;
+  height: 1500px;
 }
 .buttonContainer{
-   display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
@@ -16,11 +18,11 @@
   margin-left: 0px;
   margin-right: 0px;
   width: 100%;
-  background-color: #757575;
+  background-color: #bbe043;
 }
 
 #firstTitle {
-  background-color: #757575;
+  background-color: #bbe043;
   text-align: center;
   font-size: 4em;
 
@@ -35,12 +37,12 @@
 .loginButton{
   padding: 1%;
   width: 20%;
-  background-color: #444400;
+  background-color: #85a323;
 }
 .signUpButton{
   padding: 1%;
   width: 20%;
-  background-color: #444400;
+  background-color: #85a323;
 }
 
 @media only screen and (min-device-width: 900px){
