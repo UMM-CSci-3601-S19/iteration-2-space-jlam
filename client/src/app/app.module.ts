@@ -6,6 +6,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
+import {ProfileComponent} from './profile/profile.component';
 import {UserComponent} from './users/user.component';
 import {RideComponent} from './rides/ride.component';
 import {UserListComponent} from './users/user-list.component';
@@ -33,6 +34,7 @@ import {EditRideComponent} from "./rides/edit-ride.component";
   declarations: [
     AppComponent,
     HomeComponent,
+    ProfileComponent,
     UserListComponent,
     UserComponent,
     RideListComponent,
