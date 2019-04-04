@@ -1,17 +1,16 @@
-<div layout-gt-sm="row">
+<div layout-gt-sm="row" xmlns="http://www.w3.org/1999/html">
   <div flex-gt-sm="80" flex-offset-gt-sm="10">
     <mat-card>
-      <mat-card-title id="hello-world">{{ this.text }}</mat-card-title>
-      <mat-card-subtitle class="sub" *ngIf="!appService.isSignedIn()">Welcome to MoRide, the Morris community car-pooling application! Please Sign In Below.</mat-card-subtitle>
-      <mat-card-subtitle class="sub" *ngIf="appService.isSignedIn()">Welcome {{appComponent.getUsername()}}! To start, go to the navigation bar to the left.</mat-card-subtitle>
+      <mat-card-title id="loginCard">{{ this.text }}</mat-card-title>
+      <mat-card-subtitle class="sub" *ngIf="!appService.isSignedIn()">Welcome! Sign In Below.</mat-card-subtitle>
+      <mat-card-subtitle class="sub" *ngIf="appService.isSignedIn()">Welcome! Use the nav bar on the left.</mat-card-subtitle>
       <mat-divider></mat-divider>
-      <mat-card-content id="buttons">
-        <div id="signIn" *ngIf="!appService.isSignedIn()" class="g-signin2" (click)="appComponent.signIn()"></div>
+      <mat-card-content>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <div *ngIf="appService.isSignedIn()" class="username">
         </div>
-        <div id="signOut" *ngIf="appService.isSignedIn()" (click)="appComponent.signOut()">
-          <mat-icon>exit_to_app</mat-icon>
-          Sign Out</div>
+        <div id="signOut" *ngIf="appService.isSignedIn()" (click)="signOut()"><br>
+          Sign Out</div><div>{{getUsername}}</div>
       </mat-card-content>
     </mat-card>
   </div>
