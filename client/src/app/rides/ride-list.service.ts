@@ -63,32 +63,33 @@ export class RideListService {
       }
     }
   }
+  // Unused filter for now
 
-  filterByHasDriver(rideHasDriver?: string): void {
-    if (!(rideHasDriver == null || rideHasDriver === '')) {
-      if (this.parameterPresent('hasDriver=')) {
-        // there was a previous search by company that we need to clear
-        this.removeParameter('hasDriver=');
-      }
-      if (this.rideUrl.indexOf('?') !== -1) {
-        // there was already some information passed in this url
-        this.rideUrl += 'hasDriver=' + rideHasDriver + '&';
-      } else {
-        // this was the first bit of information to pass in the url
-        this.rideUrl += '?hasDriver=' + rideHasDriver + '&';
-      }
-    } else {
-      // there was nothing in the box to put onto the URL... reset
-      if (this.parameterPresent('hasDriver=')) {
-        let start = this.rideUrl.indexOf('hasDriver=');
-        const end = this.rideUrl.indexOf('&', start);
-        if (this.rideUrl.substring(start - 1, start) === '?') {
-          start = start - 1;
-        }
-        this.rideUrl = this.rideUrl.substring(0, start) + this.rideUrl.substring(end + 1);
-      }
-    }
-  }
+  // filterByHasDriver(rideHasDriver?: string): void {
+  //   if (!(rideHasDriver == null || rideHasDriver === '')) {
+  //     if (this.parameterPresent('hasDriver=')) {
+  //       // there was a previous search by company that we need to clear
+  //       this.removeParameter('hasDriver=');
+  //     }
+  //     if (this.rideUrl.indexOf('?') !== -1) {
+  //       // there was already some information passed in this url
+  //       this.rideUrl += 'hasDriver=' + rideHasDriver + '&';
+  //     } else {
+  //       // this was the first bit of information to pass in the url
+  //       this.rideUrl += '?hasDriver=' + rideHasDriver + '&';
+  //     }
+  //   } else {
+  //     // there was nothing in the box to put onto the URL... reset
+  //     if (this.parameterPresent('hasDriver=')) {
+  //       let start = this.rideUrl.indexOf('hasDriver=');
+  //       const end = this.rideUrl.indexOf('&', start);
+  //       if (this.rideUrl.substring(start - 1, start) === '?') {
+  //         start = start - 1;
+  //       }
+  //       this.rideUrl = this.rideUrl.substring(0, start) + this.rideUrl.substring(end + 1);
+  //     }
+  //   }
+  // }
 
   private parameterPresent(searchParam: string) {
     return this.rideUrl.indexOf(searchParam) !== -1;
