@@ -58,6 +58,11 @@ export class AddRideComponent implements OnInit {
       {type: 'minlength', message: 'The tag must not be shorter than 2 characters long'},
       {type: 'maxlength', message: 'The tag must not be longer than 50 characters long'},
       {type: 'pattern', message: 'The tag of the ride must not contain any unnecessary spaces or emojis'}
+    ],
+
+    'hasDriver': [
+      {type: 'required', message: 'Having a Driver is required'},
+      {type: 'pattern', message: 'Answer must not contain any unnecessary space or emojis'}
     ]
   };
 
@@ -109,6 +114,10 @@ export class AddRideComponent implements OnInit {
         Validators.minLength(2),
         Validators.maxLength(50),
         Validators.pattern('^[\\w]+((\\s|[\\w]+))*$'),
+      ])),
+      hasDriver: new FormControl('hasDriver', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[\\w]+((\\s|[\\w]+))*$')
       ]))
     })
 
