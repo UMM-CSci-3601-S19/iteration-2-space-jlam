@@ -4,8 +4,8 @@
 @include mat-core;
 
 //Define palette
-$new-theme-primary: mat-palette($mat-gray, 600, 400, 900);
-$new-theme-accent: mat-palette($mat-light-blue, 500, 200, 700);
+$new-theme-primary: mat-palette($mat-green, 600, 900, 900);
+$new-theme-accent: mat-palette($mat-light-green, 500, 200, 700);
 
 // The warn palette is optional (defaults to red).
 $warn: mat-palette($mat-blue);
@@ -13,7 +13,7 @@ $warn: mat-palette($mat-blue);
 // Create the theme object (a Sass map containing all of the palettes).
 $new-theme: mat-light-theme($new-theme-primary, $new-theme-accent, $warn);
 
-$background-color: #001f33;
+$background-color: #000450;
 
 
 $background: map-get($new-theme, background);
