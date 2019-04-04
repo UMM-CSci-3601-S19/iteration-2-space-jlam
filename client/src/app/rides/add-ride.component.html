@@ -64,7 +64,7 @@ is potentially helpful and contributed to the shaping of this example -->
         </mat-error>
       </mat-form-field>
       <mat-form-field flex>
-        <input matInput required #input id="hasDriverField" placeholder="Are you a Driver?" [(ngModel)]="data.ride.hasDriver"
+        <input matInput required #input id="hasDriverField" placeholder="Are you a Driver yes/no?" [(ngModel)]="data.ride.hasDriver"
                formControlName="hasDriver">
         <mat-error *ngFor="let validation of add_ride_validation_messages.hasDriver">
           <mat-error class="error-message" id='hasDriver-error'
