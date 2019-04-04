@@ -25,9 +25,11 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import org.json.*;
 
 
+
 public class Server {
   private static final String userDatabaseName = "dev";
   private static final int serverPort = 4567;
+  public static String tempUserName;
 
   public static void main(String[] args) {
 
@@ -182,6 +184,8 @@ public class Server {
       String userVehicle = (String) payload.get("userVehicle");
 
       String userName = (String) payload.get("userName");
+
+      tempUserName = (String) payload.get("userName");
 
       return userController.addNewUser(subjectId, userName, userVehicle, userEmail);
 

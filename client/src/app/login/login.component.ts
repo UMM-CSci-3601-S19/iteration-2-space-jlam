@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {AppService} from "../app.service";
 
 @Component({
   selector: 'login',
@@ -9,8 +10,7 @@ export class loginComponent {
   public text: string;
 
 
-
-  constructor() {
+  constructor(private appService : AppService) {
     this.text = 'Test Text About Logging In';
   }
 }
