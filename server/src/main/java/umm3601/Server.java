@@ -28,7 +28,7 @@ import org.json.*;
 
 public class Server {
   private static final String userDatabaseName = "dev";
-  private static final int serverPort = 4567;
+  private static final int serverPort = 80;
   public static String tempUserName;
 
   public static void main(String[] args) {
