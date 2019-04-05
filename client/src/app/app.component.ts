@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
   }
 
   signOut() {
-    // this.handleClientLoad();
+    this.handleClientLoad();
 
     this.googleAuth = gapi.auth2.getAuthInstance();
 
@@ -89,9 +89,9 @@ export class AppComponent implements OnInit {
   }
 
 
-  // handleClientLoad() {
-  //   gapi.load('client:auth2', this.initClient);
-  // }
+  handleClientLoad() {
+    gapi.load('client:auth2', this.initClient);
+  }
 
   initClient() {
     gapi.client.init({
@@ -102,7 +102,7 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    // this.handleClientLoad();
+    this.handleClientLoad();
     this.getUsername();
     /*gapi.load('client:auth2', this.initClient);*/
   }
