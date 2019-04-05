@@ -7,5 +7,5 @@ export const environment = {
   // keep the port number (`:4567`) unless you
   // reconfigure the Java Spark server to use a
   // different port.
-  API_URL: 'http://spacejlam/api/'
+  API_URL: 'http://spacejlam.me/api/'
 };
