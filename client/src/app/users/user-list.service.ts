@@ -15,8 +15,8 @@ export class UserListService {
   constructor(private http: HttpClient) {
   }
 
-  getUsers(userCompany?: string): Observable<User[]> {
-    this.filterByCompany(userCompany);
+  getUsers(userVehicle?: string): Observable<User[]> {
+    this.filterByVehicle(userVehicle);
     return this.http.get<User[]>(this.userUrl);
   }
 
@@ -27,30 +27,30 @@ export class UserListService {
   /*
   //This method looks lovely and is more compact, but it does not clear previous searches appropriately.
   //It might be worth updating it, but it is currently commented out since it is not used (to make that clear)
-  getUsersByCompany(userCompany?: string): Observable<User> {
-      this.userUrl = this.userUrl + (!(userCompany == null || userCompany == "") ? "?company=" + userCompany : "");
+  getUsersByVehicle(userVehicle?: string): Observable<User> {
+      this.userUrl = this.userUrl + (!(userVehicle == null || userVehicle == "") ? "?vehicle=" + userVehicle : "");
       console.log("The url is: " + this.userUrl);
       return this.http.request(this.userUrl).map(res => res.json());
   }
   */
 
-  filterByCompany(userCompany?: string): void {
-    if (!(userCompany == null || userCompany === '')) {
-      if (this.parameterPresent('company=')) {
-        // there was a previous search by company that we need to clear
-        this.removeParameter('company=');
+  filterByVehicle(userVehicle?: string): void {
+    if (!(userVehicle == null || userVehicle === '')) {
+      if (this.parameterPresent('vehicle=')) {
+        // there was a previous search by vehicle that we need to clear
+        this.removeParameter('vehicle=');
       }
       if (this.userUrl.indexOf('?') !== -1) {
         // there was already some information passed in this url
-        this.userUrl += 'company=' + userCompany + '&';
+        this.userUrl += 'vehicle=' + userVehicle + '&';
       } else {
         // this was the first bit of information to pass in the url
-        this.userUrl += '?company=' + userCompany + '&';
+        this.userUrl += '?vehicle=' + userVehicle + '&';
       }
     } else {
       // there was nothing in the box to put onto the URL... reset
-      if (this.parameterPresent('company=')) {
-        let start = this.userUrl.indexOf('company=');
+      if (this.parameterPresent('vehicle=')) {
+        let start = this.userUrl.indexOf('vehicle=');
         const end = this.userUrl.indexOf('&', start);
         if (this.userUrl.substring(start - 1, start) === '?') {
           start = start - 1;

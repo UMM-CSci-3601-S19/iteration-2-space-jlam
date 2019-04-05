@@ -1,30 +1,30 @@
-<!--<div layout-gt-sm="row">-->
-  <!--<div flex-gt-sm="80" flex-offset-gt-sm="10">-->
-    <!--<div class="cardlist">-->
-      <!--<mat-form-field>-->
-        <!--<input matInput id="userName" #input type="text" placeholder="Filter by name"-->
-               <!--(input)="userName = $event.target.value">-->
-      <!--</mat-form-field>-->
-      <!--<mat-accordion>-->
-        <!--<ng-container #elem class="users"-->
-                      <!--*ngFor="let user of this.filterUsers(-->
-                        <!--userName)">-->
-          <!--<mat-expansion-panel class="userInfo">-->
-            <!--<mat-expansion-panel-header style="background-color: #747474">-->
-              <!--<mat-panel-title class="userVehicle" [id]="user.name">{{user.name}}</mat-panel-title>-->
-            <!--</mat-expansion-panel-header>-->
+<div layout-gt-sm="row">
+  <div flex-gt-sm="80" flex-offset-gt-sm="10">
+    <div class="cardlist">
+      <mat-form-field>
+        <input matInput id="userName" #input type="text" placeholder="Filter by name"
+               (input)="userName = $event.target.value">
+      </mat-form-field>
+      <mat-accordion>
+        <ng-container #elem class="users"
+                      *ngFor="let user of this.filterUsers(
+                        userName)">
+          <mat-expansion-panel class="userInfo">
+            <mat-expansion-panel-header style="background-color: #747474">
+              <mat-panel-title class="userVehicle" [id]="user.name">{{user.name}}</mat-panel-title>
+            </mat-expansion-panel-header>
 
-            <!--<mat-panel-description style="color: black">Phone: {{user.phone}}</mat-panel-description>-->
-            <!--<mat-panel-description style="color: black">Email: {{user.email}}</mat-panel-description>-->
-            <!--<mat-panel-description style="color: black">Vehicle: {{user.vehicle}}</mat-panel-description>-->
-          <!--</mat-expansion-panel>-->
-        <!--</ng-container>-->
-      <!--</mat-accordion>-->
-    <!--</div>-->
-    <!--<button mat-fab id="addNewUser" class="add-fab" matTooltip="New User" matTooltipPosition="left"-->
-            <!--(click)="openDialog()">-->
-      <!--<mat-icon class="md-24" aria-label="New User">add</mat-icon>-->
-    <!--</button>-->
+            <mat-panel-description style="color: black">Phone: {{user.phone}}</mat-panel-description>
+            <mat-panel-description style="color: black">Email: {{user.email}}</mat-panel-description>
+            <mat-panel-description style="color: black">Vehicle: {{user.vehicle}}</mat-panel-description>
+          </mat-expansion-panel>
+        </ng-container>
+      </mat-accordion>
+    </div>
+    <button mat-fab id="addNewUser" class="add-fab" matTooltip="New User" matTooltipPosition="left"
+            (click)="openDialog()">
+      <mat-icon class="md-24" aria-label="New User">add</mat-icon>
+    </button>
 
-<!--</div>-->
-<!--</div>-->
+</div>
+</div>

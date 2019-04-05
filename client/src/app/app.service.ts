@@ -4,7 +4,9 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import 'rxjs/add/observable/of';
 
+
 //Code credited to group Bananya Squad iteration 2
+declare let gapi: any;
 
 @Injectable()
 export class AppService implements OnInit{

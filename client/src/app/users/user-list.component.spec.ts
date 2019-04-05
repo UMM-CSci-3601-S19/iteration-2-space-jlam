@@ -88,22 +88,22 @@ describe('User list', () => {
     });
   });
 
-  it('user list filters by phone', () => {
-    expect(userList.filteredUsers.length).toBe(3);
-    userList.userPhone = 3335555555;
-    userList.refreshUsers().subscribe(() => {
-      expect(userList.filteredUsers.length).toBe(1);
-    });
-  });
+  // it('user list filters by phone', () => {
+  //   expect(userList.filteredUsers.length).toBe(3);
+  //   userList.userPhone = 3335555555;
+  //   userList.refreshUsers().subscribe(() => {
+  //     expect(userList.filteredUsers.length).toBe(1);
+  //   });
+  // });
 
-  it('user list filters by name and age', () => {
-    expect(userList.filteredUsers.length).toBe(3);
-    userList.userPhone = 5555555555;
-    userList.userName = 'i';
-    userList.refreshUsers().subscribe(() => {
-      expect(userList.filteredUsers.length).toBe(1);
-    });
-  });
+  // it('user list filters by name and age', () => {
+  //   expect(userList.filteredUsers.length).toBe(3);
+  //   userList.userPhone = 5555555555;
+  //   userList.userName = 'i';
+  //   userList.refreshUsers().subscribe(() => {
+  //     expect(userList.filteredUsers.length).toBe(1);
+  //   });
+  // });
 
 });
 
