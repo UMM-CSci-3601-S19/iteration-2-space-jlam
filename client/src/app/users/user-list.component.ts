@@ -65,8 +65,7 @@ export class UserListComponent implements OnInit {
 
     // Filter by name
     if (searchName != null) {
-      searchName = searchName.toLocaleLowerCase();
-
+      searchName = searchName.toLocaleLowerCase().trim().replace(/\s+/g, " ");
       this.filteredUsers = this.filteredUsers.filter(user => {
         return !searchName || user.name.toLowerCase().indexOf(searchName) !== -1;
       });

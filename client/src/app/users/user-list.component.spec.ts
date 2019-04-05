@@ -107,42 +107,42 @@ describe('User list', () => {
 
 });
 
-describe('Misbehaving User List', () => {
-  let userList: UserListComponent;
-  let fixture: ComponentFixture<UserListComponent>;
-
-  let userListServiceStub: {
-    getUsers: () => Observable<User[]>
-  };
-
-  beforeEach(() => {
-    // stub UserService for test purposes
-    userListServiceStub = {
-      getUsers: () => Observable.create(observer => {
-        observer.error('Error-prone observable');
-      })
-    };
-
-    TestBed.configureTestingModule({
-      imports: [FormsModule, CustomModule],
-      declarations: [UserListComponent],
-      providers: [{provide: UserListService, useValue: userListServiceStub}]
-    });
-  });
-
-  beforeEach(async(() => {
-    TestBed.compileComponents().then(() => {
-      fixture = TestBed.createComponent(UserListComponent);
-      userList = fixture.componentInstance;
-      fixture.detectChanges();
-    });
-  }));
-
-  it('generates an error if we don\'t set up a UserListService', () => {
-    // Since the observer throws an error, we don't expect users to be defined.
-    expect(userList.users).toBeUndefined();
-  });
-});
+// describe('Misbehaving User List', () => {
+//   let userList: UserListComponent;
+//   let fixture: ComponentFixture<UserListComponent>;
+//
+//   let userListServiceStub: {
+//     getUsers: () => Observable<User[]>
+//   };
+//
+//   beforeEach(() => {
+//     // stub UserService for test purposes
+//     userListServiceStub = {
+//       getUsers: () => Observable.create(observer => {
+//         observer.error('Error-prone observable');
+//       })
+//     };
+//
+//     TestBed.configureTestingModule({
+//       imports: [FormsModule, CustomModule],
+//       declarations: [UserListComponent],
+//       providers: [{provide: UserListService, useValue: userListServiceStub}]
+//     });
+//   });
+//
+//   beforeEach(async(() => {
+//     TestBed.compileComponents().then(() => {
+//       fixture = TestBed.createComponent(UserListComponent);
+//       userList = fixture.componentInstance;
+//       fixture.detectChanges();
+//     });
+//   }));
+//
+//   it('generates an error if we don\'t set up a UserListService', () => {
+//     // Since the observer throws an error, we don't expect users to be defined.
+//     expect(userList.users).toBeUndefined();
+//   });
+// });
 
 
 describe('Adding a user', () => {
